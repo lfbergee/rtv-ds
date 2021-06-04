@@ -1,0 +1,27 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.portal-layout {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu main";
+  grid-template-columns: 200px 1fr;
+
+  & > header {
+    grid-area: header;
+    text-align: center;
+  }
+
+  & > main {
+    grid-area: main;
+  }
+
+  & > nav {
+    grid-area: menu;
+    width: 0%;
+  }
+}
