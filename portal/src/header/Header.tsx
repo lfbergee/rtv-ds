@@ -1,3 +1,8 @@
+// @ts-ignore
+import Logo from "./rikstv-logo.svg?component";
+
+import "./style.scss";
+
 export const Header = () => {
-  return <header>RiksTV Shared Components</header>;
+  return <header className="portal-header"><Logo /></header>;
 };

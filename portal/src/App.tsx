@@ -14,7 +14,7 @@ export const App = () => (
       <main>
         <Switch>
           <Route path="/" exact>
-            <p>hello world</p>
+            <p>Welcome to RiksTV Shared Components(work in progress title)</p>
           </Route>
           {components.map(({ displayName, Page }) => (
             <Route

@@ -1,2 +1,1 @@
-export { Button } from './button/Button';
-export { Checkbox } from './checkbox/Checkbox';
+export { PrimaryButton, SecondaryButton, TertiaryButton } from './button/Button';

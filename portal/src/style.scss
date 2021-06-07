@@ -2,6 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: sans-serif;
 }
 
 .portal-layout {
@@ -10,10 +11,10 @@ body {
     "header header"
     "menu main";
   grid-template-columns: 200px 1fr;
+  gap: 12px;
 
   & > header {
     grid-area: header;
-    text-align: center;
   }
 
   & > main {
@@ -22,6 +23,5 @@ body {
 
   & > nav {
     grid-area: menu;
-    width: 0%;
   }
 }

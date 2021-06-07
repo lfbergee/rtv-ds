@@ -1,0 +1,44 @@
+// TODO: this should be moved out to a common core package
+// Start of a spacing scale, perhaps should be more abstract than currently, as it is somewhat annoying when it changes
+:root {
+    --strim-spacing--8: 8px;
+    --strim-spacing--16: 16px;
+    --strim-spacing--24: 24px;
+    --strim-spacing--32: 32px;
+  }
+  
+  .strm {
+      --button-primary-fg: #004b50;
+      --accent-color: #faed6f;
+      --accent-color-dark: #f7e426;
+      --foreground-primary: #ffffff;
+      --foreground-secondary: #b2bfbf;
+      --strim-roundness--default: 12px;
+    --strim-roundness--round: 50%;
+  }
+  
+  .rtv {
+    --button-primary-fg: #fff;
+    --accent-color: #ee4642;
+    --accent-color-dark: #d41612;
+    --foreground-primary: #fff;
+    --foreground-secondary: #a8a8a8;
+    --strim-roundness--default: 4px;
+    --strim-roundness--round: 50%;
+  }
+  
+  // Common shaddows
+  :root {
+    --strim-box-shadow--default: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  }
+  
+  // Commmon font values
+  :root {
+    --font-family-lg-headlines: 'HALMatex', sans-serif;
+    --font-family-headlines: 'AvertaBold', Arial, Helvetica, sans-serif;
+    --font-family-m-headlines: 'AvertaSemibold', Arial, Helvetica, sans-serif;
+    --font-family-body: 'AvertaRegular', Arial, Helvetica, sans-serif;
+  
+    --strim-font-size--default: 1.125rem;
+  }
+  

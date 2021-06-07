@@ -3,4 +3,5 @@
 TODO: 
 * add linter
 * add prettier
-* add some baseline design
+* add precommit hooks
+* add cake.build steps

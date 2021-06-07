@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC, forwardRef } from 'react';
 
 import './button.scss';
 import './button-shared.scss';
@@ -13,7 +13,7 @@ interface BaseButtonProps extends ButtonProps {
   buttonType: 'primary' | 'secondary' | 'tertiary';
 }
 
-const BaseButton: FC<BaseButtonProps> = ({
+const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   children,
   buttonType,
   type = 'button',
@@ -21,10 +21,11 @@ const BaseButton: FC<BaseButtonProps> = ({
   postfix,
   icon: Icon,
   ...rest
-}) => (
+}, ref) => (
   <button
     type={type}
     {...rest}
+    ref={ref}
     disabled={isLoading}
     className={`rsc-button rsc-button__shared rsc-button__shared--${buttonType} rsc-button--${buttonType} ${
       isLoading ? 'rsc-button--loading' : ''
@@ -37,7 +38,7 @@ const BaseButton: FC<BaseButtonProps> = ({
     {children}
     {!!postfix && <span className="rsc-button__postfix">{postfix}</span>}
   </button>
-);
+));
 
 export const PrimaryButton: FC<ButtonProps> = props => <BaseButton buttonType="primary" {...props} />;
 
