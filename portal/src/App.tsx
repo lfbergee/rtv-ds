@@ -3,6 +3,7 @@ import { Header } from "./header/Header";
 import { Navigation } from "./navigation/Navigation";
 import { Example } from "./example/Example";
 import { components } from "./config";
+import Introduction from "./introduction.mdx";
 
 import "./style.scss";
 
@@ -14,7 +15,7 @@ export const App = () => (
       <main>
         <Switch>
           <Route path="/" exact>
-            <p>Welcome to RiksTV Shared Components(work in progress title)</p>
+            <Introduction />
           </Route>
           {components.map(({ displayName, Page }) => (
             <Route
