@@ -1,0 +1,89 @@
+// TODO: this should be moved out to a common core package
+// Start of a spacing scale, perhaps should be more abstract than currently, as it is somewhat annoying when it changes
+:root {
+  --strim-spacing--8: 8px;
+  --strim-spacing--16: 16px;
+  --strim-spacing--24: 24px;
+  --strim-spacing--32: 32px;
+}
+
+.strm {
+    --button-primary-fg: #004b50;
+    --accent-color: #faed6f;
+    --accent-color-dark: #f7e426;
+    --foreground-primary: #ffffff;
+    --foreground-secondary: #b2bfbf;
+    --strim-roundness--default: 12px;
+  --strim-roundness--round: 50%;
+}
+
+.rtv {
+  --button-primary-fg: #fff;
+  --accent-color: #ee4642;
+  --accent-color-dark: #d41612;
+  --foreground-primary: #fff;
+  --foreground-secondary: #a8a8a8;
+  --strim-roundness--default: 4px;
+  --strim-roundness--round: 50%;
+}
+
+// Common shaddows
+:root {
+  --strim-box-shadow--default: 0px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+// Commmon font values
+:root {
+  --font-family-lg-headlines: 'HALMatex', sans-serif;
+  --font-family-headlines: 'AvertaBold', Arial, Helvetica, sans-serif;
+  --font-family-m-headlines: 'AvertaSemibold', Arial, Helvetica, sans-serif;
+  --font-family-body: 'AvertaRegular', Arial, Helvetica, sans-serif;
+
+  --strim-font-size--default: 1.125rem;
+}
+
+.rsc-button__shared {
+  --common-button--primary-color: var(--button-primary-fg);
+  --common-button--primary-bg: var(--accent-color);
+  --common-button--primary-hover-bg: var(--accent-color-dark);
+
+  --common-button--disabled-bg: var(--foreground-secondary);
+  --common-button--disabled-color: var(--foreground-tertiary);
+
+  display: flex;
+  transition: 125ms ease-in-out;
+  transition-property: color, box-shadow, background-color;
+
+  &--primary {
+    color: var(--common-button--primary-color);
+    background-color: var(--common-button--primary-bg);
+
+    &:active {
+      box-shadow: none;
+      background-color: var(--common-button--primary-hover-bg);
+    }
+  }
+
+  &--secondary {
+    background-color: rebeccapurple;
+  }
+
+  &--tertiary {
+    background-color: blue;
+  }
+
+  &:disabled {
+    background-color: var(--common-button--disabled-bg);
+    color: var(--common-button--disabled-color);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:hover {
+    box-shadow: var(--strim-box-shadow--default);
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+}

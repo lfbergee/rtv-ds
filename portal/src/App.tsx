@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { Header } from "./internal/header/Header";
-import { Navigation } from "./internal/navigation/Navigation";
-import { Example } from "./internal/example/Example";
+import { Header } from "./header/Header";
+import { Navigation } from "./navigation/Navigation";
+import { Example } from "./example/Example";
 import { components } from "./config";
 
 import "./style.scss";

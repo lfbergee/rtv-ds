@@ -1,0 +1,46 @@
+import { ButtonHTMLAttributes, FC } from 'react';
+
+import './button.scss';
+import './button-shared.scss';
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  isLoading?: boolean;
+  postfix?: string;
+  icon?: FC;
+}
+
+interface BaseButtonProps extends ButtonProps {
+  buttonType: 'primary' | 'secondary' | 'tertiary';
+}
+
+const BaseButton: FC<BaseButtonProps> = ({
+  children,
+  buttonType,
+  type = 'button',
+  isLoading = false,
+  postfix,
+  icon: Icon,
+  ...rest
+}) => (
+  <button
+    type={type}
+    {...rest}
+    disabled={isLoading}
+    className={`rsc-button rsc-button__shared rsc-button__shared--${buttonType} rsc-button--${buttonType} ${
+      isLoading ? 'rsc-button--loading' : ''
+    }`}>
+    {Icon && (
+      <span className="rsc-button__icon">
+        <Icon />
+      </span>
+    )}
+    {children}
+    {!!postfix && <span className="rsc-button__postfix">{postfix}</span>}
+  </button>
+);
+
+export const PrimaryButton: FC<ButtonProps> = props => <BaseButton buttonType="primary" {...props} />;
+
+export const SecondaryButton: FC<ButtonProps> = props => <BaseButton buttonType="secondary" {...props} />;
+
+export const TertiaryButton: FC<ButtonProps> = props => <BaseButton buttonType="tertiary" {...props} />;

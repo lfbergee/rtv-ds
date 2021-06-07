@@ -1,16 +1,33 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
-import mdx from "vite-plugin-mdx";
 import reactJsx from "vite-react-jsx";
 import path from "path";
-
-const mdxOptions = {
-  remarkPlugins: [],
-  rehypePlugins: [],
-};
+import copy from "rollup-plugin-copy";
 
 export default defineConfig({
-  plugins: [reactRefresh(), mdx(mdxOptions), reactJsx()],
+  plugins: [
+    reactRefresh(),
+    reactJsx(),
+    {
+      ...copy({
+        targets: [
+          {
+            src: "src/components/**/*.scss",
+            dest: "dist",
+            rename: (_, __, fullPath) => {
+              const scssFile = fullPath.split("/");
+              scssFile.shift();
+              scssFile.shift();
+              return scssFile.join("/");
+            },
+          },
+        ],
+        verbose: true,
+        hook: "writeBundle",
+      }),
+      apply: "build",
+    },
+  ],
   build: {
     cssCodeSplit: true,
     lib: {

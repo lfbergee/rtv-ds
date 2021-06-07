@@ -1,0 +1,19 @@
+{
+  "name": "@rikstv/shared-components",
+  "version": "0.0.0",
+  "private": "false",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/shared-components.es.js",
+  "module": "./dist/shared-components.es.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
+    "serve": "vite preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "rollup-plugin-copy": "^3.4.0"
+  }
+}
