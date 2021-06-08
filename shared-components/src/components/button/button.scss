@@ -1,67 +1,66 @@
 // button reset
-  .rsc-button {
-    border: none;
-    margin: 0;
+.rsc-button {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+
+  background: transparent;
+
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
+
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
+
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+  /* Remove excess padding and border in Firefox 4+ */
+  &::-moz-focus-inner {
+    border: 0;
     padding: 0;
-    width: auto;
-    overflow: visible;
-
-    background: transparent;
-
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
-
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-    /* Remove excess padding and border in Firefox 4+ */
-    &::-moz-focus-inner {
-        border: 0;
-        padding: 0;
-    }
+  }
 }
 
-
 .rsc-button {
-    padding: var(--strim-spacing--8) var(--strim-spacing--24);
-    border-radius: var(--strim-roundness--default);
-    overflow: hidden;
-  
-    &__icon {
-      display: flex;
-      align-items: center;
-      margin-right: var(--strim-spacing--8);
-    }
-  
-    &__postfix {
-      position: relative;
-      display: flex;
-      align-items: center;
-      margin-left: var(--strim-spacing--16);
-      padding-left: var(--strim-spacing--16);
+  padding: var(--strim-spacing--8) var(--strim-spacing--24);
+  border-radius: var(--strim-roundness--default);
+  overflow: hidden;
 
-      &::before {
-        content: " ";
-        position: absolute;
-        width: 1px;
-        background-color: currentColor;
-        height: 200%;
-        left: 0;
-      }
-    }
-  
-    &--loading:disabled {
-      cursor: wait !important;
+  &__icon {
+    display: flex;
+    align-items: center;
+    margin-right: var(--strim-spacing--8);
+  }
 
-      &:hover {
-        box-shadow: none;
-      }
+  &__postfix {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: var(--strim-spacing--16);
+    padding-left: var(--strim-spacing--16);
+
+    &::before {
+      content: " ";
+      position: absolute;
+      width: 1px;
+      background-color: currentColor;
+      height: 200%;
+      left: 0;
     }
   }
+
+  &--loading:disabled {
+    cursor: wait !important;
+
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}

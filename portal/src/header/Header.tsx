@@ -4,7 +4,13 @@ import RiksTV from "./rikstv-logo.svg?component";
 
 import "./style.scss";
 
-const StrimLogo = () => <svg viewBox="0 0 141 66" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
+const StrimLogo = () => (
+  <svg
+    viewBox="0 0 141 66"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    role="img"
+  >
     <title>Strim hjem</title>
     <rect width="140.25" height="66" rx="16.5" fill="#FAED6F" />
     <path
@@ -12,10 +18,13 @@ const StrimLogo = () => <svg viewBox="0 0 141 66" fill="none" xmlns="http://www.
       fill="#004B50"
     />
   </svg>
+);
 
 export const Header = () => {
   const { theme } = useContext(ThemeContext);
-  return <header className="portal-header">{theme === 'rtv' ? <RiksTV /> : <StrimLogo />}</header>;
+  return (
+    <header className="portal-header">
+      {theme === "rtv" ? <RiksTV /> : <StrimLogo />}
+    </header>
+  );
 };
-
-

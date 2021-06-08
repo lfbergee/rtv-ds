@@ -4,6 +4,7 @@ import mdx from "vite-plugin-mdx";
 import reactJsx from "vite-react-jsx";
 // @ts-ignore
 import reactSvgPlugin from "vite-plugin-react-svg";
+import reactDogGen from './utils/react-docgen-typescript-rollup-plugin'
 
 const mdxOptions = {
   remarkPlugins: [],
@@ -11,5 +12,11 @@ const mdxOptions = {
 };
 
 export default defineConfig({
-  plugins: [reactRefresh(), mdx(mdxOptions), reactJsx(), reactSvgPlugin()],
+  plugins: [
+    reactRefresh(),
+    mdx(mdxOptions),
+    reactJsx(),
+    reactSvgPlugin(),
+    reactDogGen(),
+  ],
 });
