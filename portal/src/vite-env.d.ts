@@ -2,3 +2,4 @@
 
 declare module "*.mdx";
 
+declare module "*.svg?component";

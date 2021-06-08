@@ -20,13 +20,14 @@ const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(({
   isLoading = false,
   postfix,
   icon: Icon,
+  disabled,
   ...rest
 }, ref) => (
   <button
     type={type}
     {...rest}
     ref={ref}
-    disabled={isLoading}
+    disabled={isLoading || disabled}
     className={`rsc-button rsc-button__shared rsc-button__shared--${buttonType} rsc-button--${buttonType} ${
       isLoading ? 'rsc-button--loading' : ''
     }`}>

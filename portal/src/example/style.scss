@@ -1,6 +1,12 @@
 .portal-example {
-  & > h1 {
+  & > h1:first-of-type {
     margin-top: 0;
   }
-  padding: 32px;
+  padding: var(--strim-spacing--32);
+  background-color: var(--background-primary);
+  color: var(--foreground-primary);
+  min-height: calc(100vh - 200px);
+  border-top-left-radius: var(--strim-roundness--default);
+  border-bottom-left-radius: var(--strim-roundness--default);
+  margin-left: var(--strim-spacing--32);
 }

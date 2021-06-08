@@ -32,6 +32,7 @@
 .rsc-button {
     padding: var(--strim-spacing--8) var(--strim-spacing--24);
     border-radius: var(--strim-roundness--default);
+    overflow: hidden;
   
     &__icon {
       display: flex;
@@ -40,16 +41,27 @@
     }
   
     &__postfix {
+      position: relative;
       display: flex;
       align-items: center;
-      border-left: 1px solid currentColor;
       margin-left: var(--strim-spacing--16);
       padding-left: var(--strim-spacing--16);
-      margin-top: calc(var(--strim-spacing--8) * -1);
-      margin-bottom: calc(var(--strim-spacing--8) * -1);
+
+      &::before {
+        content: " ";
+        position: absolute;
+        width: 1px;
+        background-color: currentColor;
+        height: 200%;
+        left: 0;
+      }
     }
   
     &--loading:disabled {
-      cursor: wait;
+      cursor: wait !important;
+
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
