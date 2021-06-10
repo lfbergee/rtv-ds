@@ -20,6 +20,13 @@
 
   --strim-roundness--default: 12px;
   --strim-roundness--round: 50%;
+
+  --font-family-lg-headlines: "HALMatex", sans-serif;
+  --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
+  --font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
+
+  --strim-font-size--default: 1.125rem;
 }
 
 .rtv {
@@ -35,19 +42,16 @@
 
   --strim-roundness--default: 4px;
   --strim-roundness--round: 50%;
+
+  --font-family-lg-headlines: serif;
+  --font-family-headlines: serif;
+  --font-family-m-headlines: serif;
+  --font-family-body: serif;
+
+  --strim-font-size--default: 1.125rem;
 }
 
 // Common shaddows
 :root {
   --strim-box-shadow--default: 0px 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-// Commmon font values
-:root {
-  --font-family-lg-headlines: "HALMatex", sans-serif;
-  --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
-  --font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
-  --font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
-
-  --strim-font-size--default: 1.125rem;
 }

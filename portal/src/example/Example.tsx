@@ -6,9 +6,9 @@ interface Props {
 }
 
 export const Example: FC<Props> = ({ children, types }) => (
-  <div className="portal-example">
+  <>
     {children}
-    <aside>
+    <aside className="portal-example__types">
       {types?.map((type: any) => (
         <details key={type.displayName}>
           <summary>Typer for {type.displayName}</summary>
@@ -22,5 +22,5 @@ export const Example: FC<Props> = ({ children, types }) => (
         </details>
       ))}
     </aside>
-  </div>
+  </>
 );

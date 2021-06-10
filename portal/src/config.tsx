@@ -4,9 +4,19 @@ import Typography from "@rikstv/shared-components/src/components/typography/typo
 import buttonType from "../../shared-components/src/components/button/Button?type";
 import typographyType from "../../shared-components/src/components/typography/Typography?type";
 
+import { Example } from "./example/Example";
+
+const componentFactory = (name: string, Page: any, types: any) => ({
+  Page: () => (
+    <Example types={types}>
+      <Page />
+    </Example>
+  ),
+  displayName: name,
+});
 
 export const components = [
-  { Page: Button, displayName: "button", types: buttonType },
-  { Page: Core, displayName: "core", types: [] },
-  { Page: Typography, displayName: "typografi", types: typographyType },
+  componentFactory("button", Button, buttonType),
+  componentFactory("core", Core, []),
+  componentFactory("typografi", Typography, typographyType),
 ];

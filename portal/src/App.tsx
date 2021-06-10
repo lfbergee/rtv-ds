@@ -6,11 +6,13 @@ import { Header } from "./header/Header";
 import { Navigation } from "./navigation/Navigation";
 import { ThemeContext, themes } from "./navigation/ThemeContext";
 import { Example } from "./example/Example";
+import { AllComponents } from "./pages/all-components/AllComponents";
+import { GettingStarted } from "./pages/kom-i-gang/GettingStarted";
 import { components } from "./config";
 import { mdxComponents } from "./mdxComponents";
-import Introduction from "./introduction.mdx";
 
 import "./style.scss";
+import { FrontPage } from "./pages/front-page/FrontPage";
 
 export const App = () => {
   const [theme, setTheme] = useState<themes>("rtv");
@@ -23,25 +25,15 @@ export const App = () => {
             <Navigation />
             <main>
               <Switch>
-                <Route
-                  path="/"
-                  exact
-                  render={() => (
-                    <Example>
-                      <Introduction />
-                    </Example>
-                  )}
-                />
-                {components.map(({ displayName, Page, types }) => (
+                <Route path="/" exact component={FrontPage} />
+                <Route path="/alle" exact component={AllComponents} />
+                <Route path="/kom-i-gang" exact component={GettingStarted} />
+                {components.map(({ displayName, Page }) => (
                   <Route
                     key={displayName}
                     path={`/${displayName}`}
                     exact
-                    render={() => (
-                      <Example types={types}>
-                        <Page />
-                      </Example>
-                    )}
+                    component={Page}
                   />
                 ))}
               </Switch>

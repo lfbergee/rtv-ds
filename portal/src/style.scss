@@ -2,7 +2,6 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
 .portal-layout {
@@ -12,6 +11,7 @@ body {
     "menu main";
   grid-template-columns: 200px 1fr;
   gap: 12px;
+  font-family: var(--font-family-body);
 
   & > header {
     grid-area: header;
@@ -19,6 +19,17 @@ body {
 
   & > main {
     grid-area: main;
+
+    & > h1:first-of-type {
+      margin-top: 0;
+    }
+    padding: var(--strim-spacing--32);
+    background-color: var(--background-primary);
+    color: var(--foreground-primary);
+    min-height: calc(100vh - 200px);
+    border-top-left-radius: var(--strim-roundness--default);
+    border-bottom-left-radius: var(--strim-roundness--default);
+    margin-left: var(--strim-spacing--32);
   }
 
   & > nav {
