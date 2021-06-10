@@ -7,12 +7,9 @@ interface Props extends HTMLAttributes<HTMLHeadingElement> {
   lookLike: TypographyStyles;
 }
 
-const typographyFactory = (
-  semanticElement: HeadingLevels,
-  defaultLook: TypographyStyles
-) =>
+const typographyFactory = (semanticElement: HeadingLevels) =>
   forwardRef<HTMLHeadingElement, Props>(
-    ({ children, lookLike = defaultLook, ...props }, ref) => {
+    ({ children, lookLike, ...props }, ref) => {
       const C = semanticElement;
       return (
         <C className={lookLike} {...props} ref={ref}>
@@ -22,6 +19,11 @@ const typographyFactory = (
     }
   );
 
-export const H1 = typographyFactory("h1", "title-large");
-export const H2 = typographyFactory("h2", "title-medium");
-export const H3 = typographyFactory("h3", "title-small");
+export const H1 = typographyFactory("h1");
+H1.defaultProps = { lookLike: "title-large" };
+
+export const H2 = typographyFactory("h2");
+H2.defaultProps = { lookLike: "title-medium" };
+
+export const H3 = typographyFactory("h3");
+H3.defaultProps = { lookLike: "title-small" };

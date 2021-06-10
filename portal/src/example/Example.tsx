@@ -43,7 +43,7 @@ export const Example: FC<Props> = memo(({ children, types }) => (
                   >
                     <td>{prop}</td>
                     <td>{defaultValue}</td>
-                    <td>{isRequired}</td>
+                    <td>{isRequired ? "✅" : ""}</td>
                     <td>{type}</td>
                   </tr>
                 )
@@ -59,7 +59,7 @@ export const Example: FC<Props> = memo(({ children, types }) => (
 interface MappedType {
   prop: string;
   defaultValue: string;
-  isRequired: "true" | "false";
+  isRequired: boolean;
   type: string;
   isFromNodeModules: boolean;
 }
@@ -68,7 +68,7 @@ function mapTypeToProps(typeToProp: any): Array<MappedType> {
   return Object.entries(typeToProp).map((p: any) => ({
     prop: p[0] || "",
     defaultValue: p[1]?.defaultValue?.value?.toString() || "",
-    isRequired: p[1]?.required?.toString() || "false",
+    isRequired: !!p[1]?.required,
     type: p[1]?.type?.name || "",
     isFromNodeModules:
       !!p[1]?.declarations[0]?.fileName?.includes("/node_modules/"),
