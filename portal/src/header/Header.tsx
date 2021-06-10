@@ -1,17 +1,12 @@
-import { useContext } from "react";
+import { FC, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../navigation/ThemeContext";
 import RiksTV from "./rikstv-logo.svg?component";
 
 import "./style.scss";
 
-const StrimLogo = () => (
-  <svg
-    viewBox="0 0 141 66"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    role="img"
-  >
+const StrimLogo: FC = () => (
+  <svg viewBox="0 0 141 66" fill="none" xmlns="http://www.w3.org/2000/svg" role="img">
     <title>Strim hjem</title>
     <rect width="140.25" height="66" rx="16.5" fill="#FAED6F" />
     <path
@@ -21,7 +16,7 @@ const StrimLogo = () => (
   </svg>
 );
 
-export const Header = () => {
+export const Header: FC = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <header className="portal-header">

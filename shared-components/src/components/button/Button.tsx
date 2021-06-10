@@ -49,14 +49,10 @@ const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
   )
 );
 
-export const PrimaryButton: FC<ButtonProps> = (props) => (
-  <BaseButton buttonType="primary" {...props} />
-);
+BaseButton.displayName = "BaseButton";
 
-export const SecondaryButton: FC<ButtonProps> = (props) => (
-  <BaseButton buttonType="secondary" {...props} />
-);
+export const PrimaryButton: FC<ButtonProps> = (props) => <BaseButton buttonType="primary" {...props} />;
 
-export const TertiaryButton: FC<ButtonProps> = (props) => (
-  <BaseButton buttonType="tertiary" {...props} />
-);
+export const SecondaryButton: FC<ButtonProps> = (props) => <BaseButton buttonType="secondary" {...props} />;
+
+export const TertiaryButton: FC<ButtonProps> = (props) => <BaseButton buttonType="tertiary" {...props} />;

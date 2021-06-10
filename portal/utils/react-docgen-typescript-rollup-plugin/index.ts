@@ -1,13 +1,16 @@
 import docgen from "react-docgen-typescript";
 
-export default () => {
+export default (): {
+  name: string;
+  transform: (source: string, id: string) => { code: string; map: { mappings: string } } | null;
+} => {
   const options = {
     savePropValueAsString: true,
   };
 
   return {
     name: "react-docgen-typescript-rollup-plugin",
-    transform(_: any, id: string) {
+    transform(_, id) {
       if (!id.endsWith("?type")) {
         return null;
       }

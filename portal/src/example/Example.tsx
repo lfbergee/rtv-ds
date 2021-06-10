@@ -1,19 +1,18 @@
 import { FC, memo } from "react";
+import { Types } from "../utils/makeComponent";
+import { mapTypeToProps } from "./mapTypeToProps";
 import "./style.scss";
 
 interface Props {
-  types?: any;
+  types?: Types;
 }
 
 export const Example: FC<Props> = memo(({ children, types }) => (
   <>
     {children}
     <aside className="portal-example__types">
-      {types?.map((type: any) => (
-        <details
-          key={type.displayName}
-          className="portal-example__types__details"
-        >
+      {types?.map((type) => (
+        <details key={type.displayName} className="portal-example__types__details">
           <summary>Typer for {type.displayName}</summary>
           <table className="portal-example__types__table">
             <thead>
@@ -25,29 +24,14 @@ export const Example: FC<Props> = memo(({ children, types }) => (
               </tr>
             </thead>
             <tbody>
-              {mapTypeToProps(type.props).map(
-                ({
-                  prop,
-                  defaultValue,
-                  isRequired,
-                  type,
-                  isFromNodeModules,
-                }) => (
-                  <tr
-                    key={prop}
-                    className={
-                      isFromNodeModules
-                        ? "portal-example__types--node-module"
-                        : ""
-                    }
-                  >
-                    <td>{prop}</td>
-                    <td>{defaultValue}</td>
-                    <td>{isRequired ? "✅" : ""}</td>
-                    <td>{type}</td>
-                  </tr>
-                )
-              )}
+              {mapTypeToProps(type.props).map(({ prop, defaultValue, isRequired, type, isFromNodeModules }) => (
+                <tr key={prop} className={isFromNodeModules ? "portal-example__types--node-module" : ""}>
+                  <td>{prop}</td>
+                  <td>{defaultValue}</td>
+                  <td>{isRequired ? "✅" : ""}</td>
+                  <td>{type}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </details>
@@ -56,21 +40,4 @@ export const Example: FC<Props> = memo(({ children, types }) => (
   </>
 ));
 
-interface MappedType {
-  prop: string;
-  defaultValue: string;
-  isRequired: boolean;
-  type: string;
-  isFromNodeModules: boolean;
-}
-
-function mapTypeToProps(typeToProp: any): Array<MappedType> {
-  return Object.entries(typeToProp).map((p: any) => ({
-    prop: p[0] || "",
-    defaultValue: p[1]?.defaultValue?.value?.toString() || "",
-    isRequired: !!p[1]?.required,
-    type: p[1]?.type?.name || "",
-    isFromNodeModules:
-      !!p[1]?.declarations[0]?.fileName?.includes("/node_modules/"),
-  }));
-}
+Example.displayName = "ExampleWrapper";

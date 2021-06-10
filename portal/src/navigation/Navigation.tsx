@@ -1,15 +1,12 @@
-import { ChangeEvent, useContext, useEffect, useState } from "react";
+import { ChangeEvent, FC, useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { components } from "../config";
 import { ThemeContext } from "./ThemeContext";
 
 import "./style.scss";
-import {
-  PrimaryButton,
-  TertiaryButton,
-} from "@rikstv/shared-components/src/components/button/Button";
+import { PrimaryButton, TertiaryButton } from "@rikstv/shared-components/src/components/button/Button";
 
-export const Navigation = () => {
+export const Navigation: FC = () => {
   const [searchStr, setSearchStr] = useState("");
   const [filteredComponents, setFilteredComponents] = useState(components);
   const { theme, setTheme } = useContext(ThemeContext);
@@ -24,9 +21,7 @@ export const Navigation = () => {
     if (searchStr === "") {
       setFilteredComponents(components);
     } else {
-      setFilteredComponents(
-        components.filter(({ displayName }) => displayName.includes(searchStr))
-      );
+      setFilteredComponents(components.filter(({ displayName }) => displayName.includes(searchStr)));
     }
   }, [searchStr, setFilteredComponents]);
 
@@ -37,15 +32,12 @@ export const Navigation = () => {
   };
 
   const emptyStrString = () => setSearchStr("");
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) =>
-    setSearchStr(e.target.value);
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchStr(e.target.value);
 
   return (
     <nav className="portal-navigation">
       <div className="portal-navigation__toggle">
-        <PrimaryButton onClick={toggleTheme}>
-          {`Bytt til ${theme === "rtv" ? "Strim" : "RiksTV"}`}
-        </PrimaryButton>
+        <PrimaryButton onClick={toggleTheme}>{`Bytt til ${theme === "rtv" ? "Strim" : "RiksTV"}`}</PrimaryButton>
       </div>
       <ul className="portal-navigation__list">
         <li className="portal-navigation__list__item">
@@ -61,12 +53,7 @@ export const Navigation = () => {
       </ul>
       <label className="portal-navigation__search">
         Filter komponenter
-        <input
-          className="portal-navigation__search__input"
-          type="text"
-          onChange={handleSearch}
-          value={searchStr}
-        />
+        <input className="portal-navigation__search__input" type="text" onChange={handleSearch} value={searchStr} />
       </label>
       <ul className="portal-navigation__list">
         <li className="portal-navigation__list__item">

@@ -1,31 +1,19 @@
-import Highlight, { defaultProps } from "prism-react-renderer";
+import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
-import {
-  PrimaryButton,
-  SecondaryButton,
-  TertiaryButton,
-} from "@rikstv/shared-components/src/components/button/Button";
-import {
-  H1,
-  H2,
-  H3,
-} from "@rikstv/shared-components/src/components/typography/Typography";
+import { PrimaryButton, SecondaryButton, TertiaryButton } from "@rikstv/shared-components/src/components/button/Button";
+import { H1, H2, H3 } from "@rikstv/shared-components/src/components/typography/Typography";
 
 import "./style.scss";
+import { FC } from "react";
 
-export const CodeBlock = ({
-  children,
-  className,
-  live,
-  render,
-}: {
-  children: any;
-  className: any;
+export const CodeBlock: FC<{
+  children: string;
+  className: string;
   live: boolean;
   render: boolean;
-}) => {
-  const language = className.replace(/language-/, "");
+}> = ({ children, className, live, render }) => {
+  const language = className.replace(/language-/, "") as Language;
 
   if (live) {
     return (
@@ -66,26 +54,11 @@ export const CodeBlock = ({
 
   return (
     <Highlight {...defaultProps} code={children.trim()} language={language}>
-      {({
-        className,
-        style,
-        tokens,
-        getLineProps,
-        getTokenProps,
-      }: {
-        className: any;
-        style: any;
-        tokens: any;
-        getLineProps: any;
-        getTokenProps: any;
-      }) => (
-        <pre
-          className={className}
-          style={{ ...style, padding: "var(--strim-spacing--24)" }}
-        >
-          {tokens.map((line: any, i: number) => (
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ ...style, padding: "var(--strim-spacing--24)" }}>
+          {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token: any, key: number) => (
+              {line.map((token, key) => (
                 <span key={key} {...getTokenProps({ token, key })} />
               ))}
             </div>

@@ -8,16 +8,15 @@ interface Props extends HTMLAttributes<HTMLHeadingElement> {
 }
 
 const typographyFactory = (semanticElement: HeadingLevels) =>
-  forwardRef<HTMLHeadingElement, Props>(
-    ({ children, lookLike, ...props }, ref) => {
-      const C = semanticElement;
-      return (
-        <C className={lookLike} {...props} ref={ref}>
-          {children}
-        </C>
-      );
-    }
-  );
+  // eslint-disable-next-line react/display-name
+  forwardRef<HTMLHeadingElement, Props>(({ children, lookLike, ...props }, ref) => {
+    const C = semanticElement;
+    return (
+      <C className={lookLike} {...props} ref={ref}>
+        {children}
+      </C>
+    );
+  });
 
 export const H1 = typographyFactory("h1");
 H1.defaultProps = { lookLike: "title-large" };
