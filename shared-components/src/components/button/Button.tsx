@@ -6,7 +6,7 @@ import "./button-shared.scss";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
   postfix?: string;
-  icon?: FC;
+  icon?: () => JSX.Element;
   className?: string;
 }
 

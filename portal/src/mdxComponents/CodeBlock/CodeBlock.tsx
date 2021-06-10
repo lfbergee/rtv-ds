@@ -12,6 +12,8 @@ import {
   H3,
 } from "@rikstv/shared-components/src/components/typography/Typography";
 
+import "./style.scss";
+
 export const CodeBlock = ({
   children,
   className,
@@ -20,14 +22,14 @@ export const CodeBlock = ({
 }: {
   children: any;
   className: any;
-  live: any;
-  render: any;
+  live: boolean;
+  render: boolean;
 }) => {
   const language = className.replace(/language-/, "");
 
   if (live) {
     return (
-      <div style={{ marginTop: "40px" }}>
+      <div className="portal-code-block">
         <LiveProvider
           code={children.trim()}
           transformCode={(code: string) => "/** @jsx mdx */" + code}
@@ -42,16 +44,7 @@ export const CodeBlock = ({
           }}
         >
           <LivePreview />
-          <details
-            style={{
-              backgroundColor: "rgba(0,0,0,0.3)",
-              marginTop: "16px",
-              borderRadius: "4px",
-              maxWidth: " 750px",
-              padding: "16px",
-              cursor: "pointer",
-            }}
-          >
+          <details className="portal-code-block__details">
             <summary>Vis kode</summary>
             <LiveEditor />
           </details>
@@ -63,7 +56,7 @@ export const CodeBlock = ({
 
   if (render) {
     return (
-      <div style={{ marginTop: "40px" }}>
+      <div className="portal-code-block">
         <LiveProvider code={children}>
           <LivePreview />
         </LiveProvider>
@@ -86,7 +79,10 @@ export const CodeBlock = ({
         getLineProps: any;
         getTokenProps: any;
       }) => (
-        <pre className={className} style={{ ...style, padding: "20px" }}>
+        <pre
+          className={className}
+          style={{ ...style, padding: "var(--strim-spacing--24)" }}
+        >
           {tokens.map((line: any, i: number) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token: any, key: number) => (

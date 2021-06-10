@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { ThemeContext } from "../navigation/ThemeContext";
 import RiksTV from "./rikstv-logo.svg?component";
 
@@ -24,7 +25,9 @@ export const Header = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <header className="portal-header">
-      {theme === "rtv" ? <RiksTV /> : <StrimLogo />}
+      <Link to="/" title="Hjem">
+        {theme === "rtv" ? <RiksTV /> : <StrimLogo />}
+      </Link>
     </header>
   );
 };
