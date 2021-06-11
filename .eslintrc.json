@@ -9,8 +9,7 @@
     "prettier",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:jest/recommended"
+    "plugin:jsx-a11y/recommended"
   ],
   "plugins": ["@typescript-eslint", "jsx-a11y"],
   "env": {

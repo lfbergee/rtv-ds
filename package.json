@@ -13,10 +13,10 @@
     "precommit": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,ts,tsx,json}": [
+    "{portal,shared-components}/src/**/*.{js,ts,tsx,json}": [
       "eslint --fix"
     ],
-    "src/**/*.{js,ts,tsx,json,scss,css}": [
+    "{portal,shared-components}/src/**/*.{js,ts,tsx,json,scss,css}": [
       "prettier --write"
     ]
   },

@@ -4,6 +4,7 @@ import { App } from "./App";
 import "normalize.css";
 import "../../shared-components/src/components/core/core.scss";
 import "../../shared-components/src/components/core/strm.scss";
+import "../../shared-components/src/components/core/rtv.scss";
 
 ReactDOM.render(
   <React.StrictMode>

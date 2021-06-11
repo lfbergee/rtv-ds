@@ -1,5 +1,7 @@
 import { forwardRef, HTMLAttributes } from "react";
 
+import "./typography.scss";
+
 type HeadingLevels = `h${1 | 2 | 3 | 4 | 5}`;
 type TypographyStyles = `title-${"large" | "medium" | "small"}`;
 
