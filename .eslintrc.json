@@ -8,9 +8,11 @@
     "standard",
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jest/recommended"
   ],
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint", "jsx-a11y"],
   "env": {
     "es6": true,
     "node": true
