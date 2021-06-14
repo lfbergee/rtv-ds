@@ -11,6 +11,6 @@ const mdxOptions = {
 };
 
 export default defineConfig({
-  base: '/rtv-ds',
+  base: '/rtv-ds/',
   plugins: [reactDogGen(), reactRefresh(), mdx(mdxOptions), reactJsx(), reactSvgPlugin()],
 });
