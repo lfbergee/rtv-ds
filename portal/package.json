@@ -13,7 +13,7 @@
     "@rikstv/shared-components": "0.0.0",
     "prism-react-renderer": "^1.2.1",
     "normalize.css": "^8.0.1",
-    "react-docgen-typescript": "^1.22.0",
+    "react-docgen-typescript": "^2.0.0",
     "react-live": "^2.2.3",
     "react-router-dom": "^5.2.0",
     "vite-plugin-mdx": "^3.5.6",
