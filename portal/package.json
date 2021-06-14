@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": "false",
   "scripts": {
-    "dev": "vite -l info",
-    "build": "tsc && vite build",
+    "dev": "vite",
+    "build": "vite build -l info",
+    "typecheck": "tsc",
     "serve": "vite preview"
   },
   "dependencies": {
