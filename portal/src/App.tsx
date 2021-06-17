@@ -7,18 +7,18 @@ import { Navigation } from "./navigation/Navigation";
 import { ThemeContext, themes } from "./navigation/ThemeContext";
 import { AllComponents } from "./pages/all-components/AllComponents";
 import { GettingStarted } from "./pages/kom-i-gang/GettingStarted";
+import { FrontPage } from "./pages/front-page/FrontPage";
 import { components } from "./config";
 import { mdxComponents } from "./mdxComponents";
 
 import "./style.scss";
-import { FrontPage } from "./pages/front-page/FrontPage";
 
 export const App: FC = () => {
   const [theme, setTheme] = useState<themes>("rtv");
   return (
     <MDXProvider components={mdxComponents}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <BrowserRouter>
+        <BrowserRouter basename="rtv-ds">
           <div className="portal-layout">
             <Header />
             <Navigation />
