@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import { MDXProvider } from "@mdx-js/react";
 
 import { Header } from "./header/Header";
@@ -18,7 +18,7 @@ export const App: FC = () => {
   return (
     <MDXProvider components={mdxComponents}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        <BrowserRouter basename="rtv-ds">
+        <HashRouter basename="rtv-ds">
           <div className="portal-layout">
             <Header />
             <Navigation />
@@ -33,7 +33,7 @@ export const App: FC = () => {
               </Switch>
             </main>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </ThemeContext.Provider>
     </MDXProvider>
   );
