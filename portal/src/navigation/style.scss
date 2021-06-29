@@ -27,7 +27,7 @@
       margin-bottom: 16px;
       color: var(--background-primary);
 
-      &::first-letter {
+      & a::first-letter {
         text-transform: uppercase;
       }
 
