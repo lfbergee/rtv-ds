@@ -1,8 +1,15 @@
 .portal-example__types {
-  margin-top: var(--strim-spacing--32);
+  max-width: 46rem;
+  padding: var(--strim-spacing--16);
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: var(--strim-roundness--default);
+  margin-top: var(--strim-spacing--8);
 
   &__details {
-    margin-top: var(--strim-spacing--32);
+    cursor: pointer;
+    & summary {
+      user-select: none;
+    }
   }
 
   &__table {
@@ -15,12 +22,17 @@
     td,
     th {
       word-wrap: break-word;
-      max-width: 300px;
+      max-width: 15vw;
       padding: var(--strim-spacing--8) var(--strim-spacing--16);
     }
   }
 
   &--node-module {
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  &--required {
+    display: flex;
+    justify-content: center;
   }
 }

@@ -8,6 +8,8 @@
 }
 
 .strm {
+  --stand-up-green: #49f5a4;
+
   --button-primary-fg: #004b50;
   --accent-color: #faed6f;
   --accent-color-dark: #f7e426;
@@ -15,8 +17,12 @@
   --foreground-secondary: #b2bfbf;
   --foreground-tertiary: #356e63;
 
+  --heading-accent: var(--stand-up-green);
+
   --background-primary-rgb: 0, 42, 42; // #002a2a
   --background-primary: rgb(var(--background-primary-rgb));
+
+  --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
   --strim-roundness--default: 12px;
   --strim-roundness--round: 50%;
@@ -37,8 +43,12 @@
   --foreground-secondary: #a8a8a8;
   --foreground-tertiary: #666;
 
+  --heading-accent: var(--accent-color); // WHAT IS THIS?
+
   --background-primary-rgb: 37, 37, 37;
   --background-primary: rgb(var(--background-primary-rgb));
+
+  --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
   --strim-roundness--default: 4px;
   --strim-roundness--round: 50%;

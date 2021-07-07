@@ -1,11 +1,12 @@
+import { FC, useContext } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
-import { PrimaryButton, SecondaryButton, TertiaryButton } from "@rikstv/shared-components/src/components/button/Button";
-import { H1, H2, H3 } from "@rikstv/shared-components/src/components/typography/Typography";
+import * as components from "@rikstv/shared-components/src/components";
+import { TypeContext } from "../../utils/makeComponent";
+import { DisplayTypes } from "../../display-types/DisplayTypes";
 
 import "./style.scss";
-import { FC } from "react";
 
 export const CodeBlock: FC<{
   children: string;
@@ -15,6 +16,10 @@ export const CodeBlock: FC<{
 }> = ({ children, className, live, render }) => {
   const language = className.replace(/language-/, "") as Language;
 
+  const { types } = useContext(TypeContext);
+  const component = children.split(">")[0].split(" ")[0].replace("<", "");
+  const componentType = types.filter((item) => item.displayName === component);
+
   if (live) {
     return (
       <div className="portal-code-block">
@@ -23,12 +28,7 @@ export const CodeBlock: FC<{
           transformCode={(code: string) => "/** @jsx mdx */" + code}
           scope={{
             mdx,
-            PrimaryButton,
-            SecondaryButton,
-            TertiaryButton,
-            H1,
-            H2,
-            H3,
+            ...components,
           }}
         >
           <LivePreview />
@@ -38,6 +38,7 @@ export const CodeBlock: FC<{
           </details>
           <LiveError />
         </LiveProvider>
+        <DisplayTypes types={componentType} />
       </div>
     );
   }
@@ -48,6 +49,7 @@ export const CodeBlock: FC<{
         <LiveProvider code={children}>
           <LivePreview />
         </LiveProvider>
+        <DisplayTypes types={componentType} />
       </div>
     );
   }

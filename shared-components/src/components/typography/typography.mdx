@@ -2,14 +2,52 @@
 
 ## Overskrifter
 
+Komponentene kommer med låst semantikk og fri stil. 
+Det betyr at du MÅ bruke riktig semantisk React-komponent og heller overstyre stilen om den skal se ut som noe annet. 
+Husk at semantikk er viktig for mange brukere, så sørg for at sidene dine følger hierakriet med bare en h1.
+
 ```tsx live=true
-<H1>title-large</H1>
+<DisplayTitle>display-title</DisplayTitle>
 ```
 
 ```tsx live=true
-<H2>title-medium</H2>
+<H1>title-1</H1>
 ```
 
 ```tsx live=true
-<H3>title-small</H3>
+<H2>title-2</H2>
+```
+
+```tsx live=true
+<H3>title-3</H3>
+```
+
+```tsx live=true
+<H4>title-4</H4>
+```
+
+```tsx live=true
+<Body>body</Body>
+```
+
+```tsx live=true
+<SubBody>sub-body</SubBody>
+```
+
+```tsx live=true
+<Tag>tag</Tag>
+```
+
+```tsx live=true
+<Bold>Bold</Bold>
+```
+
+```tsx live=true
+<Meta>Meta</Meta>
+```
+
+## Overstyr
+
+```tsx live=true
+<DisplayTitle lookLike="body">h1 som ser ut som body</DisplayTitle>
 ```

@@ -58,7 +58,7 @@ export const Navigation: FC = () => {
       <ul className="portal-navigation__list">
         <li className="portal-navigation__list__item">
           <NavLink exact to="/alle">
-            Alle
+            alle
           </NavLink>
         </li>
         {filteredComponents.map(({ displayName }) => (
