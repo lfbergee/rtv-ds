@@ -7,6 +7,9 @@
     border-radius: var(--strim-roundness--default);
     max-width: 46rem;
     padding: var(--strim-spacing--16);
-    cursor: pointer;
+    & > summary {
+      user-select: none;
+      cursor: pointer;
+    }
   }
 }

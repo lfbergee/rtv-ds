@@ -1,18 +1,19 @@
 .portal-example__types {
-  max-width: 46rem;
   padding: var(--strim-spacing--16);
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: var(--strim-roundness--default);
   margin-top: var(--strim-spacing--8);
+  max-width: 46rem;
 
   &__details {
-    cursor: pointer;
     & summary {
+      cursor: pointer;
       user-select: none;
     }
   }
 
   &__table {
+    width: 100%;
     margin-top: var(--strim-spacing--24);
     table-layout: fixed;
 
@@ -22,7 +23,7 @@
     td,
     th {
       word-wrap: break-word;
-      max-width: 15vw;
+      max-width: 25%;
       padding: var(--strim-spacing--8) var(--strim-spacing--16);
     }
   }
