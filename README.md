@@ -1,4 +1,6 @@
 # RiksTV Shared Components 
 
-TODO: 
-* add build steps
+## Requirements
+
+- node 14 or later
+- npm 7 or later
