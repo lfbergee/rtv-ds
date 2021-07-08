@@ -2,6 +2,18 @@
 
 Det er litt forskjell på å utvikle bibliotekskode og klient kode. Vi prøver å ikke gjøre for mye ut av det her, men noen ting er viktige å tenke på.
 
+## Miljø og oppsett
+
+Krav:
+
+- `npm 7` eller nyere
+- `node 14` eller nyere
+
+Hvordan:
+
+- `npm install`
+- `npm run dev`
+
 ## Registrere ny komponent
 
 Når du lager en ny komponent er det noen ting som er viktige å gjøre for at den skal bli med i pakken og dokumentert i portalen.
@@ -32,3 +44,7 @@ Vi skal være pragmatiske her, men det er viktig å holde et høyt nok kvalitets
 1. Husk på universell utforming
 1. Kjerneverdier som farger og spacing er ALLTID definert i `core`, aldri i komponent stil
 1. Kjerneverdier skal alltid finnes i begge brands
+
+## Troubleshooting
+
+Hvis `npm install` feiler, sjekk at du har minst `npm 7.0.0` installert. `npm i -g npm`for å oppdatere. Vi bruker `npm workspaces`, derfor trenger vi minst denne versjonen.
