@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { AllComponents } from "./all-components/AllComponents";
-import { FrontPage } from "./front-page/FrontPage";
-import { GettingStarted } from "./kom-i-gang/GettingStarted";
+import FrontPage from "./front-page/introduction.mdx";
+import GettingStarted from "./kom-i-gang/kom-i-gang.mdx";
 import DevelopComponents from "./develop-components/develop-components.mdx";
 
 const makePage = (path: string, component: FC, name: string) => ({ path, component, name });
