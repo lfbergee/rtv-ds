@@ -5,9 +5,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { Header } from "./header/Header";
 import { Navigation } from "./navigation/Navigation";
 import { ThemeContext, themes } from "./navigation/ThemeContext";
-import { AllComponents } from "./pages/all-components/AllComponents";
-import { GettingStarted } from "./pages/kom-i-gang/GettingStarted";
-import { FrontPage } from "./pages/front-page/FrontPage";
+import { allPages } from "./pages/Pages";
 import { components } from "./config";
 import { mdxComponents } from "./mdxComponents";
 
@@ -24,9 +22,9 @@ export const App: FC = () => {
             <Navigation />
             <main>
               <Switch>
-                <Route path="/" exact component={FrontPage} />
-                <Route path="/alle" exact component={AllComponents} />
-                <Route path="/kom-i-gang" exact component={GettingStarted} />
+                {allPages.map((page) => (
+                  <Route key={page.path} {...page} exact />
+                ))}
                 {components.map(({ displayName, Page }) => (
                   <Route key={displayName} path={`/${displayName}`} exact component={Page} />
                 ))}

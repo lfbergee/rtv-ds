@@ -1,10 +1,11 @@
-import { FC, useContext } from "react";
+import { FC, useCallback, useContext, useEffect, useRef, useState } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
 import * as components from "@rikstv/shared-components/src/components";
 import { TypeContext } from "../../utils/makeComponent";
 import { DisplayTypes } from "../../display-types/DisplayTypes";
+import { DisplayStyle } from "../../display-style/DisplayStyle";
 
 import "./style.scss";
 
@@ -14,11 +15,32 @@ export const CodeBlock: FC<{
   live: boolean;
   render: boolean;
 }> = ({ children, className, live, render }) => {
+  const [styleValues, setStyleValues] = useState<CSSStyleDeclaration>();
+  const ref = useRef<HTMLDivElement>(null);
   const language = className.replace(/language-/, "") as Language;
 
   const { types } = useContext(TypeContext);
   const component = children.split(">")[0].split(" ")[0].replace("<", "");
   const componentType = types.filter((item) => item.displayName === component);
+
+  const handleResize = useCallback(() => {
+    if (ref.current) {
+      if (ref.current.firstElementChild?.firstElementChild) {
+        setStyleValues(window.getComputedStyle(ref.current.firstElementChild.firstElementChild));
+      }
+    }
+  }, [setStyleValues]);
+
+  useEffect(() => {
+    handleResize();
+  }, [handleResize]);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   if (live) {
     return (
@@ -31,7 +53,9 @@ export const CodeBlock: FC<{
             ...components,
           }}
         >
-          <LivePreview />
+          <div ref={ref}>
+            <LivePreview />
+          </div>
           <details className="portal-code-block__details">
             <summary>Vis kode</summary>
             <LiveEditor />
@@ -39,6 +63,7 @@ export const CodeBlock: FC<{
           <LiveError />
         </LiveProvider>
         <DisplayTypes types={componentType} />
+        <DisplayStyle styleValues={styleValues} />
       </div>
     );
   }

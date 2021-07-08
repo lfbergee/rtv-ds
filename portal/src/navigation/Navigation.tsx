@@ -5,6 +5,7 @@ import { ThemeContext } from "./ThemeContext";
 
 import "./style.scss";
 import { PrimaryButton, TertiaryButton } from "@rikstv/shared-components/src/components/button/Button";
+import { componentPages, documentationPages } from "../pages/Pages";
 
 export const Navigation: FC = () => {
   const [searchStr, setSearchStr] = useState("");
@@ -47,27 +48,26 @@ export const Navigation: FC = () => {
       />
       <nav className={`portal-navigation ${showMenu ? "portal-navigation--show-mobile" : ""}`}>
         <ul className="portal-navigation__list">
-          <li className="portal-navigation__list__item">
-            <NavLink onClick={closeMenu} exact to="/">
-              Hjem
-            </NavLink>
-          </li>
-          <li className="portal-navigation__list__item">
-            <NavLink onClick={closeMenu} exact to="/kom-i-gang">
-              Kom i gang
-            </NavLink>
-          </li>
+          {documentationPages.map((page) => (
+            <li key={page.path} className="portal-navigation__list__item">
+              <NavLink onClick={closeMenu} exact to={page.path}>
+                {page.name}
+              </NavLink>
+            </li>
+          ))}
         </ul>
         <label className="portal-navigation__search">
           Filter komponenter
           <input className="portal-navigation__search__input" type="text" onChange={handleSearch} value={searchStr} />
         </label>
         <ul className="portal-navigation__list">
-          <li className="portal-navigation__list__item">
-            <NavLink onClick={closeMenu} exact to="/alle">
-              alle
-            </NavLink>
-          </li>
+          {componentPages.map((page) => (
+            <li key={page.path} className="portal-navigation__list__item">
+              <NavLink onClick={closeMenu} exact to={page.path}>
+                {page.name}
+              </NavLink>
+            </li>
+          ))}
           {filteredComponents.map(({ displayName }) => (
             <li key={displayName} className="portal-navigation__list__item">
               <NavLink onClick={closeMenu} exact to={`/${displayName}`}>

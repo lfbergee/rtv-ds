@@ -60,7 +60,9 @@
 
 @media only screen and (max-width: 768px) {
   .portal-navigation {
-    transform: translateX(100%);
+    transform: translateX(100vw);
+    width: 100vw;
+    min-height: 100vh;
     transition: transform 250ms ease-in-out;
     background-color: var(--foreground-primary);
     padding: var(--strim-spacing--32) var(--strim-spacing--32) var(--strim-spacing--32) var(--strim-spacing--16);

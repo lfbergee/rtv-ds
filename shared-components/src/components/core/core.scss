@@ -43,7 +43,7 @@
   --foreground-secondary: #a8a8a8;
   --foreground-tertiary: #666;
 
-  --heading-accent: var(--accent-color); // WHAT IS THIS?
+  --heading-accent: var(--foreground-primary);
 
   --background-primary-rgb: 37, 37, 37;
   --background-primary: rgb(var(--background-primary-rgb));

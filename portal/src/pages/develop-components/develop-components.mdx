@@ -1,0 +1,33 @@
+# Utvikle til komponent biblioteket
+
+Det er litt forskjell på å utvikle bibliotekskode og klient kode. Vi prøver å ikke gjøre for mye ut av det her, men noen ting er viktige å tenke på.
+
+## Registrere ny komponent
+
+Når du lager en ny komponent er det noen ting som er viktige å gjøre for at den skal bli med i pakken og dokumentert i portalen.
+
+1. Lag ny mappe inne i `shared-components`
+1. Lag komponenten din, bruk named export
+1. Legg til komponenten i `shared-components/src/index.ts` også som named export
+1. Lag en `.mdx` fil med dokumentasjonen sammen med komponenten din
+1. Registerer komponenten og eventuelt typen i `portal/src/config.ts`
+
+## Krav til komponentene
+
+Vi skal være pragmatiske her, men det er viktig å holde et høyt nok kvalitetsnivå på komponentene siden de taes i bruk i mange forskjellige prosjekt.
+
+1. Snakk med de andre teamene før man lager ny komponent
+1. Alle kompoennter tilbyr referanse til det viktige underliggende komponenten. Feks  i `<Input />` skal det være en `forwardRef`som gir referansen til `<input>` elementet
+1. Universell utforming er ivaretatt
+1. Ytelse er ivaretatt
+1. Nødvendig funksjonalitet er testet
+1. Dekker teamenes behov, men bør ikke løse problemer ingen har behov for at løses
+1. Foretrekk HTML/CSS over Javascript
+1. Skriv ut typene i interface definisjonen isteden for å definere typene utenfor, gir bedre dokumentasjon i portalen
+
+## Krav til stil
+
+1. Hold det ryddig
+1. Foretrekk CSS funksjonalitet over SCSS
+1. Husk på universell utforming
+1. Kjerneverdier som farger og spacing er ALLTID definert i `core`, aldri i komponent stil
