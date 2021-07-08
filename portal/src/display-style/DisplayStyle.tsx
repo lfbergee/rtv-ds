@@ -13,6 +13,13 @@ const computedStyleValues = [
   "background-color",
 ];
 
+const uselessValues = ["0px", "none", "rgba(0, 0, 0, 0)"];
+
+const displayComputedValue = (styleProp: string, styleValues?: CSSStyleDeclaration) =>
+  styleValues &&
+  styleValues.getPropertyValue(styleProp) &&
+  !uselessValues.includes(styleValues.getPropertyValue(styleProp));
+
 export const DisplayStyle: FC<{ styleValues?: CSSStyleDeclaration }> = ({ styleValues }) => (
   <aside className="portal-example__types">
     <details className="portal-example__types__details">
@@ -29,10 +36,10 @@ export const DisplayStyle: FC<{ styleValues?: CSSStyleDeclaration }> = ({ styleV
         </thead>
         <tbody>
           {computedStyleValues.map((styleProp) =>
-            styleValues && styleValues.getPropertyValue(styleProp) ? (
+            displayComputedValue(styleProp, styleValues) ? (
               <tr key={styleProp}>
                 <td>{styleProp}</td>
-                <td>{styleValues.getPropertyValue(styleProp)}</td>
+                <td>{styleValues?.getPropertyValue(styleProp)}</td>
               </tr>
             ) : null
           )}

@@ -62,8 +62,8 @@ export const CodeBlock: FC<{
           </details>
           <LiveError />
         </LiveProvider>
-        <DisplayTypes types={componentType} />
         <DisplayStyle styleValues={styleValues} />
+        <DisplayTypes types={componentType} />
       </div>
     );
   }
