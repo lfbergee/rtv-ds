@@ -8,6 +8,8 @@ import { PrimaryButton, TertiaryButton } from "@rikstv/shared-components/src/com
 
 export const Navigation: FC = () => {
   const [searchStr, setSearchStr] = useState("");
+  const [showMenu, setShowMenu] = useState<boolean>();
+
   const [filteredComponents, setFilteredComponents] = useState(components);
   const { theme, setTheme } = useContext(ThemeContext);
 
@@ -25,59 +27,68 @@ export const Navigation: FC = () => {
     }
   }, [searchStr, setFilteredComponents]);
 
+  const emptyStrString = () => setSearchStr("");
+  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchStr(e.target.value);
+  const toggleMenu = () => setShowMenu(!showMenu);
+  const closeMenu = () => setShowMenu(!showMenu);
   const toggleTheme = () => {
     if (setTheme) {
       setTheme(theme === "rtv" ? "strm" : "rtv");
+      closeMenu();
     }
   };
 
-  const emptyStrString = () => setSearchStr("");
-  const handleSearch = (e: ChangeEvent<HTMLInputElement>) => setSearchStr(e.target.value);
-
   return (
-    <nav className="portal-navigation">
-      <div className="portal-navigation__toggle">
-        <PrimaryButton onClick={toggleTheme}>{`Bytt til ${theme === "rtv" ? "Strim" : "RiksTV"}`}</PrimaryButton>
-      </div>
-      <ul className="portal-navigation__list">
-        <li className="portal-navigation__list__item">
-          <NavLink exact to="/">
-            Hjem
-          </NavLink>
-        </li>
-        <li className="portal-navigation__list__item">
-          <NavLink exact to="/kom-i-gang">
-            Kom i gang
-          </NavLink>
-        </li>
-      </ul>
-      <label className="portal-navigation__search">
-        Filter komponenter
-        <input className="portal-navigation__search__input" type="text" onChange={handleSearch} value={searchStr} />
-      </label>
-      <ul className="portal-navigation__list">
-        <li className="portal-navigation__list__item">
-          <NavLink exact to="/alle">
-            alle
-          </NavLink>
-        </li>
-        {filteredComponents.map(({ displayName }) => (
-          <li key={displayName} className="portal-navigation__list__item">
-            <NavLink exact to={`/${displayName}`}>
-              {displayName}
+    <>
+      <button
+        onClick={toggleMenu}
+        className={`portal-menu-btn ${showMenu ? "portal-menu-btn--close" : "portal-menu-btn--open"}`}
+        title={showMenu ? "Lukk meny" : "Åpne meny"}
+      />
+      <nav className={`portal-navigation ${showMenu ? "portal-navigation--show-mobile" : ""}`}>
+        <ul className="portal-navigation__list">
+          <li className="portal-navigation__list__item">
+            <NavLink onClick={closeMenu} exact to="/">
+              Hjem
             </NavLink>
           </li>
-        ))}
-
-        {filteredComponents.length === 0 && (
           <li className="portal-navigation__list__item">
-            Ingen komponenter matcher {searchStr} 🤬
-            <TertiaryButton type="button" onClick={emptyStrString}>
-              Tøm filter
-            </TertiaryButton>
+            <NavLink onClick={closeMenu} exact to="/kom-i-gang">
+              Kom i gang
+            </NavLink>
           </li>
-        )}
-      </ul>
-    </nav>
+        </ul>
+        <label className="portal-navigation__search">
+          Filter komponenter
+          <input className="portal-navigation__search__input" type="text" onChange={handleSearch} value={searchStr} />
+        </label>
+        <ul className="portal-navigation__list">
+          <li className="portal-navigation__list__item">
+            <NavLink onClick={closeMenu} exact to="/alle">
+              alle
+            </NavLink>
+          </li>
+          {filteredComponents.map(({ displayName }) => (
+            <li key={displayName} className="portal-navigation__list__item">
+              <NavLink onClick={closeMenu} exact to={`/${displayName}`}>
+                {displayName}
+              </NavLink>
+            </li>
+          ))}
+
+          {filteredComponents.length === 0 && (
+            <li className="portal-navigation__list__item">
+              Ingen komponenter matcher {searchStr} 🤬
+              <TertiaryButton type="button" onClick={emptyStrString}>
+                Tøm filter
+              </TertiaryButton>
+            </li>
+          )}
+        </ul>
+        <div className="portal-navigation__toggle">
+          <PrimaryButton onClick={toggleTheme}>{`Bytt til ${theme === "rtv" ? "Strim" : "RiksTV"}`}</PrimaryButton>
+        </div>
+      </nav>
+    </>
   );
 };

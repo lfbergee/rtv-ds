@@ -25,6 +25,16 @@
       word-wrap: break-word;
       max-width: 25%;
       padding: var(--strim-spacing--8) var(--strim-spacing--16);
+
+      @media only screen and (max-width: 768px) {
+        display: none;
+        &:first-of-type {
+          display: table-cell;
+        }
+        &:last-of-type {
+          display: table-cell;
+        }
+      }
     }
   }
 

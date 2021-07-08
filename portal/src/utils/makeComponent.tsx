@@ -13,10 +13,10 @@ export const TypeContext = createContext<{ types: Types }>({ types: [] });
 export const makeComponent = (
   name: string,
   Page: () => JSX.Element,
-  types: Types
+  types?: Types
 ): { Page: () => JSX.Element; displayName: string } => {
   const WrappedPage = () => (
-    <TypeContext.Provider value={{ types }}>
+    <TypeContext.Provider value={{ types: types || [] }}>
       <Page />
     </TypeContext.Provider>
   );

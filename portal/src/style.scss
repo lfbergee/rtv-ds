@@ -35,4 +35,22 @@ body {
   & > nav {
     grid-area: menu;
   }
+
+  @media only screen and (max-width: 768px) {
+    grid-template-areas:
+      "header"
+      "main";
+    grid-template-columns: 100%;
+    position: relative;
+    overflow-x: hidden;
+
+    & > nav {
+      position: absolute;
+      inset: 0;
+    }
+
+    & > main {
+      margin: 0;
+    }
+  }
 }

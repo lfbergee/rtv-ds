@@ -11,6 +11,6 @@ import typographyType from "../../../shared-components/src/components/typography
 
 export const components = [
   makeComponent("button", Button, buttonType),
-  makeComponent("core", Core, []),
+  makeComponent("core", Core),
   makeComponent("typografi", Typography, typographyType),
 ];
