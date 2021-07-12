@@ -4,7 +4,7 @@ import { components } from "../config";
 import { ThemeContext } from "./ThemeContext";
 
 import "./style.scss";
-import { PrimaryButton, TertiaryButton } from "@rikstv/shared-components/src/components/button/Button";
+import { PrimaryButton } from "@rikstv/shared-components/src/components/button/Button";
 import { componentPages, documentationPages } from "../pages/Pages";
 
 export const Navigation: FC = () => {
@@ -79,9 +79,9 @@ export const Navigation: FC = () => {
           {filteredComponents.length === 0 && (
             <li className="portal-navigation__list__item">
               Ingen komponenter matcher {searchStr} 🤬
-              <TertiaryButton type="button" onClick={emptyStrString}>
+              <PrimaryButton type="button" onClick={emptyStrString}>
                 Tøm filter
-              </TertiaryButton>
+              </PrimaryButton>
             </li>
           )}
         </ul>

@@ -29,6 +29,9 @@
       margin-bottom: 16px;
       color: var(--background-primary);
 
+      & > button {
+        margin-top: var(--rds-spacing--16);
+      }
       & a::first-letter {
         text-transform: uppercase;
       }
