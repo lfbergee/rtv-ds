@@ -12,6 +12,7 @@
 
   --button-primary-fg: #004b50;
   --accent-color: #faed6f;
+  --accent-color-mid: #f7e426;
   --accent-color-dark: #f7e426;
   --foreground-primary: #ffffff;
   --foreground-secondary: #b2bfbf;
@@ -21,11 +22,14 @@
 
   --background-primary-rgb: 0, 42, 42; // #002a2a
   --background-primary: rgb(var(--background-primary-rgb));
+  --background-secondary: #001515;
 
+  --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
-  --strim-roundness--default: 12px;
-  --strim-roundness--round: 50%;
+  --rds-roundness--default: 12px;
+  --rds-roundness--button: 12px;
+  --rds-roundness--round: 50%;
 
   --font-family-lg-headlines: "HALMatex", sans-serif;
   --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
@@ -38,6 +42,7 @@
 .rtv {
   --button-primary-fg: #fff;
   --accent-color: #ee4642;
+  --accent-color-mid: #ed302b;
   --accent-color-dark: #d41612;
   --foreground-primary: #fff;
   --foreground-secondary: #a8a8a8;
@@ -47,11 +52,14 @@
 
   --background-primary-rgb: 37, 37, 37;
   --background-primary: rgb(var(--background-primary-rgb));
+  --background-secondary: #0b0b0b;
 
+  --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
-  --strim-roundness--default: 4px;
-  --strim-roundness--round: 50%;
+  --rds-roundness--default: 4px;
+  --rds-roundness--button: 34px;
+  --rds-roundness--round: 50%;
 
   --font-family-lg-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
   --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;

@@ -27,8 +27,8 @@ body {
     background-color: var(--background-primary);
     color: var(--foreground-primary);
     min-height: calc(100vh - 200px);
-    border-top-left-radius: var(--strim-roundness--default);
-    border-bottom-left-radius: var(--strim-roundness--default);
+    border-top-left-radius: var(--rds-roundness--default);
+    border-bottom-left-radius: var(--rds-roundness--default);
     margin-left: var(--strim-spacing--32);
   }
 
