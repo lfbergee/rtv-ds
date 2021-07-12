@@ -1,8 +1,8 @@
 .portal-example__types {
-  padding: var(--strim-spacing--16);
+  padding: var(--rds-spacing--16);
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: var(--rds-roundness--default);
-  margin-top: var(--strim-spacing--8);
+  margin-top: var(--rds-spacing--8);
   max-width: 46rem;
 
   &__details {
@@ -14,7 +14,7 @@
 
   &__table {
     width: 100%;
-    margin-top: var(--strim-spacing--24);
+    margin-top: var(--rds-spacing--24);
     table-layout: fixed;
 
     & > thead {
@@ -24,7 +24,7 @@
     th {
       word-wrap: break-word;
       max-width: 25%;
-      padding: var(--strim-spacing--8) var(--strim-spacing--16);
+      padding: var(--rds-spacing--8) var(--rds-spacing--16);
 
       @media only screen and (max-width: 768px) {
         display: none;

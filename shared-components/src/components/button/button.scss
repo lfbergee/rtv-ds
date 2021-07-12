@@ -29,22 +29,22 @@
 }
 
 .rsc-button {
-  padding: var(--strim-spacing--8) var(--strim-spacing--24);
+  padding: var(--rds-spacing--8) var(--rds-spacing--24);
   border-radius: var(--rds-roundness--button);
   overflow: hidden;
 
   &__icon {
     display: flex;
     align-items: center;
-    margin-right: var(--strim-spacing--8);
+    margin-right: var(--rds-spacing--8);
   }
 
   &__postfix {
     position: relative;
     display: flex;
     align-items: center;
-    margin-left: var(--strim-spacing--16);
-    padding-left: var(--strim-spacing--16);
+    margin-left: var(--rds-spacing--16);
+    padding-left: var(--rds-spacing--16);
 
     &::before {
       content: " ";
