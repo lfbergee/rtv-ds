@@ -5,7 +5,7 @@ import "./typography.scss";
 type HeadingLevels = 1 | 2 | 3 | 4;
 type SemanticElement = `h${HeadingLevels}` | "p" | "span" | "strong";
 interface Props extends HTMLAttributes<HTMLHeadingElement> {
-  lookLike: `title-${HeadingLevels}` | "display-title" | "body" | "sub-body" | "tag" | "bold" | "meta";
+  lookLike?: `title-${HeadingLevels}` | "display-title" | "body" | "sub-body" | "tag" | "bold" | "meta";
   className?: string;
 }
 

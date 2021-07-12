@@ -6,6 +6,8 @@
     "dev": "npm run dev --workspace=portal",
     "build": "npm run build --workspace=portal --workspace=shared-components",
     "serve": "npm run serve --workspace=portal",
+    "test": "npm run test --workspace=shared-components",
+    "test:open": "npm run test:open --workspace=shared-components",
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "prepare": "husky install",

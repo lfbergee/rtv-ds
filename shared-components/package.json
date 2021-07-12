@@ -10,10 +10,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "test": "cypress run-ct",
+    "test:open": "cypress open-ct"
   },
   "dependencies": {},
   "devDependencies": {
+    "@cypress/react": "^5.9.1",
+    "@cypress/vite-dev-server": "^2.0.1",
+    "@testing-library/cypress": "^7.0.6",
     "rollup-plugin-copy": "^3.4.0"
   }
 }
