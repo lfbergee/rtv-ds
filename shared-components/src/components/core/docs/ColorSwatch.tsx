@@ -16,18 +16,15 @@ const getColor = (divElement: HTMLDivElement): string => {
   return `#${toIndividualHex.toUpperCase()}${alphaChannel}`;
 };
 
-export const ColorSwatch: FC<{ title: string; color: string; usage?: string[] }> = ({
-  children,
-  title,
-  usage,
-  color,
-}) => {
+export const ColorSwatch: FC<{ color: string; usage?: string[] }> = ({ children, usage, color }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [hex, setHex] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     if (ref?.current && !hex) {
       setHex(getColor(ref.current));
+      setTitle(ref.current.style.backgroundColor.replace("var(", "").replace(")", ""));
     }
   }, [setHex, hex]);
 
