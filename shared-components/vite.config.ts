@@ -1,11 +1,13 @@
 import { defineConfig } from "vite";
 import reactRefresh from "@vitejs/plugin-react-refresh";
+import reactSvgPlugin from "vite-plugin-react-svg";
 import reactJsx from "vite-react-jsx";
 import path from "path";
 import copy from "rollup-plugin-copy";
 
 export default defineConfig({
   plugins: [
+    reactSvgPlugin(),
     reactRefresh(),
     reactJsx(),
     {

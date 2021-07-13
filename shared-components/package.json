@@ -19,6 +19,7 @@
     "@cypress/react": "^5.9.1",
     "@cypress/vite-dev-server": "^2.0.1",
     "@testing-library/cypress": "^7.0.6",
-    "rollup-plugin-copy": "^3.4.0"
+    "rollup-plugin-copy": "^3.4.0",
+    "vite-plugin-react-svg": "^0.2.0"
   }
 }
