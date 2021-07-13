@@ -8,6 +8,7 @@ import "./button-shared.scss";
 
 interface IconButtonProps extends Omit<ButtonProps, "icon" | "children"> {
   as: "play" | "pause";
+  ["aria-label"]: string;
 }
 
 const getIcon = (as: "play" | "pause") => {
