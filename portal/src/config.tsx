@@ -1,7 +1,8 @@
 import { makeComponent } from "./utils/makeComponent";
 
 // Components
-import Core from "@rikstv/shared-components/src/components/core/core.mdx";
+import Spacing from "@rikstv/shared-components/src/components/core/spacing.mdx";
+import Colors from "@rikstv/shared-components/src/components/core/colors.mdx";
 import Button from "@rikstv/shared-components/src/components/button/button.mdx";
 import Typography from "@rikstv/shared-components/src/components/typography/typography.mdx";
 
@@ -11,6 +12,7 @@ import typographyType from "../../../shared-components/src/components/typography
 
 export const components = [
   makeComponent("button", Button, buttonType),
-  makeComponent("core", Core),
+  makeComponent("spacing", Spacing),
+  makeComponent("colors", Colors),
   makeComponent("typografi", Typography, typographyType),
-];
+].sort((a, b) => a.displayName.localeCompare(b.displayName));

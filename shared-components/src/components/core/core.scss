@@ -1,10 +1,16 @@
 // TODO: this should be moved out to a common core package
 // Start of a spacing scale, perhaps should be more abstract than currently, as it is somewhat annoying when it changes
 :root {
+  --rds-spacing--2: 2px;
+  --rds-spacing--4: 4px;
   --rds-spacing--8: 8px;
   --rds-spacing--16: 16px;
   --rds-spacing--24: 24px;
   --rds-spacing--32: 32px;
+  --rds-spacing--48: 48px;
+  --rds-spacing--64: 64px;
+  --rds-spacing--80: 80px;
+  --rds-spacing--96: 96px;
 }
 
 .strm {
@@ -25,7 +31,17 @@
   --background-secondary: #001515;
 
   --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
+  --foreground-overlay-medium: rgba(255, 255, 255, 0.5);
   --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+
+  --background-overlay-soft: rgba(0, 0, 0, 0.1);
+  --background-overlay-medium: rgba(0, 0, 0, 0.5);
+  --background-overlay-heavy: rgba(0, 0, 0, 0.85);
+
+  --feedback-info: #00aec7;
+  --feedback-warning: #f2a900;
+  --feedback-confirm: #4cbb81;
+  --feedback-error: #e01c17;
 
   --rds-roundness--default: 12px;
   --rds-roundness--button: 12px;
@@ -55,7 +71,17 @@
   --background-secondary: #0b0b0b;
 
   --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
+  --foreground-overlay-medium: rgba(255, 255, 255, 0.5);
   --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+
+  --background-overlay-soft: rgba(0, 0, 0, 0.1);
+  --background-overlay-medium: rgba(0, 0, 0, 0.5);
+  --background-overlay-heavy: rgba(0, 0, 0, 0.85);
+
+  --feedback-info: #00aec7;
+  --feedback-warning: #f2a900;
+  --feedback-confirm: #4cbb81;
+  --feedback-error: #e01c17;
 
   --rds-roundness--default: 4px;
   --rds-roundness--button: 34px;
