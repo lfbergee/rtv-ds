@@ -51,7 +51,7 @@ export const Colors: FC = () => (
 );
 
 export const Spacing: FC = () => (
-  <>
+  <div style={{ display: "flex" }}>
     <SpacingBlock size={2} />
     <SpacingBlock size={4} />
     <SpacingBlock size={8} />
@@ -62,5 +62,5 @@ export const Spacing: FC = () => (
     <SpacingBlock size={64} />
     <SpacingBlock size={80} />
     <SpacingBlock size={96} />
-  </>
+  </div>
 );

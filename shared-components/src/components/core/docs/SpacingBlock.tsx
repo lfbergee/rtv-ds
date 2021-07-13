@@ -9,7 +9,7 @@ export const SpacingBlock: FC<{ size: Size }> = ({ size }) => {
         backgroundColor: "var(--accent-color-dark)",
         width: `var(--rds-spacing--${size})`,
         height: `var(--rds-spacing--${size})`,
-        marginBottom: "var(--rds-spacing--8)",
+        marginLeft: "var(--rds-spacing--8)",
       }}
       title={`rds-spacing--${size}`}
     />

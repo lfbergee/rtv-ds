@@ -48,7 +48,7 @@
   display: flex;
   transition: 125ms ease-in-out;
   transition-property: color, box-shadow, background-color;
-  font-weight: bold;
+  font-weight: 600;
 
   &--primary {
     color: var(--common-button--primary-color);
