@@ -4,11 +4,14 @@ import reactSvgPlugin from "vite-plugin-react-svg";
 import reactJsx from "vite-react-jsx";
 import path from "path";
 import copy from "rollup-plugin-copy";
+// eslint-disable-next-line
+// @ts-ignore
+import svg from "rollup-plugin-svg";
 
 export default defineConfig({
   plugins: [
-    reactSvgPlugin(),
     reactRefresh(),
+    reactSvgPlugin(),
     reactJsx(),
     {
       ...copy({
@@ -38,16 +41,14 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
+      plugins: [svg()],
       external: ["react"],
       output: {
         manualChunks(id) {
           if (id.match(/\/components\/[\w\W]*\/*.tsx$/)) {
             const componentPath = id.split(".");
-            const componentName =
-              componentPath[componentPath.length - 2].split("/");
-            return `${componentName[componentName.length - 2]}/${
-              componentName[componentName.length - 1]
-            }`;
+            const componentName = componentPath[componentPath.length - 2].split("/");
+            return `${componentName[componentName.length - 2]}/${componentName[componentName.length - 1]}`;
           }
         },
         globals: {

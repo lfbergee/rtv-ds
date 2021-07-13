@@ -3,6 +3,7 @@ import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
 import * as components from "@rikstv/shared-components/src/components";
+import * as icons from "@rikstv/shared-components/src/components/icons/Icons";
 import { TypeContext } from "../../utils/makeComponent";
 import { DisplayTypes } from "../../display-types/DisplayTypes";
 import { DisplayStyle } from "../../display-style/DisplayStyle";
@@ -56,6 +57,7 @@ export const CodeBlock: FC<{
           scope={{
             mdx,
             ...components,
+            ...icons,
           }}
         >
           <div ref={ref}>
@@ -100,3 +102,5 @@ export const CodeBlock: FC<{
     </Highlight>
   );
 };
+
+export { CodeBlock as default };

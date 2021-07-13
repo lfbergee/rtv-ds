@@ -1,7 +1,9 @@
-import { CodeBlock } from "./CodeBlock/CodeBlock";
+import { lazy } from "react";
 import { H1, H2, H3, H4, Body, Bold } from "@rikstv/shared-components/src/components/typography/Typography";
 
 import "./style.scss";
+
+const Code = lazy(() => import("./CodeBlock/CodeBlock"));
 
 /* eslint-disable @typescript-eslint/no-explicit-any, react/display-name */
 export const mdxComponents = {
@@ -13,6 +15,6 @@ export const mdxComponents = {
   b: (props: any): JSX.Element => <Bold {...props} />,
   strong: (props: any): JSX.Element => <Bold {...props} />,
   pre: (props: any): JSX.Element => <div {...props} />,
-  code: CodeBlock,
+  code: Code,
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */

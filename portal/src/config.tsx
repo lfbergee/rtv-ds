@@ -1,4 +1,4 @@
-import { makeComponent } from "./utils/makeComponent";
+import { makeComponent, Types } from "./utils/makeComponent";
 
 // Components
 import Spacing from "@rikstv/shared-components/src/components/core/spacing.mdx";
@@ -8,9 +8,13 @@ import IconButton from "@rikstv/shared-components/src/components/button/iconButt
 import Typography from "@rikstv/shared-components/src/components/typography/typography.mdx";
 
 // Types
-import buttonType from "../../../shared-components/src/components/button/Button?type";
-import iconButtonType from "../../../shared-components/src/components/button/IconButton?type";
-import typographyType from "../../../shared-components/src/components/typography/Typography?type";
+const buttonType: Promise<{ default: Types }> = import("../../../shared-components/src/components/button/Button?type");
+const iconButtonType: Promise<{ default: Types }> = import(
+  "../../../shared-components/src/components/button/IconButton?type"
+);
+const typographyType: Promise<{ default: Types }> = import(
+  "../../../shared-components/src/components/typography/Typography?type"
+);
 
 export const components = [
   makeComponent("button", Button, buttonType),

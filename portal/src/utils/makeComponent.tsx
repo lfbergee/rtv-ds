@@ -13,10 +13,16 @@ export const TypeContext = createContext<{ types: Types }>({ types: [] });
 export const makeComponent = (
   name: string,
   Page: () => JSX.Element,
-  types?: Types
+  types?: Promise<{ default: Types }>
 ): { Page: () => JSX.Element; displayName: string } => {
+  let resolvedTypes: Types;
+
+  if (types) {
+    types.then((resolve) => (resolvedTypes = resolve.default));
+  }
+
   const WrappedPage = () => (
-    <TypeContext.Provider value={{ types: types || [] }}>
+    <TypeContext.Provider value={{ types: resolvedTypes || [] }}>
       <Page />
     </TypeContext.Provider>
   );
