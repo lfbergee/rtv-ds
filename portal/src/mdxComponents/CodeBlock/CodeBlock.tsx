@@ -1,4 +1,4 @@
-import { FC, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { FC, useCallback, useContext, useEffect, useRef, useState } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
