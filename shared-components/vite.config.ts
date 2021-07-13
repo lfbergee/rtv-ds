@@ -4,9 +4,6 @@ import reactSvgPlugin from "vite-plugin-react-svg";
 import reactJsx from "vite-react-jsx";
 import path from "path";
 import copy from "rollup-plugin-copy";
-// eslint-disable-next-line
-// @ts-ignore
-import svg from "rollup-plugin-svg";
 
 export default defineConfig({
   plugins: [
@@ -41,7 +38,6 @@ export default defineConfig({
       formats: ["es"],
     },
     rollupOptions: {
-      plugins: [svg()],
       external: ["react"],
       output: {
         manualChunks(id) {

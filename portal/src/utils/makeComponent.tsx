@@ -1,7 +1,6 @@
 import { createContext } from "react";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type RawTypeProps = [string, any];
+export type RawTypeProps = [string, unknown];
 
 export type Types = Array<{
   displayName: string;
@@ -18,7 +17,9 @@ export const makeComponent = (
   let resolvedTypes: Types;
 
   if (types) {
-    types.then((resolve) => (resolvedTypes = resolve.default));
+    types.then((resolve) => {
+      resolvedTypes = resolve.default;
+    });
   }
 
   const WrappedPage = () => (
@@ -26,6 +27,7 @@ export const makeComponent = (
       <Page />
     </TypeContext.Provider>
   );
+
   return {
     Page: WrappedPage,
     displayName: name,
