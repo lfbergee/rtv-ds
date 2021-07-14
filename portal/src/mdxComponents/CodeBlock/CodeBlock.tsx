@@ -97,38 +97,42 @@ export const CodeBlock: FC<{
           }}
         >
           <LivePreview />
-          <Highlight {...defaultProps} code={children.trim()} language={language}>
-            {({ className, style, tokens, getLineProps, getTokenProps }) => (
-              <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
-                {tokens.map((line, i) => (
-                  <div key={i} {...getLineProps({ line, key: i })}>
-                    {line.map((token, key) => (
-                      <span key={key} {...getTokenProps({ token, key })} />
-                    ))}
-                  </div>
-                ))}
-              </pre>
-            )}
-          </Highlight>
+          <div className="portal-max-width">
+            <Highlight {...defaultProps} code={children.trim()} language={language}>
+              {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
+                  {tokens.map((line, i) => (
+                    <div key={i} {...getLineProps({ line, key: i })}>
+                      {line.map((token, key) => (
+                        <span key={key} {...getTokenProps({ token, key })} />
+                      ))}
+                    </div>
+                  ))}
+                </pre>
+              )}
+            </Highlight>
+          </div>
         </LiveProvider>
       </div>
     );
   }
 
   return (
-    <Highlight {...defaultProps} code={children.trim()} language={language}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({ token, key })} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
+    <div className="portal-max-width">
+      <Highlight {...defaultProps} code={children.trim()} language={language}>
+        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+          <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
+            {tokens.map((line, i) => (
+              <div key={i} {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        )}
+      </Highlight>
+    </div>
   );
 };
 

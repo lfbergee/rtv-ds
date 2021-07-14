@@ -60,27 +60,27 @@ En linje lager en inline `<code>` blokk. Praktisk for små forklaringer og uthev
 
 Flere linjers kode kan brukes hvis man skal beskrive flere påfølgende steg eller korte kodesnutter
 
-````
+```
     ```tsx
     flere
     linjer
     kode
-````
+```
 
 Flere linjers live-kodeblokk tar inn en React komponent og gir den tilbake i en fungerende versjon med en kode editor, så man kan gjøre endringer i koden og se resultatet direkte.
 Brukes til å vise frem komponentene i all sin prakt. Den vil også lage en accordion med generert stil og en accordion med typene til komponeten hvis det er importert for den komponenten i `config.ts`.
 
-````
+```
     ```tsx live=true
     <SomeComponent />
-````
+```
 
 Tilsvarende som over, men denne vil ikke ha live editering og vil vise kodeblokken under. Brukes til å vise varianter eller hvis man vil vise samme komponent flere ganger på en side.
 
-````
+```
     ```tsx render=true
     <SomeComponent />
-````
+```
 
 ## Tester
 
