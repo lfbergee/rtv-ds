@@ -1,12 +1,8 @@
 .portal-navigation {
-  position: sticky;
-  top: 100px;
-  padding-top: 32px;
-
   &__toggle {
     position: fixed;
-    bottom: 40px;
-    right: 10px;
+    bottom: var(--rds-spacing--24);
+    right: var(--rds-spacing--16);
   }
 
   &__search {
@@ -58,29 +54,34 @@
   }
 }
 
+.portal-menu-bottom-btn,
 .portal-menu-btn {
   display: none;
 }
 
 @media only screen and (max-width: 768px) {
   .portal-navigation {
+    margin-top: var(--rds-spacing--80);
     transform: translateX(100vw);
     width: 100vw;
-    min-height: 100vh;
     transition: transform 250ms ease-in-out;
     background-color: var(--foreground-primary);
     padding: var(--rds-spacing--32) var(--rds-spacing--32) var(--rds-spacing--32) var(--rds-spacing--16);
 
     &--show-mobile {
+      z-index: 1;
       transform: translateX(0);
     }
     &__toggle {
       position: relative;
       bottom: unset;
       right: unset;
+      margin-top: var(--rds-spacing--48);
       margin-left: var(--rds-spacing--32);
     }
   }
+
+  .portal-menu-bottom-btn,
   .portal-menu-btn {
     display: initial;
     position: absolute;
@@ -121,6 +122,20 @@
       &::after {
         transform: rotate(45deg) translateX(-10px);
       }
+    }
+  }
+  .portal-menu-bottom-btn {
+    top: initial;
+    bottom: var(--rds-spacing--16);
+    opacity: 0;
+    &:focus {
+      opacity: 1;
+    }
+    &::before {
+      transform: rotate(-45deg) translateX(-10px);
+    }
+    &::after {
+      transform: rotate(45deg) translateX(-10px);
     }
   }
 }

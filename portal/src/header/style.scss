@@ -1,7 +1,11 @@
 .portal-header {
-  padding: 32px;
+  padding: var(--rds-spacing--32);
+
+  @media only screen and (max-width: 768px) {
+    padding: var(--rds-spacing--24) var(--rds-spacing--32);
+  }
 
   & > a > svg {
-    height: 32px;
+    height: var(--rds-spacing--32);
   }
 }

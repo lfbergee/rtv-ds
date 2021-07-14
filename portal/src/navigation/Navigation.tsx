@@ -1,18 +1,20 @@
 import { ChangeEvent, FC, useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { PrimaryButton } from "@rikstv/shared-components/src/components/button/Button";
+import { componentPages, documentationPages } from "../pages/Pages";
 import { components } from "../config";
+import { useMediaQuery } from "../utils/useMediaQuery";
 import { ThemeContext } from "./ThemeContext";
 
 import "./style.scss";
-import { PrimaryButton } from "@rikstv/shared-components/src/components/button/Button";
-import { componentPages, documentationPages } from "../pages/Pages";
 
 export const Navigation: FC = () => {
   const [searchStr, setSearchStr] = useState("");
-  const [showMenu, setShowMenu] = useState<boolean>();
+  const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const [filteredComponents, setFilteredComponents] = useState(components);
   const { theme, setTheme } = useContext(ThemeContext);
+  const isSmallScreen = useMediaQuery(`(max-width: 768px)`);
 
   useEffect(() => {
     const prevTheme = theme === "rtv" ? "strm" : "rtv";
@@ -50,7 +52,7 @@ export const Navigation: FC = () => {
         <ul className="portal-navigation__list">
           {documentationPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
-              <NavLink onClick={closeMenu} exact to={page.path}>
+              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={page.path}>
                 {page.name}
               </NavLink>
             </li>
@@ -58,19 +60,25 @@ export const Navigation: FC = () => {
         </ul>
         <label className="portal-navigation__search">
           Filter komponenter
-          <input className="portal-navigation__search__input" type="text" onChange={handleSearch} value={searchStr} />
+          <input
+            tabIndex={isSmallScreen && !showMenu ? -1 : 0}
+            className="portal-navigation__search__input"
+            type="text"
+            onChange={handleSearch}
+            value={searchStr}
+          />
         </label>
         <ul className="portal-navigation__list">
           {componentPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
-              <NavLink onClick={closeMenu} exact to={page.path}>
+              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={page.path}>
                 {page.name}
               </NavLink>
             </li>
           ))}
           {filteredComponents.map(({ displayName }) => (
             <li key={displayName} className="portal-navigation__list__item">
-              <NavLink onClick={closeMenu} exact to={`/${displayName}`}>
+              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={`/${displayName}`}>
                 {displayName}
               </NavLink>
             </li>
@@ -79,16 +87,19 @@ export const Navigation: FC = () => {
           {filteredComponents.length === 0 && (
             <li className="portal-navigation__list__item">
               Ingen komponenter matcher {searchStr} 🤬
-              <PrimaryButton type="button" onClick={emptyStrString}>
+              <PrimaryButton tabIndex={isSmallScreen && !showMenu ? -1 : 0} type="button" onClick={emptyStrString}>
                 Tøm filter
               </PrimaryButton>
             </li>
           )}
         </ul>
         <div className="portal-navigation__toggle">
-          <PrimaryButton onClick={toggleTheme}>{`Bytt til ${theme === "rtv" ? "Strim" : "RiksTV"}`}</PrimaryButton>
+          <PrimaryButton tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={toggleTheme}>{`Bytt til ${
+            theme === "rtv" ? "Strim" : "RiksTV"
+          }`}</PrimaryButton>
         </div>
       </nav>
+      {showMenu && <button onClick={toggleMenu} className="portal-menu-bottom-btn" title={"Lukk meny"} />}
     </>
   );
 };

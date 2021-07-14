@@ -26,7 +26,7 @@ body {
     padding: var(--rds-spacing--32);
     background-color: var(--background-primary);
     color: var(--foreground-primary);
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 300px);
     border-top-left-radius: var(--rds-roundness--default);
     border-bottom-left-radius: var(--rds-roundness--default);
     margin-left: var(--rds-spacing--32);
@@ -53,6 +53,10 @@ body {
 
     & > main {
       margin: 0;
+      margin-top: calc(var(--rds-spacing--16) * -1);
+      border-radius: 0;
+      padding: var(--rds-spacing--24) var(--rds-spacing--16);
+      min-height: calc(100vh - 128px);
     }
   }
 }
