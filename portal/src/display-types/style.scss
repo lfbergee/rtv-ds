@@ -1,6 +1,6 @@
 .portal-example__types {
   padding: var(--rds-spacing--16);
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--background-overlay-medium);
   border-radius: var(--rds-roundness--default);
   margin-top: var(--rds-spacing--8);
   max-width: 46rem;
@@ -22,24 +22,31 @@
     }
     td,
     th {
-      word-wrap: break-word;
-      max-width: 25%;
       padding: var(--rds-spacing--8) var(--rds-spacing--16);
-
-      @media only screen and (max-width: 768px) {
-        display: none;
-        &:first-of-type {
-          display: table-cell;
-        }
-        &:last-of-type {
-          display: table-cell;
-        }
-      }
+    }
+    td {
+      word-wrap: break-word;
     }
   }
 
   &--node-module {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--background-overlay-medium);
+  }
+
+  &--large-row {
+    width: 40%;
+  }
+  &--small-row {
+    width: 10%;
+  }
+  @media only screen and (max-width: 768px) {
+    &--large-row {
+      display: table-cell;
+      width: 50%;
+    }
+    &--small-row {
+      display: none;
+    }
   }
 
   &--required {

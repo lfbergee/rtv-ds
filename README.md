@@ -8,6 +8,10 @@
 
 ## Todo
 - Focus styling
-- Keyboard/ touchlistner function
-- A11y in mobile menu
+- Keyboard/touch listener function
 - Using the component guide
+- Button style when on light background
+- Move repo to shared rikstv 
+- Deploy to npm
+- Use Cypress Dashboard
+- Improve README

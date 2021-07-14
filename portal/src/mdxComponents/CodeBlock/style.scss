@@ -2,7 +2,7 @@
   margin-top: var(--rds-spacing--32);
 
   &__details {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--background-overlay-medium);
     margin-top: var(--rds-spacing--32);
     border-radius: var(--rds-roundness--default);
     max-width: 46rem;
