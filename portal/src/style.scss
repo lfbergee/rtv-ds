@@ -30,6 +30,8 @@ body {
     border-top-left-radius: var(--rds-roundness--default);
     border-bottom-left-radius: var(--rds-roundness--default);
     margin-left: var(--rds-spacing--32);
+    margin-bottom: var(--rds-spacing--96);
+    padding-bottom: var(--rds-spacing--80);
   }
 
   & > nav {

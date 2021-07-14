@@ -20,7 +20,7 @@ export const CodeBlock: FC<{
   const [componentType, setComponentType] = useState<Types>();
 
   const ref = useRef<HTMLDivElement>(null);
-  const language = className.replace(/language-/, "") as Language;
+  const language = (className?.replace(/language-/, "") as Language) || "markup";
 
   const { types } = useContext(TypeContext);
 
@@ -88,10 +88,29 @@ export const CodeBlock: FC<{
   if (render) {
     return (
       <div className="portal-code-block">
-        <LiveProvider code={children}>
+        <LiveProvider
+          code={children.trim()}
+          scope={{
+            mdx,
+            ...components,
+            ...icons,
+          }}
+        >
           <LivePreview />
+          <Highlight {...defaultProps} code={children.trim()} language={language}>
+            {({ className, style, tokens, getLineProps, getTokenProps }) => (
+              <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
+                {tokens.map((line, i) => (
+                  <div key={i} {...getLineProps({ line, key: i })}>
+                    {line.map((token, key) => (
+                      <span key={key} {...getTokenProps({ token, key })} />
+                    ))}
+                  </div>
+                ))}
+              </pre>
+            )}
+          </Highlight>
         </LiveProvider>
-        {componentType && <DisplayTypes types={componentType} />}
       </div>
     );
   }

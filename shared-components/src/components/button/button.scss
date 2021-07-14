@@ -1,12 +1,13 @@
 .rds-button {
   padding: var(--rds-spacing--8) var(--rds-spacing--24);
   border-radius: var(--rds-roundness--button);
-  overflow: hidden;
+  overflow-y: hidden;
 
   &__icon {
     display: flex;
     align-items: center;
-    margin-right: var(--rds-spacing--8);
+    margin-right: var(--rds-spacing--16);
+    width: 1.125rem;
   }
 
   &__postfix {

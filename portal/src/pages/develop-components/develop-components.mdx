@@ -29,7 +29,7 @@ Når du lager en ny komponent er det noen ting som er viktige å gjøre for at d
 Vi skal være pragmatiske her, men det er viktig å holde et høyt nok kvalitetsnivå på komponentene siden de taes i bruk i mange forskjellige prosjekt.
 
 1. Snakk med de andre teamene før man lager ny komponent
-1. Alle kompoennter tilbyr referanse til det viktige underliggende komponenten. Feks  i `<Input />` skal det være en `forwardRef`som gir referansen til `<input>` elementet
+1. Alle komponenter tilbyr referanse til det viktige underliggende komponenten. Feks i `<Input />` skal det være en `forwardRef` som gir referansen til `<input>` elementet
 1. Universell utforming er ivaretatt
 1. Ytelse er ivaretatt
 1. Nødvendig funksjonalitet er testet
@@ -45,6 +45,43 @@ Vi skal være pragmatiske her, men det er viktig å holde et høyt nok kvalitets
 1. Kjerneverdier som farger og spacing er ALLTID definert i `core`, aldri i komponent stil
 1. Kjerneverdier skal alltid finnes i begge brands
 
+## Dokumentasjon
+
+Vi dokumenterer komponentene med mdx. Komponentene tilgjengeliggjøres for markdown parseren automatisk når du eksporterer den fra `index.ts` i shared-components.
+Les mer om [mdx her](https://mdxjs.com/). Tldr; er at mdx er et superset av markdown som støtter React. Vi oversetter markdown til å bruke våre typografi komponenter.
+Hvis du benytter deg av markdown som ikke er mappet opp til en av våre komponenter, kan det gjøres i `/portal/src/mdxComponents/index.tsx`, er oversetter vi fra default HTML elementer til våre utganger av de elementene.
+Man kan vise frem kode på fire måter i vårt oppsett.
+
+En linje lager en inline `<code>` blokk. Praktisk for små forklaringer og utheve enkelt verdier.
+
+```
+`en linje kode`
+```
+
+Flere linjers kode kan brukes hvis man skal beskrive flere påfølgende steg eller korte kodesnutter
+
+````
+    ```tsx
+    flere
+    linjer
+    kode
+````
+
+Flere linjers live-kodeblokk tar inn en React komponent og gir den tilbake i en fungerende versjon med en kode editor, så man kan gjøre endringer i koden og se resultatet direkte.
+Brukes til å vise frem komponentene i all sin prakt. Den vil også lage en accordion med generert stil og en accordion med typene til komponeten hvis det er importert for den komponenten i `config.ts`.
+
+````
+    ```tsx live=true
+    <SomeComponent />
+````
+
+Tilsvarende som over, men denne vil ikke ha live editering og vil vise kodeblokken under. Brukes til å vise varianter eller hvis man vil vise samme komponent flere ganger på en side.
+
+````
+    ```tsx render=true
+    <SomeComponent />
+````
+
 ## Troubleshooting
 
-Hvis `npm install` feiler, sjekk at du har minst `npm 7.0.0` installert. `npm i -g npm`for å oppdatere. Vi bruker `npm workspaces`, derfor trenger vi minst denne versjonen.
+Hvis `npm install` feiler, sjekk at du har minst `npm 7.0.0` installert. `npm i -g npm` for å oppdatere. Vi bruker `npm workspaces`, derfor trenger vi minst denne versjonen.

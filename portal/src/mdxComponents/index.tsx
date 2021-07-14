@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content, @typescript-eslint/no-explicit-any, react/display-name */
 import { lazy } from "react";
 import { H1, H2, H3, H4, Body, Bold } from "@rikstv/shared-components/src/components/typography/Typography";
 
@@ -5,7 +6,6 @@ import "./style.scss";
 
 const Code = lazy(() => import("./CodeBlock/CodeBlock"));
 
-/* eslint-disable @typescript-eslint/no-explicit-any, react/display-name */
 export const mdxComponents = {
   h1: (props: any): JSX.Element => <H1 {...props} />,
   h2: (props: any): JSX.Element => <H2 {...props} />,
@@ -15,6 +15,6 @@ export const mdxComponents = {
   b: (props: any): JSX.Element => <Bold {...props} />,
   strong: (props: any): JSX.Element => <Bold {...props} />,
   pre: (props: any): JSX.Element => <div {...props} />,
+  a: (props: any): JSX.Element => <a style={{ color: "currentColor" }} {...props} />,
   code: Code,
 };
-/* eslint-enable @typescript-eslint/no-explicit-any */

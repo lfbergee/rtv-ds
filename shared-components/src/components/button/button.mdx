@@ -31,3 +31,24 @@ Tertiærknappen brukes til andre operasjoner enn den viktigste
   Hello world
 </TertiaryButton>
 ```
+
+## Button options
+
+### With postfix
+
+Kan brukes til å vise pris eller annen viktig info
+
+```tsx render=true
+<PrimaryButton postfix="249 kr">
+  Film og Serier
+</PrimaryButton>
+```
+
+
+### With icon
+
+```tsx render=true
+<PrimaryButton icon={Play}>
+  Spill av
+</PrimaryButton>
+```
