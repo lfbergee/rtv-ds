@@ -4,7 +4,7 @@ import { ButtonProps, BaseButton } from "./BaseButton";
 import "./icon-button.scss";
 import "./button-shared.scss";
 
-interface IconButtonProps extends Omit<ButtonProps, "icon" | "children"> {
+interface IconButtonProps extends Omit<ButtonProps, "icon" | "postfix"> {
   ["aria-label"]: string;
   icon: () => JSX.Element;
 }

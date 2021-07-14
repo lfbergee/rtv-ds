@@ -24,6 +24,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       icon: Icon,
       disabled,
       className = "",
+      "aria-busy": ariaBusy,
       ...rest
     },
     ref
@@ -33,17 +34,18 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       {...rest}
       ref={ref}
       disabled={isLoading || disabled}
+      aria-busy={isLoading || ariaBusy}
       className={`${buttonStyle} rds-button__shared rds-button__shared--${buttonType} rds-button--${buttonType} ${
         isLoading ? "rds-button--loading" : ""
       } ${className}`}
     >
       {Icon && (
-        <span className="rds-button__icon">
+        <span data-testid="rds-button__icon" className="rds-button__icon">
           <Icon />
         </span>
       )}
       {children}
-      {!!postfix && <span className="rds-button__postfix">{postfix}</span>}
+      {!!postfix && buttonStyle !== "rds-icon-button" && <span className="rds-button__postfix">{postfix}</span>}
     </button>
   )
 );
