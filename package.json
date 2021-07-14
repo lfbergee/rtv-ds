@@ -60,5 +60,10 @@
   "engines": {
     "node": ">=14",
     "npm": ">=7"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lfbergee/rtv-ds.git"
+  },
+  "homepage": "https://lfbergee.github.io/rtv-ds/#/"
 }
