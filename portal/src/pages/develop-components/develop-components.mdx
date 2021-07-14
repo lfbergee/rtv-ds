@@ -82,6 +82,14 @@ Tilsvarende som over, men denne vil ikke ha live editering og vil vise kodeblokk
     <SomeComponent />
 ````
 
+## Tester
+
+Vi ønsker kvalitet i komponentene og at det stabilt for de som tar de i bruk. Derfor er det smart å skrive noen gode tester for komponenten. Vi ønsker ikke å overdrive her og skrive tester for testenes del.
+Så finn et fornuftig nivå hvor nøkkelfunksjonaliteten til komponenten er ivaretatt. Imotsetning til Jest eller Mocha de fleste er vant med fra klient-prosjekt bruker Cypress som testverktøy her.
+Det gjør vi for å ha et testmiljø som er så tett som mulig til produksjon. Det gjør også at man kan teste komponeter som bruker browser API som feks IntersectionObserver.
+Det muliggjør visuell regresjons testing på sikt. Ulempen er at testene blir noe tregere enn via en mer tradisjonell testrunner. Du kan bruke @testing/libary-stil for å finne elementer.
+Det er også lagt opp en customMount funksjon for å kunne rendere komponenten i begge brands.
+
 ## Troubleshooting
 
 Hvis `npm install` feiler, sjekk at du har minst `npm 7.0.0` installert. `npm i -g npm` for å oppdatere. Vi bruker `npm workspaces`, derfor trenger vi minst denne versjonen.
