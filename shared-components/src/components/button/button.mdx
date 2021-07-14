@@ -24,7 +24,7 @@ Sekundærknappen brukes til andre operasjoner enn den viktigste
 
 ## TertiaryButton
 
-Tertiærknappen brukes til andre operasjoner enn den viktigste
+Tertiærknappen brukes til destruktive eller mindre viktige handliger
 
 ```tsx live=true
 <TertiaryButton postfix="" isLoading={false} disabled={false}>
@@ -49,6 +49,14 @@ Kan brukes til å vise pris eller annen viktig info
 
 ```tsx render=true
 <PrimaryButton icon={Play}>
+  Spill av
+</PrimaryButton>
+```
+
+### With postfix and icon
+
+```tsx render=true
+<PrimaryButton icon={Play} postfix="249 kr">
   Spill av
 </PrimaryButton>
 ```
