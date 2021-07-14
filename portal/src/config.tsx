@@ -1,18 +1,17 @@
-import { makeComponent, Types } from "./utils/makeComponent";
+import { lazy } from "react";
+import { makeComponent, LazyImportedTypes } from "./utils/makeComponent";
 
 // Components
-import Spacing from "@rikstv/shared-components/src/components/core/spacing.mdx";
-import Colors from "@rikstv/shared-components/src/components/core/colors.mdx";
-import Button from "@rikstv/shared-components/src/components/button/button.mdx";
-import IconButton from "@rikstv/shared-components/src/components/button/iconButton.mdx";
-import Typography from "@rikstv/shared-components/src/components/typography/typography.mdx";
+const Spacing = lazy(() => import("@rikstv/shared-components/src/components/core/spacing.mdx"));
+const Colors = lazy(() => import("@rikstv/shared-components/src/components/core/colors.mdx"));
+const Button = lazy(() => import("@rikstv/shared-components/src/components/button/button.mdx"));
+const IconButton = lazy(() => import("@rikstv/shared-components/src/components/button/iconButton.mdx"));
+const Typography = lazy(() => import("@rikstv/shared-components/src/components/typography/typography.mdx"));
 
 // Types
-const buttonType: Promise<{ default: Types }> = import("../../../shared-components/src/components/button/Button?type");
-const iconButtonType: Promise<{ default: Types }> = import(
-  "../../../shared-components/src/components/button/IconButton?type"
-);
-const typographyType: Promise<{ default: Types }> = import(
+const buttonType: LazyImportedTypes = import("../../../shared-components/src/components/button/Button?type");
+const iconButtonType: LazyImportedTypes = import("../../../shared-components/src/components/button/IconButton?type");
+const typographyType: LazyImportedTypes = import(
   "../../../shared-components/src/components/typography/Typography?type"
 );
 

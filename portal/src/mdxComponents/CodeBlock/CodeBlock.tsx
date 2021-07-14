@@ -1,10 +1,10 @@
-import { FC, useCallback, useContext, useEffect, useRef, useState } from "react";
+import { FC, useCallback, useContext, useEffect, useLayoutEffect, useRef, useState } from "react";
 import Highlight, { defaultProps, Language } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import { mdx } from "@mdx-js/react";
 import * as components from "@rikstv/shared-components/src/components";
 import * as icons from "@rikstv/shared-components/src/components/icons/Icons";
-import { TypeContext } from "../../utils/makeComponent";
+import { TypeContext, Types } from "../../utils/makeComponent";
 import { DisplayTypes } from "../../display-types/DisplayTypes";
 import { DisplayStyle } from "../../display-style/DisplayStyle";
 
@@ -17,12 +17,12 @@ export const CodeBlock: FC<{
   render: boolean;
 }> = ({ children, className, live, render }) => {
   const [styleValues, setStyleValues] = useState<CSSStyleDeclaration>();
+  const [componentType, setComponentType] = useState<Types>();
+
   const ref = useRef<HTMLDivElement>(null);
   const language = className.replace(/language-/, "") as Language;
 
   const { types } = useContext(TypeContext);
-  const component = children.split(">")[0].split(" ")[0].replace("<", "");
-  const componentType = types.filter((item) => item.displayName === component);
 
   const handleResize = useCallback(() => {
     if (ref.current) {
@@ -40,6 +40,16 @@ export const CodeBlock: FC<{
       window.clearTimeout(timeout);
     };
   }, [handleResize]);
+
+  useLayoutEffect(() => {
+    if (!componentType) {
+      const component = children.split(">")[0].split(" ")[0].replace("<", "");
+
+      types.then((resolve) => {
+        setComponentType(resolve.default.filter((item) => item.displayName === component));
+      });
+    }
+  }, [componentType, setComponentType, types, children]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
@@ -70,7 +80,7 @@ export const CodeBlock: FC<{
           <LiveError />
         </LiveProvider>
         <DisplayStyle styleValues={styleValues} />
-        <DisplayTypes types={componentType} />
+        {componentType && <DisplayTypes types={componentType} />}
       </div>
     );
   }
@@ -81,7 +91,7 @@ export const CodeBlock: FC<{
         <LiveProvider code={children}>
           <LivePreview />
         </LiveProvider>
-        <DisplayTypes types={componentType} />
+        {componentType && <DisplayTypes types={componentType} />}
       </div>
     );
   }

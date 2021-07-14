@@ -13,15 +13,16 @@ import "./style.scss";
 
 export const App: FC = () => {
   const [theme, setTheme] = useState<themes>("rtv");
+
   return (
-    <Suspense fallback="Laster innhold">
-      <MDXProvider components={mdxComponents}>
-        <ThemeContext.Provider value={{ theme, setTheme }}>
-          <HashRouter basename="rtv-ds">
-            <div className="portal-layout">
-              <Header />
-              <Navigation />
-              <main>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <HashRouter basename="rtv-ds">
+        <div className="portal-layout">
+          <Header />
+          <Navigation />
+          <main>
+            <Suspense fallback="Laster innhold">
+              <MDXProvider components={mdxComponents}>
                 <Switch>
                   {allPages.map((page) => (
                     <Route key={page.path} {...page} exact />
@@ -30,11 +31,11 @@ export const App: FC = () => {
                     <Route key={displayName} path={`/${displayName}`} exact component={Page} />
                   ))}
                 </Switch>
-              </main>
-            </div>
-          </HashRouter>
-        </ThemeContext.Provider>
-      </MDXProvider>
-    </Suspense>
+              </MDXProvider>
+            </Suspense>
+          </main>
+        </div>
+      </HashRouter>
+    </ThemeContext.Provider>
   );
 };

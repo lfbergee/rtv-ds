@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": "false",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite -l info",
     "dev:clean": "vite --force",
     "build": "vite build -l info",
     "typecheck": "tsc",
