@@ -19,6 +19,7 @@
 
 - Update version number in `shared-components/package.json`
 - Update `@rikstv/shared-components` version number in `portal/package.json` accordingly
+- Commit using the following pattern `chore: {describe release} [release]`
 - Merge to master, that will automatically release to npm
 
 *** NEVER release from your machine ***
