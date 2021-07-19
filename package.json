@@ -12,7 +12,8 @@
     "lint": "eslint --ext .ts,.tsx,.js .",
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "prepare": "husky install",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "release": "npm publish --workspace shared-components --dry-run"
   },
   "lint-staged": {
     "{portal,shared-components}/src/**/*.{js,ts,tsx,json}": [
