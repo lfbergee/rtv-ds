@@ -13,16 +13,19 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16"
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - name: Install and Build 🔧
         run: |
           npm install
           npm run build
+
+      - name: Release 🔥
+        if: "contains(github.event.head_commit.message, '[release]')"
+        run: |
           npm run release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
