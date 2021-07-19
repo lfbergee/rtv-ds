@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { H3 } from "@rikstv/shared-components/src/components";
+import { H3 } from "../..";
 
 export const ExampleGrid: FC<{ title: string }> = ({ children, title }) => (
   <>

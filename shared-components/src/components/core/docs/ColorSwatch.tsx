@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react";
-import { Bold, Body, Meta } from "@rikstv/shared-components/src/components";
+import { Bold, Body, Meta } from "../..";
 
 const getColor = (divElement: HTMLDivElement): string => {
   const rgbString = window.getComputedStyle(divElement).getPropertyValue("background-color");

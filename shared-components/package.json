@@ -1,5 +1,5 @@
 {
-  "name": "@lfberge/shared-components",
+  "name": "@rikstv/shared-components",
   "version": "0.0.1",
   "publishConfig": {
     "access": "public"
@@ -15,6 +15,7 @@
   "types": "./dist/index.d.ts",
   "main": "./dist/shared-components.es.js",
   "module": "./dist/shared-components.es.js",
+  "browser": "./dist/shared-components.es.js",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
