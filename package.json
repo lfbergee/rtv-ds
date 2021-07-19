@@ -13,7 +13,7 @@
     "lint:fix": "eslint --fix --ext .ts,.tsx,.js .",
     "prepare": "husky install",
     "precommit": "lint-staged",
-    "release": "npm publish --workspace shared-components"
+    "release": "npm publish --access public --workspace shared-components"
   },
   "lint-staged": {
     "{portal,shared-components}/src/**/*.{js,ts,tsx,json}": [
