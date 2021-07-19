@@ -107,6 +107,7 @@ export const CodeBlock: FC<{
                     backgroundColor: "var(--background-overlay-medium)",
                     padding: "var(--rds-spacing--24)",
                     borderRadius: "var(--rds-roundness--default)",
+                    overflowX: "scroll",
                   }}
                 >
                   {tokens.map((line, i) => (
@@ -129,7 +130,16 @@ export const CodeBlock: FC<{
     <div className="portal-max-width">
       <Highlight {...defaultProps} code={children.trim()} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
-          <pre className={className} style={{ ...style, padding: "var(--rds-spacing--24)" }}>
+          <pre
+            className={className}
+            style={{
+              ...style,
+              backgroundColor: "var(--background-overlay-medium)",
+              padding: "var(--rds-spacing--24)",
+              borderRadius: "var(--rds-roundness--default)",
+              overflowX: "scroll",
+            }}
+          >
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
                 {line.map((token, key) => (
