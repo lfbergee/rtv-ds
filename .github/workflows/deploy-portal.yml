@@ -25,3 +25,8 @@ jobs:
         with:
           branch: gh-pages
           folder: portal/dist 
+
+      - name: Deploy 🔥
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}

@@ -1,7 +1,7 @@
 {
   "name": "@rikstv/portal",
   "version": "0.0.0",
-  "private": "false",
+  "private": "true",
   "scripts": {
     "dev": "vite -l info",
     "dev:clean": "vite --force",

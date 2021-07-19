@@ -2,6 +2,7 @@
   padding: var(--rds-spacing--8) var(--rds-spacing--24);
   border-radius: var(--rds-roundness--button);
   overflow-y: hidden;
+  cursor: pointer;
 
   &__icon {
     display: flex;
