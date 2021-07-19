@@ -17,17 +17,15 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm -v
           npm install
           npm run build
+          run: npm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
           folder: portal/dist
-
-      - name: Release 🔥
-        run: npm run release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
