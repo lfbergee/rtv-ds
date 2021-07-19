@@ -90,6 +90,10 @@ Det gjør vi for å ha et testmiljø som er så tett som mulig til produksjon. D
 Det muliggjør visuell regresjons testing på sikt. Ulempen er at testene blir noe tregere enn via en mer tradisjonell testrunner. Du kan bruke @testing/libary-stil for å finne elementer.
 Det er også lagt opp en customMount funksjon for å kunne rendere komponenten i begge brands.
 
+## Release
+
+Ny release lages ved å oppdatere versjonsnummeret i `shared-components/package.json` og for `@rikstv/shared-components` i `portal/package.json` og merge den til master, release til npm skjer automatisk.
+
 ## Troubleshooting
 
 Hvis `npm install` feiler, sjekk at du har minst `npm 7.0.0` installert. `npm i -g npm` for å oppdatere. Vi bruker `npm workspaces`, derfor trenger vi minst denne versjonen.

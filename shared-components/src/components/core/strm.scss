@@ -29,9 +29,50 @@
 /* Averta Standard Bold */
 @font-face {
   font-family: "AvertaBold";
-  src: url("/fonts/AvertaStandardBold.woff2") format("woff2"),
-    url("/fonts/hinted-AvertaStd-Bold.woff") format("woff");
+  src: url("/fonts/AvertaStandardBold.woff2") format("woff2"), url("/fonts/hinted-AvertaStd-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
+}
+
+.strm {
+  --stand-up-green: #49f5a4;
+
+  --button-primary-fg: #004b50;
+  --accent-color: #faed6f;
+  --accent-color-mid: #f7e426;
+  --accent-color-dark: #f7e426;
+  --foreground-primary: #ffffff;
+  --foreground-secondary: #b2bfbf;
+  --foreground-tertiary: #356e63;
+
+  --heading-accent: var(--stand-up-green);
+
+  --background-primary-rgb: 0, 42, 42; // #002a2a
+  --background-primary: rgb(var(--background-primary-rgb));
+  --background-secondary: #001515;
+
+  --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
+  --foreground-overlay-medium: rgba(255, 255, 255, 0.5);
+  --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+
+  --background-overlay-soft: rgba(0, 0, 0, 0.1);
+  --background-overlay-medium: rgba(0, 0, 0, 0.5);
+  --background-overlay-heavy: rgba(0, 0, 0, 0.85);
+
+  --feedback-info: #00aec7;
+  --feedback-warning: #f2a900;
+  --feedback-confirm: #4cbb81;
+  --feedback-error: #e01c17;
+
+  --rds-roundness--default: 12px;
+  --rds-roundness--button: 12px;
+  --rds-roundness--round: 50%;
+
+  --font-family-lg-headlines: "HALMatex", sans-serif;
+  --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
+  --font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
+
+  --rds-font-size--default: 1.125rem;
 }

@@ -25,3 +25,43 @@
   font-style: normal;
   font-display: swap;
 }
+
+.rtv {
+  --button-primary-fg: #fff;
+  --accent-color: #ee4642;
+  --accent-color-mid: #ed302b;
+  --accent-color-dark: #d41612;
+  --foreground-primary: #fff;
+  --foreground-secondary: #a8a8a8;
+  --foreground-tertiary: #666;
+
+  --heading-accent: var(--foreground-primary);
+
+  --background-primary-rgb: 37, 37, 37;
+  --background-primary: rgb(var(--background-primary-rgb));
+  --background-secondary: #0b0b0b;
+
+  --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
+  --foreground-overlay-medium: rgba(255, 255, 255, 0.5);
+  --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+
+  --background-overlay-soft: rgba(0, 0, 0, 0.1);
+  --background-overlay-medium: rgba(0, 0, 0, 0.5);
+  --background-overlay-heavy: rgba(0, 0, 0, 0.85);
+
+  --feedback-info: #00aec7;
+  --feedback-warning: #f2a900;
+  --feedback-confirm: #4cbb81;
+  --feedback-error: #e01c17;
+
+  --rds-roundness--default: 4px;
+  --rds-roundness--button: 34px;
+  --rds-roundness--round: 50%;
+
+  --font-family-lg-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
+  --font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
+
+  --rds-font-size--default: 1.125rem;
+}
