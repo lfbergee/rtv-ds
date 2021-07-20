@@ -1,4 +1,6 @@
-# RiksTV Shared Components 
+# RiksTV Shared Components
+
+Welcome to Shared Components for RiksTV. Please check the portal for usage guide and development guide.
 
 ## Requirements
 
@@ -7,13 +9,9 @@
 
 
 ## Todo
-- Focus styling
-- Keyboard/touch listener function
 - Button style when on light background
 - Move repo to shared rikstv 
 - Use Cypress Dashboard
-- Improve README
-
 
 ## How to release
 
@@ -24,6 +22,6 @@
 
 *** NEVER release from your machine ***
 
-### Details
+### Release details
 
 We release to the public npm registry under the @rikstv-scope. 

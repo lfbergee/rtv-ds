@@ -1,5 +1,7 @@
 import { createContext, LazyExoticComponent } from "react";
-import { GithubLink } from "../github-link/GithubLink";
+import { GithubLink } from "../links/GithubLink";
+import { NpmLink } from "../links/NpmLink";
+import { LinkContainer } from "../links/LinkContainer";
 
 export type RawTypeProps = [string, unknown];
 
@@ -21,7 +23,10 @@ export const makeComponent = (
 ): { Page: () => JSX.Element; displayName: string } => {
   const WrappedPage = () => (
     <TypeContext.Provider value={{ types: types || defaultTypes }}>
-      <GithubLink />
+      <LinkContainer>
+        <GithubLink />
+        <NpmLink />
+      </LinkContainer>
       <Page />
     </TypeContext.Provider>
   );

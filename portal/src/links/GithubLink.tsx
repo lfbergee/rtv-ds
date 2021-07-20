@@ -9,6 +9,6 @@ export const GithubLink: FC = () => (
     rel="noopener noreferrer"
     aria-label="GitHub repository"
     href={pkg.repository.url.replace("git+", "").replace(".git", "")}
-    className="portal-github-link"
+    className="portal-external-link portal-external-link--github"
   ></a>
 );
