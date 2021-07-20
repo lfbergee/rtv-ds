@@ -42,17 +42,17 @@ export const CodeBlock: FC<{
   }, [handleResize]);
 
   useLayoutEffect(() => {
-    if (!componentType) {
+    if (!componentType && live) {
       let component = children.split(">")[0].split(" ")[0].replace("<", "").trim();
       if (component === "") {
         component = children.split(">")[0].split("\n")[0].replace("<", "").trim();
       }
 
-      types.then((resolve) => {
-        setComponentType(resolve.default.filter((item) => item.displayName === component));
+      Promise.all(types).then((resolve) => {
+        setComponentType(resolve.flatMap((a) => a.default).filter((item) => item.displayName === component));
       });
     }
-  }, [componentType, setComponentType, types, children]);
+  }, [componentType, setComponentType, types, children, live]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);

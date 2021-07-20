@@ -5,27 +5,27 @@ import { Example } from './docs/Example';
 <Example />
 
 ```tsx live=true
-  <FieldSet
-    legend="Is The Room the greatest movie ever"
-    name="the-room"
-  >
-    <RadioToggleInput
-      value={0}
-      label="Yes"
-    />
-    <RadioToggleInput
-      value={1}
-      label="No"
-    />
-  </FieldSet>
+<FieldSet
+  legend="Is The Room the greatest movie ever"
+  name="the-room"
+>
+  <RadioToggleInput
+    value={0}
+    label="Yes"
+  />
+  <RadioToggleInput
+    value={1}
+    label="No"
+  />
+</FieldSet>
 ```
 
 ```tsx live=true
-    <RadioToggleInput
-      value={0}
-      label="Yes"
-      name="demo"
-    />
+<RadioToggleInput
+  value={0}
+  label="Yes"
+  name="demo"
+/>
 ```
 
 ## Controlled component
@@ -68,19 +68,19 @@ Den kan også brukes som en ukontrollert komponent. Du kan gi referanse til båd
 å ta ut verdiene.
 
 ```tsx
-  <FieldSet
-    legend="Is The Room the greatest movie ever"
-    name="the-room"
-  >
-    <RadioToggleInput
-      value={0}
-      label="Yes"
-    />
-    <RadioToggleInput
-      value={1}
-      label="No"
-    />
-  </FieldSet>
+<FieldSet
+  legend="Is The Room the greatest movie ever"
+  name="the-room"
+>
+  <RadioToggleInput
+    value={0}
+    label="Yes"
+  />
+  <RadioToggleInput
+    value={1}
+    label="No"
+  />
+</FieldSet>
 ```
 
 ## Uncontrolled with react-hook-form
@@ -89,32 +89,32 @@ Det er kanskje mest interessant sammen med et form-bibliotek som  `react-hook-fo
 Da register du hvert enkelt input felt med register funksjonen. Det må ha samme navn som du gir til fieldsetet.
 
 ```tsx
-  const {
-    register,
-    handleSubmit,
-  } = useForm();
-  const onSubmit = data => console.log(data);
-  
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FieldSet
-        legend="Is The Room the greatest movie ever"
-        name="the-room"
-      >
-        <RadioToggleInput
-          {...register('the-room')}
-          value="0"
-          label="Yes"
-        />
-        <RadioToggleInput
-          {...register('the-room')}
-          value="1"
-          label="No"
-        />
-      </FieldSet>
-      <PrimaryButton type="submit">
-        Send inn
-      </PrimaryButton>
-    </form>
-  );
+const {
+  register,
+  handleSubmit,
+} = useForm();
+const onSubmit = data => console.log(data);
+
+return (
+  <form onSubmit={handleSubmit(onSubmit)}>
+    <FieldSet
+      legend="Is The Room the greatest movie ever"
+      name="the-room"
+    >
+      <RadioToggleInput
+        {...register('the-room')}
+        value="0"
+        label="Yes"
+      />
+      <RadioToggleInput
+        {...register('the-room')}
+        value="1"
+        label="No"
+      />
+    </FieldSet>
+    <PrimaryButton type="submit">
+      Send inn
+    </PrimaryButton>
+  </form>
+);
 ```

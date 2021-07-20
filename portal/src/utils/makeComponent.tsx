@@ -12,14 +12,16 @@ export type Types = Array<{
 
 export type LazyImportedTypes = Promise<{ default: Types }>;
 
-const defaultTypes = new Promise<{ default: Types }>((resolve) => setTimeout(() => resolve({ default: [] })));
+export type LazyImportedTypesArray = Array<LazyImportedTypes>;
 
-export const TypeContext = createContext<{ types: LazyImportedTypes }>({ types: defaultTypes });
+const defaultTypes = [new Promise<{ default: Types }>((resolve) => setTimeout(() => resolve({ default: [] })))];
+
+export const TypeContext = createContext<{ types: LazyImportedTypesArray }>({ types: defaultTypes });
 
 export const makeComponent = (
   name: string,
   Page: (() => JSX.Element) | LazyExoticComponent<React.ComponentType<unknown>>,
-  types?: LazyImportedTypes
+  ...types: LazyImportedTypesArray
 ): { Page: () => JSX.Element; displayName: string } => {
   const WrappedPage = () => (
     <TypeContext.Provider value={{ types: types || defaultTypes }}>

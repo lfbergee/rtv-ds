@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.2.0 (2021-07-20)
+
+### 🤷 Description
+
+New component
+
+### 🎉 Features
+
+- RadioToggle button component
+
 ## 0.1.1 (2021-07-20)
 
 ### 🤷 Description
