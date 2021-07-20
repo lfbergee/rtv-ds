@@ -17,8 +17,9 @@
     outline: 0;
   }
 
-  &:focus {
-    @include key.keyboard-navigation {
+  @include key.keyboard-navigation {
+    &:focus,
+    &:focus-within {
       outline-offset: $offset;
       outline: $width solid var(--feedback-info);
       transition: outline-offset 0.25s ease;

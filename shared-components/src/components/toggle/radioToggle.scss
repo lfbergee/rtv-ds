@@ -1,0 +1,57 @@
+@use '../core/mixin/focus' as mix;
+
+.rds-field-set {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  &__legend {
+    margin-bottom: var(--rds-spacing--8);
+  }
+}
+
+.rds-radio-toggle {
+  // button reset
+  padding: 0;
+  background-color: var(--foreground-overlay-soft);
+  color: #fff;
+
+  margin: 0 var(--rds-spacing--8);
+  display: block;
+  max-width: 200px;
+  overflow: hidden;
+  border-radius: var(--rds-roundness--button);
+
+  &:active {
+    background-color: var(--foreground-overlay-medium);
+    color: #fff;
+  }
+
+  &__label {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    transition: 125ms ease background-color;
+    padding: var(--rds-spacing--8) var(--rds-spacing--24);
+    box-sizing: border-box;
+    user-select: none;
+  }
+
+  min-width: 50px;
+  &__input {
+    position: absolute;
+    opacity: 0;
+
+    &:checked {
+      & + .rds-radio-toggle__label {
+        background-color: var(--foreground-tertiary);
+      }
+    }
+    &:active {
+      & + .rds-radio-toggle__label {
+        background-color: var(--foreground-overlay-medium);
+      }
+    }
+  }
+  @include mix.with-keyboard-focus;
+}

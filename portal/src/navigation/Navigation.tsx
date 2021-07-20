@@ -46,7 +46,12 @@ export const Navigation: FC = () => {
         <ul className="portal-navigation__list">
           {documentationPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
-              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={page.path}>
+              <NavLink
+                tabIndex={isSmallScreen && !showMenu ? -1 : 0}
+                onClick={closeMenu}
+                exact
+                to={page.path.replace(" ", "-")}
+              >
                 {page.name}
               </NavLink>
             </li>
@@ -65,14 +70,24 @@ export const Navigation: FC = () => {
         <ul className="portal-navigation__list">
           {componentPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
-              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={page.path}>
+              <NavLink
+                tabIndex={isSmallScreen && !showMenu ? -1 : 0}
+                onClick={closeMenu}
+                exact
+                to={page.path.replace(" ", "-")}
+              >
                 {page.name}
               </NavLink>
             </li>
           ))}
           {filteredComponents.map(({ displayName }) => (
             <li key={displayName} className="portal-navigation__list__item">
-              <NavLink tabIndex={isSmallScreen && !showMenu ? -1 : 0} onClick={closeMenu} exact to={`/${displayName}`}>
+              <NavLink
+                tabIndex={isSmallScreen && !showMenu ? -1 : 0}
+                onClick={closeMenu}
+                exact
+                to={`/${displayName.replace(" ", "-")}`}
+              >
                 {displayName}
               </NavLink>
             </li>

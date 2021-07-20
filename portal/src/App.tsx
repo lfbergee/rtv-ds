@@ -30,7 +30,7 @@ export const App: FC = () => {
                       <Route key={page.path} {...page} exact />
                     ))}
                     {components.map(({ displayName, Page }) => (
-                      <Route key={displayName} path={`/${displayName}`} exact component={Page} />
+                      <Route key={displayName} path={`/${displayName.replace(" ", "-")}`} exact component={Page} />
                     ))}
                   </Switch>
                 </MDXProvider>

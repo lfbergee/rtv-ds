@@ -43,7 +43,10 @@ export const CodeBlock: FC<{
 
   useLayoutEffect(() => {
     if (!componentType) {
-      const component = children.split(">")[0].split(" ")[0].replace("<", "");
+      let component = children.split(">")[0].split(" ")[0].replace("<", "").trim();
+      if (component === "") {
+        component = children.split(">")[0].split("\n")[0].replace("<", "").trim();
+      }
 
       types.then((resolve) => {
         setComponentType(resolve.default.filter((item) => item.displayName === component));
@@ -80,7 +83,7 @@ export const CodeBlock: FC<{
           <LiveError />
         </LiveProvider>
         <DisplayStyle styleValues={styleValues} />
-        {componentType && <DisplayTypes types={componentType} />}
+        {!!componentType?.length && <DisplayTypes types={componentType} />}
       </div>
     );
   }
