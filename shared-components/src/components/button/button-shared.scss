@@ -1,3 +1,5 @@
+@use '../core/mixin/focus' as mix;
+
 .rds-button__shared {
   --common-button--primary-color: var(--button-primary-fg);
   --common-button--primary-bg: var(--accent-color);
@@ -100,4 +102,6 @@
   &:active {
     box-shadow: none;
   }
+
+  @include mix.with-keyboard-focus;
 }

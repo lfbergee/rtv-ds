@@ -1,3 +1,5 @@
+@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+
 .portal-example__types {
   padding: var(--rds-spacing--16);
   background-color: var(--background-overlay-medium);
@@ -9,6 +11,7 @@
     & summary {
       cursor: pointer;
       user-select: none;
+      @include mix.with-keyboard-focus(var(--rds-spacing--8));
     }
   }
 

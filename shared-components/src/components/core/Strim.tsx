@@ -1,7 +1,6 @@
 import { FC } from "react";
+import { Core } from "./Core";
 
 import "./strm.scss";
 
-export const Strim: FC = ({ children }) => {
-  return <div className="strm">{children}</div>;
-};
+export const Strim: FC = ({ children }) => <Core brand="strm">{children}</Core>;

@@ -1,0 +1,27 @@
+@use './navigation' as key;
+
+@mixin with-keyboard-focus($offset: 2px, $width: 2px) {
+  &::-moz-focus-inner {
+    border-style: none;
+    outline: 0;
+  }
+
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+    border-style: none;
+  }
+
+  input[type="button"]::-moz-focus-inner {
+    outline: 0;
+  }
+
+  &:focus {
+    @include key.keyboard-navigation {
+      outline-offset: $offset;
+      outline: $width solid var(--feedback-info);
+      transition: outline-offset 0.25s ease;
+    }
+  }
+}

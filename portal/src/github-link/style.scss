@@ -1,3 +1,5 @@
+@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+
 .portal-github-link {
   position: absolute;
   top: 140px;
@@ -22,4 +24,6 @@
       opacity: 1;
     }
   }
+  border-radius: var(--rds-spacing--2);
+  @include mix.with-keyboard-focus;
 }

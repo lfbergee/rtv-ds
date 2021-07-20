@@ -1,3 +1,5 @@
+@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+
 .portal-navigation {
   &__toggle {
     position: fixed;
@@ -28,6 +30,7 @@
       & > button {
         margin-top: var(--rds-spacing--16);
       }
+
       & a::first-letter {
         text-transform: uppercase;
       }
@@ -49,6 +52,10 @@
           border-radius: 50%;
           background-color: var(--background-primary);
         }
+      }
+      & a {
+        border-radius: var(--rds-spacing--2);
+        @include mix.with-keyboard-focus;
       }
     }
   }
@@ -123,6 +130,8 @@
         transform: rotate(45deg) translateX(-10px);
       }
     }
+    border-radius: var(--rds-spacing--2);
+    @include mix.with-keyboard-focus;
   }
   .portal-menu-bottom-btn {
     top: initial;
@@ -137,5 +146,7 @@
     &::after {
       transform: rotate(45deg) translateX(-10px);
     }
+    border-radius: var(--rds-spacing--2);
+    @include mix.with-keyboard-focus;
   }
 }

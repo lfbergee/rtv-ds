@@ -1,6 +1,7 @@
 import { FC, Suspense, useState } from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import { MDXProvider } from "@mdx-js/react";
+import { Core } from "@rikstv/shared-components/src/components/core/Core";
 
 import { Header } from "./header/Header";
 import { Navigation } from "./navigation/Navigation";
@@ -16,26 +17,28 @@ export const App: FC = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <HashRouter basename="rtv-ds">
-        <div className="portal-layout">
-          <Header />
-          <Navigation />
-          <main>
-            <Suspense fallback="Laster innhold">
-              <MDXProvider components={mdxComponents}>
-                <Switch>
-                  {allPages.map((page) => (
-                    <Route key={page.path} {...page} exact />
-                  ))}
-                  {components.map(({ displayName, Page }) => (
-                    <Route key={displayName} path={`/${displayName}`} exact component={Page} />
-                  ))}
-                </Switch>
-              </MDXProvider>
-            </Suspense>
-          </main>
-        </div>
-      </HashRouter>
+      <Core brand={theme}>
+        <HashRouter basename="rtv-ds">
+          <div className="portal-layout">
+            <Header />
+            <Navigation />
+            <main>
+              <Suspense fallback="Laster innhold">
+                <MDXProvider components={mdxComponents}>
+                  <Switch>
+                    {allPages.map((page) => (
+                      <Route key={page.path} {...page} exact />
+                    ))}
+                    {components.map(({ displayName, Page }) => (
+                      <Route key={displayName} path={`/${displayName}`} exact component={Page} />
+                    ))}
+                  </Switch>
+                </MDXProvider>
+              </Suspense>
+            </main>
+          </div>
+        </HashRouter>
+      </Core>
     </ThemeContext.Provider>
   );
 };

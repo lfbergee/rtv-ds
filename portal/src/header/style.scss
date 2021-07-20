@@ -1,3 +1,5 @@
+@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+
 .portal-header {
   padding: var(--rds-spacing--32);
 
@@ -7,5 +9,10 @@
 
   & > a > svg {
     height: var(--rds-spacing--32);
+  }
+
+  & a {
+    border-radius: var(--rds-spacing--2);
+    @include mix.with-keyboard-focus;
   }
 }

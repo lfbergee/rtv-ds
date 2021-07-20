@@ -17,12 +17,6 @@ export const Navigation: FC = () => {
   const isSmallScreen = useMediaQuery(`(max-width: 768px)`);
 
   useEffect(() => {
-    const prevTheme = theme === "rtv" ? "strm" : "rtv";
-    document.getElementById("root")?.classList.add(theme);
-    document.getElementById("root")?.classList.remove(prevTheme);
-  }, [theme]);
-
-  useEffect(() => {
     if (searchStr === "") {
       setFilteredComponents(components);
     } else {
