@@ -1,8 +1,8 @@
 @use '../core/mixin/rem';
 
 .rds-icon-button {
-  --default-icon-size: rem.convert(48px);
-  --default-icon-margin: rem.convert(12px);
+  --default-icon-size: #{rem.convert(48px)};
+  --default-icon-margin: #{rem.convert(12px)};
 
   border-radius: 50%;
   max-height: var(--default-icon-size);
