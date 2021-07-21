@@ -27,6 +27,7 @@ export const Colors: FC = () => (
     <ExampleGrid title="Background">
       <ColorSwatch color="--rds-background-primary" usage={["app background"]} />
       <ColorSwatch color="--rds-background-secondary" usage={["contrast background"]} />
+      <ColorSwatch color="--rds-background-tertiary" usage={["contrast background"]} />
     </ExampleGrid>
 
     <ExampleGrid title="Transparent objects">

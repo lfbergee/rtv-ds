@@ -1,5 +1,12 @@
 # 📖 Change Log
 
+## 0.3.1
+
+### 🤷 Description
+New color
+
+### 🎉 Features
+- new color, bakground-tertiary
 ## 0.3.0
 
 ### 🤷 Description
