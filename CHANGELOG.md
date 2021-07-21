@@ -1,6 +1,19 @@
 # 📖 Change Log
 
-## 0.2.2
+## 0.3.0
+
+### 🤷 Description
+Clean up API and make spacing relative
+
+### 🎉 Features
+- Use relative values in spacing scale and radio-toggle
+- Supply px-to-rem conversion function
+
+### 💥 BREAKING CHANGES 💥
+- Rename Strim component to StrimProvider
+- Rename RiksTV Component to RiksTVProvider
+
+## 0.2.2 (2021-07-21)
 
 ### 🤷 Description
 
@@ -16,7 +29,7 @@ Make it easier to use RDS with existing code.
 - Fix focus on RadioToggle
 - Fix overflow issue on small screens in portal
 
-## 0.2.1
+## 0.2.1 (2021-07-21)
 
 ### 🤷 Description
 
