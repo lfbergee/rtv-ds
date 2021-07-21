@@ -19,6 +19,7 @@
   margin: 0 var(--rds-spacing--8);
   display: block;
   max-width: 25ch;
+  min-width: 7ch;
   overflow: hidden;
   border-radius: var(--rds-roundness--button);
 
@@ -37,7 +38,6 @@
     user-select: none;
   }
 
-  min-width: 7ch;
   &__input {
     position: absolute;
     opacity: 0;
