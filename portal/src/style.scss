@@ -1,3 +1,40 @@
+@font-face {
+  font-family: "HALMatex";
+  src: url("/fonts/HALMatexStrim-Regular.woff2") format("woff2"),
+    url("/fonts/HALMatexStrim-Regular.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Averta Standard Regular */
+@font-face {
+  font-family: "AvertaRegular";
+  src: url("/fonts/AvertaStandardRegular.woff2") format("woff2"),
+    url("/fonts/hinted-AvertaStd-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Averta Standard Semibold  */
+@font-face {
+  font-family: "AvertaSemibold";
+  src: url("/fonts/AvertaStandardSemibold.woff2") format("woff2"),
+    url("/fonts/hinted-AvertaStd-Semibold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Averta Standard Bold */
+@font-face {
+  font-family: "AvertaBold";
+  src: url("/fonts/AvertaStandardBold.woff2") format("woff2"), url("/fonts/hinted-AvertaStd-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   margin: 0;
@@ -11,7 +48,7 @@ body {
     "menu main";
   grid-template-columns: 200px 1fr;
   gap: 12px;
-  font-family: var(--font-family-body);
+  font-family: var(--rds-font-family-body);
 
   & > header {
     grid-area: header;
@@ -24,14 +61,15 @@ body {
       margin-top: 0;
     }
     padding: var(--rds-spacing--32);
-    background-color: var(--background-primary);
-    color: var(--foreground-primary);
+    background-color: var(--rds-background-primary);
+    color: var(--rds-foreground-primary);
     min-height: calc(100vh - 300px);
     border-top-left-radius: var(--rds-roundness--default);
     border-bottom-left-radius: var(--rds-roundness--default);
     margin-left: var(--rds-spacing--32);
     margin-bottom: var(--rds-spacing--96);
     padding-bottom: var(--rds-spacing--80);
+    overflow-x: hidden;
   }
 
   & > nav {

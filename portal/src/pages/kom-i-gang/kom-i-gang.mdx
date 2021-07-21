@@ -4,7 +4,7 @@
 1. Pakk inn appen din i ønsket merkevare, `<Strim> <App /> <Strim>` eller `<RiksTV> <App /> <RiksTV>`
 1. Importer rot stilen `import "@rikstv/shared-components/dist/core/strim.css"` eller `import "@rikstv/shared-components/dist/core/rikstv.css"`
 1. Importer stilen til komponentene du trenger feks `import "@rikstv/shared-components/dist/button/Button.css"`
-1. Sørg for at fonten er tilgjengelig i `public/fonts` mappen, kan hentes fra portalen
+1. Legg til fontene du trenger, kan hentes fra portalen
 
 ```tsx
 import {
@@ -12,6 +12,7 @@ import {
     PrimaryButton,
     DisplayTitle,
 } from '@rikstv/shared-components";
+
 import '@rikstv/shared-components/dist/core/Strim.css";
 import '@rikstv/shared-components/dist/button/Button.css";
 import '@rikstv/shared-components/dist/typography/Typography.css";

@@ -37,7 +37,7 @@ ved å gi hver `RadioToggleInput` en `checked` verdi og `onChange` handler.
 ```tsx
 const [value, setValue] = useState(1);
 
-const changeValue = (e: ChangeEvent<HTMLInputElement>) => {
+const changeValue = (e) => {
   setValue(parseFloat(e.target.value));
 }
 

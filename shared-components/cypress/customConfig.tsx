@@ -14,7 +14,7 @@ export const customMount =
       <div
         className={brand}
         style={{
-          backgroundColor: "var(--background-primary)",
+          backgroundColor: "var(--rds-background-primary)",
           width: "100%",
           minHeight: "100vh",
           padding: "24px",

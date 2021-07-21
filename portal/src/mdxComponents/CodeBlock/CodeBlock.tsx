@@ -107,10 +107,10 @@ export const CodeBlock: FC<{
                   className={className}
                   style={{
                     ...style,
-                    backgroundColor: "var(--background-overlay-medium)",
+                    backgroundColor: "var(--rds-background-overlay-medium)",
                     padding: "var(--rds-spacing--24)",
                     borderRadius: "var(--rds-roundness--default)",
-                    overflowX: "scroll",
+                    overflowX: "auto",
                   }}
                 >
                   {tokens.map((line, i) => (
@@ -137,10 +137,10 @@ export const CodeBlock: FC<{
             className={className}
             style={{
               ...style,
-              backgroundColor: "var(--background-overlay-medium)",
+              backgroundColor: "var(--rds-background-overlay-medium)",
               padding: "var(--rds-spacing--24)",
               borderRadius: "var(--rds-roundness--default)",
-              overflowX: "scroll",
+              overflowX: "auto",
             }}
           >
             {tokens.map((line, i) => (

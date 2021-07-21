@@ -38,7 +38,7 @@ export const ColorSwatch: FC<{ color: string; usage?: string[] }> = ({ children,
           borderRadius: "50%",
           backgroundColor: `var(${color})`,
           marginBottom: "var(--rds-spacing--16)",
-          border: color === "--background-primary" ? "2px solid var(--background-secondary)" : "",
+          border: color === "--rds-background-primary" ? "2px solid var(--rds-background-secondary)" : "",
         }}
       ></div>
       <div style={{ textAlign: "center" }}>

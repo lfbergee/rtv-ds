@@ -19,7 +19,7 @@
 
   @include key.keyboard-navigation {
     outline-offset: $offset;
-    outline: $width solid var(--feedback-info);
+    outline: $width solid var(--rds-feedback-info);
     transition: outline-offset 0.25s ease;
   }
 }
@@ -31,7 +31,9 @@
 }
 
 @mixin with-keyboard-focus-within($offset: 2px, $width: 2px) {
-  &:focus,
+  &:focus {
+    @include with-focus($offset, $width);
+  }
   &:focus-within {
     @include with-focus($offset, $width);
   }

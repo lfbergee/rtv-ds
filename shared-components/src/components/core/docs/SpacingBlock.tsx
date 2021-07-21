@@ -6,7 +6,7 @@ export const SpacingBlock: FC<{ size: Size }> = ({ size }) => {
   return (
     <div
       style={{
-        backgroundColor: "var(--accent-color-dark)",
+        backgroundColor: "var(--rds-accent-color-dark)",
         width: `var(--rds-spacing--${size})`,
         height: `var(--rds-spacing--${size})`,
         marginLeft: "var(--rds-spacing--8)",

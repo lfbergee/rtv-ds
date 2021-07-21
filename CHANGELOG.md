@@ -1,5 +1,21 @@
 # 📖 Change Log
 
+## 0.2.2
+
+### 🤷 Description
+
+Make it easier to use RDS with existing code.
+
+### 🎉 Features
+
+- Scope custom properties
+- Remove font declaration from root style file
+
+### 🐛 Bug Fixes
+
+- Fix focus on RadioToggle
+- Fix overflow issue on small screens in portal
+
 ## 0.2.1
 
 ### 🤷 Description

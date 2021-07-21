@@ -25,7 +25,7 @@
     &__item {
       list-style: none;
       margin-bottom: 16px;
-      color: var(--background-primary);
+      color: var(--rds-background-primary);
 
       & > button {
         margin-top: var(--rds-spacing--16);
@@ -36,7 +36,7 @@
       }
 
       & a:visited {
-        color: var(--background-primary);
+        color: var(--rds-background-primary);
       }
 
       & .active {
@@ -50,7 +50,7 @@
           height: 6px;
           width: 6px;
           border-radius: 50%;
-          background-color: var(--background-primary);
+          background-color: var(--rds-background-primary);
         }
       }
       & a {
@@ -72,7 +72,7 @@
     transform: translateX(100vw);
     width: 100vw;
     transition: transform 250ms ease-in-out;
-    background-color: var(--foreground-primary);
+    background-color: var(--rds-foreground-primary);
     padding: var(--rds-spacing--32) var(--rds-spacing--32) var(--rds-spacing--32) var(--rds-spacing--16);
 
     &--show-mobile {
@@ -109,7 +109,7 @@
       left: 0;
       height: 1px;
       width: 100%;
-      background-color: var(--background-primary);
+      background-color: var(--rds-background-primary);
       transform-origin: center center;
       transition: transform 125ms ease-in-out;
     }

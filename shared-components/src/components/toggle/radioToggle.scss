@@ -13,7 +13,7 @@
 .rds-radio-toggle {
   // button reset
   padding: 0;
-  background-color: var(--foreground-overlay-soft);
+  background-color: var(--rds-foreground-overlay-soft);
   color: #fff;
 
   margin: 0 var(--rds-spacing--8);
@@ -23,7 +23,7 @@
   border-radius: var(--rds-roundness--button);
 
   &:active {
-    background-color: var(--foreground-overlay-medium);
+    background-color: var(--rds-foreground-overlay-medium);
     color: #fff;
   }
 
@@ -44,12 +44,12 @@
 
     &:checked {
       & + .rds-radio-toggle__label {
-        background-color: var(--foreground-tertiary);
+        background-color: var(--rds-foreground-tertiary);
       }
     }
     &:active {
       & + .rds-radio-toggle__label {
-        background-color: var(--foreground-overlay-medium);
+        background-color: var(--rds-foreground-overlay-medium);
       }
     }
   }

@@ -1,25 +1,25 @@
 @use '../core/mixin/focus' as mix;
 
 .rds-button__shared {
-  --common-button--primary-color: var(--button-primary-fg);
-  --common-button--primary-bg: var(--accent-color);
-  --common-button--primary-hover-bg: var(--accent-color-mid);
-  --common-button--primary-pressed-bg: var(--accent-color-dark);
+  --common-button--primary-color: var(--rds-button-primary-fg);
+  --common-button--primary-bg: var(--rds-accent-color);
+  --common-button--primary-hover-bg: var(--rds-accent-color-mid);
+  --common-button--primary-pressed-bg: var(--rds-accent-color-dark);
 
-  --common-button--secondary-border-color: var(--foreground-primary);
-  --common-button--secondary-color: var(--foreground-primary);
-  --common-button--secondary-hover-color: var(--background-primary);
-  --common-button--secondary-hover-bg: var(--foreground-primary);
+  --common-button--secondary-border-color: var(--rds-foreground-primary);
+  --common-button--secondary-color: var(--rds-foreground-primary);
+  --common-button--secondary-hover-color: var(--rds-background-primary);
+  --common-button--secondary-hover-bg: var(--rds-foreground-primary);
 
-  --common-button--tertiary-bg: var(--foreground-overlay-soft);
-  --common-button--tertiary-color: var(--foreground-primary);
-  --common-button--tertiary-hover-bg: var(--foreground-primary);
-  --common-button--tertiary-hover-color: var(--background-primary);
-  --common-button--tertiary-pressed-bg: var(--background-secondary);
-  --common-button--tertiary-pressed-color: var(--foreground-primary);
+  --common-button--tertiary-bg: var(--rds-foreground-overlay-soft);
+  --common-button--tertiary-color: var(--rds-foreground-primary);
+  --common-button--tertiary-hover-bg: var(--rds-foreground-primary);
+  --common-button--tertiary-hover-color: var(--rds-background-primary);
+  --common-button--tertiary-pressed-bg: var(--rds-background-secondary);
+  --common-button--tertiary-pressed-color: var(--rds-foreground-primary);
 
-  --common-button--disabled-bg: var(--foreground-secondary);
-  --common-button--disabled-color: var(--foreground-tertiary);
+  --common-button--disabled-bg: var(--rds-foreground-secondary);
+  --common-button--disabled-color: var(--rds-foreground-tertiary);
 
   // button reset
   border: none;

@@ -1,69 +1,41 @@
 @use './core';
 
-@font-face {
-  font-family: "AvertaRegular";
-  src: url("/fonts/AvertaStandardRegular.woff2") format("woff2"),
-    url("/fonts/hinted-AvertaStd-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Averta Standard Semibold  */
-@font-face {
-  font-family: "AvertaSemibold";
-  src: url("/fonts/AvertaStandardSemibold.woff2") format("woff2"),
-    url("/fonts/hinted-AvertaStd-Semibold.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Averta Standard Bold */
-@font-face {
-  font-family: "AvertaBold";
-  src: url("/fonts/AvertaStandardBold.woff2") format("woff2"), url("/fonts/hinted-AvertaStd-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 .rtv {
-  --button-primary-fg: #fff;
-  --accent-color: #ee4642;
-  --accent-color-mid: #ed302b;
-  --accent-color-dark: #d41612;
-  --foreground-primary: #fff;
-  --foreground-secondary: #a8a8a8;
-  --foreground-tertiary: #666;
+  --rds-button-primary-fg: #fff;
+  --rds-accent-color: #ee4642;
+  --rds-accent-color-mid: #ed302b;
+  --rds-accent-color-dark: #d41612;
+  --rds-foreground-primary: #fff;
+  --rds-foreground-secondary: #a8a8a8;
+  --rds-foreground-tertiary: #666;
 
-  --heading-accent: var(--foreground-primary);
+  --rds-heading-accent: var(--rds-foreground-primary);
 
-  --background-primary-rgb: 37, 37, 37;
-  --background-primary: rgb(var(--background-primary-rgb));
-  --background-secondary: #0b0b0b;
+  --rds-background-primary-rgb: 37, 37, 37;
+  --rds-background-primary: rgb(var(--rds-background-primary-rgb));
+  --rds-background-secondary: #0b0b0b;
 
-  --foreground-overlay-soft: rgba(255, 255, 255, 0.1);
-  --foreground-overlay-medium: rgba(255, 255, 255, 0.3);
-  --foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+  --rds-foreground-overlay-soft: rgba(255, 255, 255, 0.1);
+  --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);
+  --rds-foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
-  --background-overlay-soft: rgba(0, 0, 0, 0.1);
-  --background-overlay-medium: rgba(0, 0, 0, 0.5);
-  --background-overlay-heavy: rgba(0, 0, 0, 0.85);
+  --rds-background-overlay-soft: rgba(0, 0, 0, 0.1);
+  --rds-background-overlay-medium: rgba(0, 0, 0, 0.5);
+  --rds-background-overlay-heavy: rgba(0, 0, 0, 0.85);
 
-  --feedback-info: #00aec7;
-  --feedback-warning: #f2a900;
-  --feedback-confirm: #4cbb81;
-  --feedback-error: #e01c17;
+  --rds-feedback-info: #00aec7;
+  --rds-feedback-warning: #f2a900;
+  --rds-feedback-confirm: #4cbb81;
+  --rds-feedback-error: #e01c17;
 
   --rds-roundness--default: 4px;
   --rds-roundness--button: 34px;
   --rds-roundness--round: 50%;
 
-  --font-family-lg-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
-  --font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
-  --font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
-  --font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
+  --rds-font-family-lg-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --rds-font-family-headlines: "AvertaBold", Arial, Helvetica, sans-serif;
+  --rds-font-family-m-headlines: "AvertaSemibold", Arial, Helvetica, sans-serif;
+  --rds-font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
 
   --rds-font-size--default: 1.125rem;
 }

@@ -2,7 +2,7 @@
 
 .portal-example__types {
   padding: var(--rds-spacing--16);
-  background-color: var(--background-overlay-medium);
+  background-color: var(--rds-background-overlay-medium);
   border-radius: var(--rds-roundness--default);
   margin-top: var(--rds-spacing--8);
   max-width: 46rem;
@@ -33,7 +33,7 @@
   }
 
   &--node-module {
-    background-color: var(--background-overlay-medium);
+    background-color: var(--rds-background-overlay-medium);
   }
 
   &--large-row {
