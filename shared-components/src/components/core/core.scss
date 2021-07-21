@@ -1,15 +1,17 @@
+@use "./mixin/rem";
+
 :root {
   // Start of a spacing scale, perhaps should be more abstract than currently, as it is somewhat annoying when it changes
-  --rds-spacing--2: 2px;
-  --rds-spacing--4: 4px;
-  --rds-spacing--8: 8px;
-  --rds-spacing--16: 16px;
-  --rds-spacing--24: 24px;
-  --rds-spacing--32: 32px;
-  --rds-spacing--48: 48px;
-  --rds-spacing--64: 64px;
-  --rds-spacing--80: 80px;
-  --rds-spacing--96: 96px;
+  --rds-spacing--2: #{rem.convert(2px)};
+  --rds-spacing--4: #{rem.convert(4px)};
+  --rds-spacing--8: #{rem.convert(8px)};
+  --rds-spacing--16: #{rem.convert(16px)};
+  --rds-spacing--24: #{rem.convert(24px)};
+  --rds-spacing--32: #{rem.convert(32px)};
+  --rds-spacing--48: #{rem.convert(48px)};
+  --rds-spacing--64: #{rem.convert(64px)};
+  --rds-spacing--80: #{rem.convert(80px)};
+  --rds-spacing--96: #{rem.convert(96px)};
 
   // Common shadows
   --rds-box-shadow--default: 0px 8px 16px rgba(0, 0, 0, 0.5);

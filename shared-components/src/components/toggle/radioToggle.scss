@@ -1,4 +1,5 @@
 @use '../core/mixin/focus' as mix;
+@use '../core/mixin/rem';
 
 .rds-field-set {
   border: none;
@@ -18,7 +19,7 @@
 
   margin: 0 var(--rds-spacing--8);
   display: block;
-  max-width: 200px;
+  max-width: rem.convert(200px);
   overflow: hidden;
   border-radius: var(--rds-roundness--button);
 
@@ -37,7 +38,7 @@
     user-select: none;
   }
 
-  min-width: 50px;
+  min-width: rem.convert(50px);
   &__input {
     position: absolute;
     opacity: 0;

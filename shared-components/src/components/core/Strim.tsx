@@ -3,4 +3,4 @@ import { Core } from "./Core";
 
 import "./strm.scss";
 
-export const Strim: FC = ({ children }) => <Core brand="strm">{children}</Core>;
+export const StrimProvider: FC = ({ children }) => <Core brand="strm">{children}</Core>;

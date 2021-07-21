@@ -1,5 +1,5 @@
-export { RiksTV } from "./core/RiksTV";
-export { Strim } from "./core/Strim";
+export { RiksTVProvider } from "./core/RiksTV";
+export { StrimProvider } from "./core/Strim";
 
 export { PrimaryButton, SecondaryButton, TertiaryButton } from "./button/Button";
 export { PrimaryIconButton, SecondaryIconButton, TertiaryIconButton } from "./button/IconButton";

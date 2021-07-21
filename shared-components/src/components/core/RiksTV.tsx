@@ -3,4 +3,4 @@ import { Core } from "./Core";
 
 import "./rtv.scss";
 
-export const RiksTV: FC = ({ children }) => <Core brand="rtv">{children}</Core>;
+export const RiksTVProvider: FC = ({ children }) => <Core brand="rtv">{children}</Core>;
