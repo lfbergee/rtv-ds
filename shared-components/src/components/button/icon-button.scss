@@ -19,5 +19,8 @@
     margin: var(--default-icon-margin);
     height: var(--default-icon-size);
     width: var(--default-icon-size);
+    & > svg {
+      width: 100%;
+    }
   }
 }

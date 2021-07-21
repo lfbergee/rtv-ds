@@ -9,6 +9,10 @@
     align-items: center;
     margin-right: var(--rds-spacing--16);
     width: 1.125rem;
+
+    & > svg {
+      width: 100%;
+    }
   }
 
   &__postfix {

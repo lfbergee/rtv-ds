@@ -1,6 +1,6 @@
 @use './navigation' as key;
 
-@mixin with-keyboard-focus($offset: 2px, $width: 2px) {
+@mixin with-focus($offset: 2px, $width: 2px) {
   &::-moz-focus-inner {
     border-style: none;
     outline: 0;
@@ -18,11 +18,21 @@
   }
 
   @include key.keyboard-navigation {
-    &:focus,
-    &:focus-within {
-      outline-offset: $offset;
-      outline: $width solid var(--feedback-info);
-      transition: outline-offset 0.25s ease;
-    }
+    outline-offset: $offset;
+    outline: $width solid var(--feedback-info);
+    transition: outline-offset 0.25s ease;
+  }
+}
+
+@mixin with-keyboard-focus($offset: 2px, $width: 2px) {
+  &:focus {
+    @include with-focus($offset, $width);
+  }
+}
+
+@mixin with-keyboard-focus-within($offset: 2px, $width: 2px) {
+  &:focus,
+  &:focus-within {
+    @include with-focus($offset, $width);
   }
 }

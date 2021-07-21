@@ -131,8 +131,12 @@
       }
     }
     border-radius: var(--rds-spacing--2);
+  }
+
+  .portal-menu-bottom-btn {
     @include mix.with-keyboard-focus;
   }
+
   .portal-menu-bottom-btn {
     top: initial;
     bottom: var(--rds-spacing--16);

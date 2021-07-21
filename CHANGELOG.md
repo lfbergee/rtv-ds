@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.2.1
+
+### 🤷 Description
+
+Fix to portal focus and icons in safari
+
+### 🐛 Bug Fixes
+
+- Icons now should show also in Safari
+
 ## 0.2.0 (2021-07-20)
 
 ### 🤷 Description

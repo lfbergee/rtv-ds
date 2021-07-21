@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": "true",
   "scripts": {
-    "dev": "vite -l info",
+    "dev": "vite --host",
     "dev:clean": "vite --force",
     "build": "vite build -l info",
     "typecheck": "tsc",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@mdx-js/react": "^1.6.22",
-    "@rikstv/shared-components": "0.2.0",
+    "@rikstv/shared-components": "0.2.1",
     "prism-react-renderer": "^1.2.1",
     "normalize.css": "^8.0.1",
     "react-docgen-typescript": "^2.0.0",
