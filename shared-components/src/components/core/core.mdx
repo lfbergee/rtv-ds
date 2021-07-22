@@ -1,0 +1,20 @@
+# Core
+
+## Custom properties
+
+Vi baserer oss i stor grad på custom properties for å kunne toggle mellom brands feks.
+
+Alle properties som er scopet til `--rds` er felles verdier som forventes å finnes for begge brands.
+Hvis de er ekte felles, som spacing-skalaen, så skal de defineres i `core.scss` fila så de blir tilgjengelige for begge.
+Hvis det er verdier som skal finnes i begge brands, men er forskjellige, så skal de scopes med prefixen `--rds` feks `--rds-focus-color`.
+De legges da inn i henholdsvis `strm.scss` og `rtv.scss`. Det er tester som sjekker at verdiene finnes i begge drakter.
+
+## Provider
+
+Det forventes at alle som skal bruke komponent biblioteket setter opp Provider komponenten høyt nok opp i sin app.
+Denne setter opp et scoping punkt for cssen og event-listners for å få riktig fokus stil feks.
+
+## Mixins
+
+Hvis du vil lage egne fokus stiler feks, så kan man bruke `mixin/focus.scss` som vil basere seg på data attributter satt opp av Provider komponenten.
+`mixin/navigation` er også tilgjengelig for å plukke opp data-attributtene. `mixin/rem.scss` kan brukes til å konvertere pixel verdier til rem.

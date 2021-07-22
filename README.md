@@ -7,16 +7,18 @@ Welcome to Shared Components for RiksTV. Please check the portal for usage guide
 - node 14 or later
 - npm 7 or later
 
-
 ## Todo
 
 ### Missing in components
 - Button style when on light background
 - screen-reader-only class
+- Rewrite RadioToggle style to not use button style, check new hover state and larger size
 - icon in RadioToggle component
 - icon-only or number only version of RadioToggle
+- Test for RadioToggle
+- test of custom properties ( since we have no types, it can easily happen a color is defined in on brand and not the other, causing it to fail. Lets try to import the css files into a cypress test and expect that every key in one brand is present in both. Everything that is prefix --rds that is, --strm can be for strim only and --rtv can be rikstv only)
 
-### Infrasturcture
+### Infrastructure
 - Move repo to shared rikstv 
 - Use Cypress Dashboard
 

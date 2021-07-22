@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { makeComponent, LazyImportedTypes } from "./utils/makeComponent";
 
 // Components
+const Core = lazy(() => import("@rikstv/shared-components/src/components/core/core.mdx"));
 const Spacing = lazy(() => import("@rikstv/shared-components/src/components/core/spacing.mdx"));
 const Colors = lazy(() => import("@rikstv/shared-components/src/components/core/colors.mdx"));
 const Button = lazy(() => import("@rikstv/shared-components/src/components/button/button.mdx"));
@@ -24,6 +25,7 @@ export const components = [
   makeComponent("button", Button, buttonType),
   makeComponent("icon button", IconButton, iconButtonType),
   makeComponent("radio toggle", RadioToggle, radioToggleType, fieldSetType),
+  makeComponent("core", Core),
   makeComponent("spacing", Spacing),
   makeComponent("colors", Colors),
   makeComponent("typografi", Typography, typographyType),
