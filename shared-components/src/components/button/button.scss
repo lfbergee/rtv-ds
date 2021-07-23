@@ -1,8 +1,11 @@
+@use '../core/mixin/rem';
+
 .rds-button {
-  padding: var(--rds-spacing--8) var(--rds-spacing--24);
+  padding: rem.convert(12.5px) var(--rds-spacing--32);
   border-radius: var(--rds-roundness--button);
   overflow-y: hidden;
   cursor: pointer;
+  font-size: rem.convert(18px);
 
   &__icon {
     display: flex;

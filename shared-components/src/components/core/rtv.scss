@@ -5,6 +5,7 @@
   --rds-accent-color: #ee4642;
   --rds-accent-color-mid: #ed302b;
   --rds-accent-color-dark: #d41612;
+  --rds-accent-hover: #d41612;
   --rds-foreground-primary: #fff;
   --rds-foreground-secondary: #a8a8a8;
   --rds-foreground-tertiary: #666;
@@ -39,4 +40,7 @@
   --rds-font-family-body: "AvertaRegular", Arial, Helvetica, sans-serif;
 
   --rds-font-size--default: 1.125rem;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

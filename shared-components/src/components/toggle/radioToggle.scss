@@ -1,4 +1,5 @@
 @use '../core/mixin/focus' as mix;
+@use '../core/mixin/rem';
 
 .rds-field-set {
   border: none;
@@ -23,8 +24,12 @@
   overflow: hidden;
   border-radius: var(--rds-roundness--button);
 
+  &:hover {
+    background-color: var(--rds-background-tertiary);
+  }
+
   &:active {
-    background-color: var(--rds-foreground-overlay-medium);
+    background-color: var(--rds-background-overlay-soft);
     color: #fff;
   }
 
@@ -33,7 +38,7 @@
     display: grid;
     place-items: center;
     transition: 125ms ease background-color;
-    padding: var(--rds-spacing--8) var(--rds-spacing--24);
+    padding: rem.convert(12.5px) var(--rds-spacing--24);
     box-sizing: border-box;
     user-select: none;
   }
@@ -49,7 +54,7 @@
     }
     &:active {
       & + .rds-radio-toggle__label {
-        background-color: var(--rds-foreground-overlay-medium);
+        background-color: var(--rds-foreground-overlay-soft);
       }
     }
   }

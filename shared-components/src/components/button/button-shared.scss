@@ -3,8 +3,8 @@
 .rds-button__shared {
   --common-button--primary-color: var(--rds-button-primary-fg);
   --common-button--primary-bg: var(--rds-accent-color);
-  --common-button--primary-hover-bg: var(--rds-accent-color-mid);
-  --common-button--primary-pressed-bg: var(--rds-accent-color-dark);
+  --common-button--primary-hover-bg: var(--rds-accent-hover);
+  --common-button--primary-pressed-bg: var(--rds-accent-color);
 
   --common-button--secondary-border-color: var(--rds-foreground-primary);
   --common-button--secondary-color: var(--rds-foreground-primary);
@@ -27,16 +27,8 @@
 
   background: transparent;
 
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
-
   /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
   line-height: normal;
-
-  /* Corrects font smoothing for webkit */
-  -webkit-font-smoothing: inherit;
-  -moz-osx-font-smoothing: inherit;
 
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
@@ -49,11 +41,15 @@
   display: flex;
   transition: 125ms ease-in-out;
   transition-property: color, box-shadow, background-color;
-  font-weight: 600;
+  font-family: var(--rds-font-family-m-headlines);
 
   &--primary {
     color: var(--common-button--primary-color);
     background-color: var(--common-button--primary-bg);
+
+    &:hover {
+      background-color: var(--common-button--primary-hover-bg);
+    }
 
     &:active {
       box-shadow: none;

@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.3.2
+
+### 🤷 Description
+Updated button and toggle style
+
+### 🎉 Features
+- new color, accent-hover
+- updated button style, taller and bolder
+- update toggle style, same as button and new hover
+
 ## 0.3.1
 
 ### 🤷 Description

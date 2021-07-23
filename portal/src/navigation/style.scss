@@ -68,7 +68,7 @@
 
 @media only screen and (max-width: 768px) {
   .portal-navigation {
-    margin-top: var(--rds-spacing--80);
+    margin-top: calc(var(--rds-spacing--80) - 2px);
     transform: translateX(100vw);
     width: 100vw;
     transition: transform 250ms ease-in-out;
