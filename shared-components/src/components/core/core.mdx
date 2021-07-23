@@ -18,3 +18,12 @@ Denne setter opp et scoping punkt for cssen og event-listners for å få riktig 
 
 Hvis du vil lage egne fokus stiler feks, så kan man bruke `mixin/focus.scss` som vil basere seg på data attributter satt opp av Provider komponenten.
 `mixin/navigation` er også tilgjengelig for å plukke opp data-attributtene. `mixin/rem.scss` kan brukes til å konvertere pixel verdier til rem.
+
+## Screenreader only
+
+Hvis du ønsker at noe bare skal være der for skjermlesere kan man legge til klassen `sr-only`.
+Feks
+
+```html
+<h2 class="sr-only" aria-live="polite">Viser sesong 12</h2>
+```

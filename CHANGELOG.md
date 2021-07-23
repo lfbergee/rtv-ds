@@ -1,5 +1,17 @@
 # 📖 Change Log
 
+## 0.3.3
+
+### 🤷 Description
+Screenreaders
+
+### 🎉 Features
+- new `sr-only` screenreader only class
+- hide legend in radio toggle by default
+
+### 🧪 Test
+- RadioToggleTest
+
 ## 0.3.2
 
 ### 🤷 Description
@@ -101,6 +113,8 @@ First full release with portal and npm deploy
 ### 🐛 Bug Fixes
 
 ### 🎉 Features
+
+### 🧪 Test
 
 ### 💥 BREAKING CHANGES 💥
 

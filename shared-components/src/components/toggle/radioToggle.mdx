@@ -2,12 +2,15 @@ import { Example } from './docs/Example';
 
 # RadioToggle
 
+Hvis man setter showLegend til false vil den kun være der for screenreaders.
+
 <Example />
 
 ```tsx live=true
 <FieldSet
   legend="Is The Room the greatest movie ever"
   name="the-room"
+  showLegend="true"
 >
   <RadioToggleInput
     value={0}

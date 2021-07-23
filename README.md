@@ -11,10 +11,8 @@ Welcome to Shared Components for RiksTV. Please check the portal for usage guide
 
 ### Missing in components
 - Button style when on light background
-- screen-reader-only class
 - icon in RadioToggle component
 - icon-only or number only version of RadioToggle
-- Test for RadioToggle
 
 ### Infrastructure
 - Move repo to shared rikstv 
