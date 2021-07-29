@@ -1,5 +1,16 @@
 # 📖 Change Log
 
+## 0.4.0
+
+### 🤷 Description
+Typography for light background
+
+### 🎉 Features
+- Ligth background wrapper component
+- Light background typograhy
+- Use HalMatex for Title2
+- Add system-ui to font-stack
+
 ## 0.3.3
 
 ### 🤷 Description

@@ -9,6 +9,7 @@ type AcceptedHTMLElements = HTMLSpanElement | HTMLHeadingElement | HTMLParagraph
 interface Props<T extends AcceptedHTMLElements> extends HTMLAttributes<T> {
   lookLike?: `title-${HeadingLevels}` | "display-title" | "body" | "sub-body" | "tag" | "bold" | "meta";
   className?: string;
+  lightBackground?: boolean;
 }
 
 interface FactoryProps<T extends AcceptedHTMLElements> extends Pick<Props<T>, "lookLike"> {
@@ -23,15 +24,21 @@ interface TypographyType {
 
 const typographyFactory: TypographyType = (factoryProps) =>
   // eslint-disable-next-line react/display-name
-  forwardRef(({ children, lookLike = factoryProps.lookLike, className = "", ...props }, ref) => {
-    const C = factoryProps.semanticElement;
-    return (
-      // @ts-ignore ts mismatches ref while constrained
-      <C className={`rds-${lookLike} ${className}`} {...props} ref={ref}>
-        {children}
-      </C>
-    );
-  });
+  forwardRef(
+    ({ children, lookLike = factoryProps.lookLike, className = "", lightBackground = false, ...props }, ref) => {
+      const C = factoryProps.semanticElement;
+      return (
+        <C
+          className={`rds-${lookLike} ${lightBackground ? `rds-${lookLike}--light` : ""} ${className}`}
+          {...props}
+          // @ts-ignore ts mismatches ref while constrained
+          ref={ref}
+        >
+          {children}
+        </C>
+      );
+    }
+  );
 
 export const DisplayTitle = typographyFactory<HTMLHeadingElement>({ semanticElement: "h1", lookLike: "display-title" });
 export const H1 = typographyFactory<HTMLHeadingElement>({ semanticElement: "h1", lookLike: "title-1" });

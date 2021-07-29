@@ -13,7 +13,7 @@
 }
 
 .rds-title-2 {
-  font-family: var(--rds-font-family-headlines);
+  font-family: var(--rds-font-family-lg-headlines);
   font-size: clamp(1.5rem, 4vw, 2.125rem);
   line-height: clamp(2.25rem, 4vw, 3.1875rem);
   color: var(--rds-foreground-primary);
@@ -21,9 +21,9 @@
 
 .rds-title-3 {
   font-family: var(--rds-font-family-m-headlines);
-  color: var(--rds-heading-accent);
   font-size: clamp(1.25rem, 4vw, 1.5rem);
   line-height: clamp(1.875rem, 4vw, 2.25rem);
+  color: var(--rds-heading-accent);
 }
 
 .rds-title-4 {
@@ -69,4 +69,28 @@
   font-size: clamp(0.875rem, 4vw, 0.875rem);
   line-height: clamp(1.125rem, 4vw, 1.3125rem);
   color: var(--rds-foreground-overlay-heavy);
+}
+
+$typography-scale: (
+  "display-title": "--rds-foreground-tertiary",
+  "title-1": "--rds-foreground-tertiary",
+  "title-2": "--rds-button-primary-fg",
+  "title-3": "--rds-button-primary-fg",
+  "title-4": "--rds-button-primary-fg",
+  "body": "--rds-background-primary",
+  "sub-body": "--rds-button-primary-fg",
+  "tag": "--rds-background-primary",
+  "bold": "--rds-background-primary",
+  "meta": "--rds-button-primary-fg",
+);
+
+@each $level, $color in $typography-scale {
+  .rds-light {
+    .rds-#{$level} {
+      color: var(#{$color});
+    }
+  }
+  .rds-#{$level}--light {
+    color: var(#{$color});
+  }
 }

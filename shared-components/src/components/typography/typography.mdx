@@ -53,3 +53,38 @@ Husk at semantikk er viktig for mange brukere, så sørg for at sidene dine føl
     h1 som ser ut som body
 </DisplayTitle>
 ```
+
+## Lys bakgrunn
+
+Denne er kun implementert for Strim per nå.
+
+```tsx render=true
+<LightMode style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)"
+}}>
+    <DisplayTitle>display-title</DisplayTitle>
+    <H1>title-1</H1>
+    <H2>title-2</H2>
+    <H3>title-3</H3>
+    <H4>title-4</H4>
+    <Body>body</Body>
+    <SubBody>sub-body</SubBody>
+    <Tag>tag</Tag><br />
+    <Bold>Bold</Bold><br />
+    <Meta>Meta</Meta>
+</LightMode>
+```
+
+Man kan også bruke `lightBackground` prop om det kun er en enkelt typografi komponent som skal mot lys bakgrunn.
+
+```tsx render=true
+<div style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)"
+}}>
+    <H1 lightBackground={true}>title-1</H1>
+</div>
+```

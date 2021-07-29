@@ -14,6 +14,12 @@ De legges da inn i henholdsvis `strm.scss` og `rtv.scss`. Det er tester som sjek
 Det forventes at alle som skal bruke komponent biblioteket setter opp Provider komponenten høyt nok opp i sin app.
 Denne setter opp et scoping punkt for cssen og event-listners for å få riktig fokus stil feks.
 
+## LightMode
+
+Default på alle komponent vår er at de forventer mørk bakgrunn. Der man ikke har mørk bakgrunn, kan man legge til `class="rds-ligth"`
+eller ved å sette opp `<LightMode>{children}</LightMode>`. Anbefalt implementasjon er å lage en layoutkomponent som setter inn denne,
+hvis man har behov for lyse komponenter.
+
 ## Mixins
 
 Hvis du vil lage egne fokus stiler feks, så kan man bruke `mixin/focus.scss` som vil basere seg på data attributter satt opp av Provider komponenten.
