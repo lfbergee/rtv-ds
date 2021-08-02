@@ -32,7 +32,7 @@
   "dependencies": {},
   "devDependencies": {
     "@cypress/react": "^5.9.2",
-    "@cypress/vite-dev-server": "^2.0.3",
+    "@cypress/vite-dev-server": "^2.0.4",
     "@testing-library/cypress": "^8.0.0",
     "react-hook-form": "^7.12.1",
     "rollup-plugin-copy": "^3.4.0",
