@@ -31,7 +31,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@cypress/react": "^5.9.2",
+    "@cypress/react": "^5.9.3",
     "@cypress/vite-dev-server": "^2.0.5",
     "@testing-library/cypress": "^8.0.0",
     "react-hook-form": "^7.12.1",
