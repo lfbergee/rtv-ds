@@ -7,6 +7,7 @@ import "./button-shared.scss";
 interface IconButtonProps extends Omit<ButtonProps, "icon" | "postfix"> {
   ["aria-label"]: string;
   icon: () => JSX.Element;
+  iconClass?: string;
 }
 
 export const PrimaryIconButton: FC<IconButtonProps> = ({ ...props }) => (

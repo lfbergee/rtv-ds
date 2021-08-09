@@ -5,6 +5,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   postfix?: string;
   icon?: () => JSX.Element;
   className?: string;
+  iconClass?: string;
 }
 
 interface BaseButtonProps extends ButtonProps {
@@ -22,6 +23,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       isLoading = false,
       postfix,
       icon: Icon,
+      iconClass = "",
       disabled,
       className = "",
       "aria-busy": ariaBusy,
@@ -40,7 +42,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       } ${className}`}
     >
       {Icon && (
-        <span data-testid="rds-button__icon" className="rds-button__icon">
+        <span data-testid="rds-button__icon" className={`rds-button__icon ${iconClass}`}>
           <Icon />
         </span>
       )}
