@@ -1,16 +1,25 @@
 # 📖 Change Log
 
-## 0.4.0
+## 0.4.2
+
+### 🎉 Features
+
+- Added optional `iconClass`-prop to `IconButton`
+
+## 0.4.1
 
 ### 🐛 Bug Fixes
+
 - Darker title-1 color
 
 ## 0.4.0
 
 ### 🤷 Description
+
 Typography for light background
 
 ### 🎉 Features
+
 - Light background wrapper component
 - Light background typograhy
 - Use HalMatex for Title2
@@ -19,21 +28,26 @@ Typography for light background
 ## 0.3.3
 
 ### 🤷 Description
+
 Screenreaders
 
 ### 🎉 Features
+
 - new `sr-only` screenreader only class
 - hide legend in radio toggle by default
 
 ### 🧪 Test
+
 - RadioToggleTest
 
 ## 0.3.2
 
 ### 🤷 Description
+
 Updated button and toggle style
 
 ### 🎉 Features
+
 - new color, accent-hover
 - updated button style, taller and bolder
 - update toggle style, same as button and new hover
@@ -41,20 +55,26 @@ Updated button and toggle style
 ## 0.3.1
 
 ### 🤷 Description
+
 New color
 
 ### 🎉 Features
+
 - new color, bakground-tertiary
+
 ## 0.3.0
 
 ### 🤷 Description
+
 Clean up API and make spacing relative
 
 ### 🎉 Features
+
 - Use relative values in spacing scale and radio-toggle
 - Supply px-to-rem conversion function
 
 ### 💥 BREAKING CHANGES 💥
+
 - Rename Strim component to StrimProvider
 - Rename RiksTV Component to RiksTVProvider
 
@@ -133,4 +153,3 @@ First full release with portal and npm deploy
 ### 🧪 Test
 
 ### 💥 BREAKING CHANGES 💥
-
