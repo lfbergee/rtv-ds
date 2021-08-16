@@ -14,7 +14,7 @@
     "@rikstv/shared-components": "0.4.2",
     "prism-react-renderer": "^1.2.1",
     "normalize.css": "^8.0.1",
-    "react-docgen-typescript": "^2.0.0",
+    "react-docgen-typescript": "^2.1.0",
     "react-live": "^2.3.0",
     "react-router-dom": "^5.2.0"
   },
