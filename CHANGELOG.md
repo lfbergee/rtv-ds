@@ -1,5 +1,12 @@
 # 📖 Change Log
 
+## 0.4.3
+
+### 🎉 Features
+
+- Use numerical values for typography `line-heights`
+- Change `rds-title-4` from `18-22px` to `16-22px`
+
 ## 0.4.2
 
 ### 🎉 Features
