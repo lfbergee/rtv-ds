@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.7.0
+
+### 💥 BREAKING CHANGES 💥
+
+- Bundle is now outputted in commonjs instead of es-module
+
+### 🎉 Features
+
+- Add resolver function for client project using vite to automatically import css files
+
 ## 0.6.7
 
 ### 🤷 Description

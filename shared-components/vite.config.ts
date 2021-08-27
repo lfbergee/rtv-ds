@@ -35,11 +35,17 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/components/index.ts"),
       name: "index",
-      formats: ["es"],
+      formats: ["cjs"],
     },
     rollupOptions: {
-      external: ["react"],
+      external: ["react", "vite-plugin-style-import"],
+      input: {
+        Components: path.resolve(__dirname, "src/components/index.ts"),
+        Tools: path.resolve(__dirname, "src/tools/tools.ts"),
+      },
       output: {
+        entryFileNames: ({ facadeModuleId }) =>
+          facadeModuleId?.includes("shared-components/src/tools") ? "tools.js" : "index.js",
         manualChunks(id) {
           if (id.match(/\/components\/[\w\W]*\/*.tsx$/)) {
             const componentPath = id.split(".");

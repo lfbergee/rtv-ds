@@ -31,3 +31,23 @@ const Root = () => (
     </StrimProvider>
 )
 ```
+
+## Importere stil
+
+Komponentene klarer ikke importere stilen selv. Det betyr at du som tar ibruk komponentene har ansvaret for å sørge for at 
+stilen er tilgjengelig for komponenten. Den enkleste varianten er som i eksemplet over og med en `style-loader` til ditt 
+byggsystem. Det kan også være et alternativ å laste css-filene inn i `index.html`, gjerne med `preload` så stilen er tilgjengelig 
+så fort som mulig.
+
+### Med vite
+
+Vi er veldig glade i Vite, så der har vi gjort litt ekstra for å forenkle prosessen med å ta ibruk komponenter. Legg til i 
+`vite.config.ts` 
+
+```ts
+import { styleResolver } from '@rikstv/shared-components/dist/tools';
+
+export default defineConfig(() => ({
+    plugins: [styleResolver]
+}))
+```

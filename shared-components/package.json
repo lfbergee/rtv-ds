@@ -1,6 +1,6 @@
 {
   "name": "@rikstv/shared-components",
-  "version": "0.6.7",
+  "version": "0.7.0",
   "publishConfig": {
     "access": "public"
   },
@@ -12,15 +12,17 @@
   },
   "license": "MIT",
   "types": "./dist/index.d.ts",
-  "main": "./dist/shared-components.es.js",
-  "module": "./dist/shared-components.es.js",
-  "browser": "./dist/shared-components.es.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "browser": "./dist/index.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
+    "build": "vite build && run-p generate:type:*",
     "serve": "vite preview",
     "test": "cypress run-ct",
-    "test:open": "cypress open-ct"
+    "test:open": "cypress open-ct",
+    "generate:type:components": "tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
+    "generate:type:tools": "tsc src/tools/tools.ts --declaration --emitDeclarationOnly --esModuleInterop --outDir dist"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,8 @@
     "@cypress/react": "^5.10.0",
     "@cypress/vite-dev-server": "^2.1.0",
     "@testing-library/cypress": "^8.0.1",
+    "case": "^1.6.3",
+    "npm-run-all": "^4.1.5",
     "react-hook-form": "^7.16.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-svg": "^2.0.0",
@@ -42,6 +46,7 @@
   "peerDependencies": {
     "@types/react": "^16.8.6 || ^17",
     "@types/react-dom": "^16.8.6 || ^17",
-    "react": "^16.8.0 || ^17"
+    "react": "^16.8.0 || ^17",
+    "vite-plugin-style-import": "^1.2.1"
   }
 }
