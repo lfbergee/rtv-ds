@@ -11,12 +11,13 @@
   --common-button--secondary-bg: var(--rds-background-primary);
   --common-button--secondary-hover-color: var(--rds-background-primary);
   --common-button--secondary-hover-bg: var(--rds-foreground-primary);
-  --common-button--secondary-pressed-bg: var(--rds-background-secondary);
+  --common-button--secondary-pressed-color: var(--rds-button-secondary-pressed-fg);
+  --common-button--secondary-pressed-bg: var(--rds-button-secondary-pressed-bg);
 
   --common-button--tertiary-bg: var(--rds-button-tertirary-bg);
   --common-button--tertiary-color: var(--rds-foreground-primary);
-  --common-button--tertiary-hover-bg: var(--rds-button-primary-fg);
-  --common-button--tertiary-hover-color: var(--rds-background-primary);
+  --common-button--tertiary-hover-bg: var(--rds-button-tertiary-hover-bg);
+  --common-button--tertiary-hover-color: var(--rds-foreground-primary);
   --common-button--tertiary-pressed-bg: var(--rds-background-tertiary);
   --common-button--tertiary-pressed-color: var(--rds-foreground-primary);
 
@@ -82,6 +83,7 @@
 
     &:hover {
       background-color: var(--common-button--tertiary-hover-bg);
+      color: var(--common-button--tertiary-hover-color);
     }
 
     &:active {
