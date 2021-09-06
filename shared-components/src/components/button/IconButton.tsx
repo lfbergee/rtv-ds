@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import { ButtonProps, BaseButton } from "./BaseButton";
 
 import "./icon-button.scss";
@@ -9,14 +9,20 @@ interface IconButtonProps extends Omit<ButtonProps, "icon" | "postfix"> {
   icon: () => JSX.Element;
 }
 
-export const PrimaryIconButton: FC<IconButtonProps> = ({ ...props }) => (
-  <BaseButton buttonStyle="rds-icon-button" buttonType="primary" {...props} />
-);
+export const PrimaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+  <BaseButton buttonStyle="rds-icon-button" buttonType="primary" ref={ref} {...props} />
+));
 
-export const SecondaryIconButton: FC<IconButtonProps> = ({ ...props }) => (
-  <BaseButton buttonStyle="rds-icon-button" buttonType="secondary" {...props} />
-);
+PrimaryIconButton.displayName = "PrimaryIconButton";
 
-export const TertiaryIconButton: FC<IconButtonProps> = ({ ...props }) => (
-  <BaseButton buttonStyle="rds-icon-button" buttonType="tertiary" {...props} />
-);
+export const SecondaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+  <BaseButton buttonStyle="rds-icon-button" buttonType="secondary" ref={ref} {...props} />
+));
+
+SecondaryIconButton.displayName = "SecondaryIconButton";
+
+export const TertiaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+  <BaseButton buttonStyle="rds-icon-button" buttonType="tertiary" ref={ref} {...props} />
+));
+
+TertiaryIconButton.displayName = "TertiaryIconButton";
