@@ -9,19 +9,19 @@ interface IconButtonProps extends Omit<ButtonProps, "icon" | "postfix"> {
   icon: () => JSX.Element;
 }
 
-export const PrimaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+export const PrimaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => (
   <BaseButton buttonStyle="rds-icon-button" buttonType="primary" ref={ref} {...props} />
 ));
 
 PrimaryIconButton.displayName = "PrimaryIconButton";
 
-export const SecondaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+export const SecondaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => (
   <BaseButton buttonStyle="rds-icon-button" buttonType="secondary" ref={ref} {...props} />
 ));
 
 SecondaryIconButton.displayName = "SecondaryIconButton";
 
-export const TertiaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>(({ ...props }, ref) => (
+export const TertiaryIconButton = forwardRef<HTMLButtonElement, IconButtonProps>((props, ref) => (
   <BaseButton buttonStyle="rds-icon-button" buttonType="tertiary" ref={ref} {...props} />
 ));
 

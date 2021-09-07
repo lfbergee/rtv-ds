@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, forwardRef, RefObject } from "react";
+import { ButtonHTMLAttributes, forwardRef } from "react";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isLoading?: boolean;
@@ -6,7 +6,6 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: () => JSX.Element;
   className?: string;
   iconClass?: string;
-  ref?: RefObject<HTMLButtonElement>;
 }
 
 interface BaseButtonProps extends ButtonProps {
