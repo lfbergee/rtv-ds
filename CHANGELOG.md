@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.5.1
+
+### 🤷 Description
+
+Align icons in buttons properly in safari
+
+### 🎉 Features
+
+- Uses 'align-items' css to align icons in buttons for safari
+
 ## 0.5.0
 
 ### 🤷 Description
