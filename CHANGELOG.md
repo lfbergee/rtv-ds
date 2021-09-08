@@ -4,9 +4,9 @@
 
 ### 🤷 Description
 
-Simplify release.
-More inclusive PeerDependency
-Remove react-dom as peerDep
+- Simplify release.
+- More inclusive PeerDependency
+- Remove react-dom as peerDep
 
 ## 0.5.1
 
