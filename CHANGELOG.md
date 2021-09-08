@@ -1,5 +1,13 @@
 # 📖 Change Log
 
+## 0.5.2
+
+### 🤷 Description
+
+Simplify release.
+More inclusive PeerDependency
+Remove react-dom as peerDep
+
 ## 0.5.1
 
 ### 🤷 Description

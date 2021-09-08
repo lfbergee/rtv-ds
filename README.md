@@ -21,7 +21,6 @@ Welcome to Shared Components for RiksTV. Please check the portal for usage guide
 ## How to release
 
 - Update version number in `shared-components/package.json`
-- Update `@rikstv/shared-components` version number in `portal/package.json` accordingly
 - Update change log
 - Commit using the following pattern `{chore|feat|fix}: {describe release} [release]`
 - Merge to master, that will automatically release to npm
