@@ -2,6 +2,10 @@
 
 .rtv {
   --rds-button-primary-fg: #fff;
+  --rds-button-secondary-pressed-fg: #666666;
+  --rds-button-secondary-pressed-bg: #fff;
+  --rds-button-tertirary-bg: #3b3b3b;
+  --rds-button-tertiary-hover-bg: #434343;
   --rds-accent-color: #ee4642;
   --rds-accent-color-mid: #ed302b;
   --rds-accent-color-dark: #d41612;
@@ -14,8 +18,8 @@
 
   --rds-background-primary-rgb: 37, 37, 37;
   --rds-background-primary: rgb(var(--rds-background-primary-rgb));
-  --rds-background-secondary: #0b0b0b;
-  --rds-background-tertiary: #434343;
+  --rds-background-secondary: #434343;
+  --rds-background-tertiary: #0b0b0b;
 
   --rds-foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);

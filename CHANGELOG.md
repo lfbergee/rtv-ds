@@ -1,5 +1,21 @@
 # 📖 Change Log
 
+## 0.5.0
+
+### 🤷 Description
+
+Adds forwardRef to all buttons in Button.tsx and IconButton.tsx
+Updates the colors of buttons
+
+### 🎉 Features
+
+- Ref can be used with buttons
+- All buttons have updated colors
+
+### 💥 BREAKING CHANGES 💥
+
+- Added forwardRef to all buttons.
+
 ## 0.4.3
 
 ### 🎉 Features

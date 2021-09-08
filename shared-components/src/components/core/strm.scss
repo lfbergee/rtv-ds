@@ -3,8 +3,11 @@
 .strm {
   --stand-up-green: #49f5a4;
   --surface-background: #edfef6;
-
   --rds-button-primary-fg: #004b50;
+  --rds-button-secondary-pressed-fg: #ffffff;
+  --rds-button-secondary-pressed-bg: #001d1d;
+  --rds-button-tertirary-bg: #193f3f;
+  --rds-button-tertiary-hover-bg: #004b50;
   --rds-accent-color: #faed6f;
   --rds-accent-color-mid: #f7e426;
   --rds-accent-color-dark: #f7e426;
@@ -17,8 +20,8 @@
 
   --rds-background-primary-rgb: 0, 42, 42; // #002a2a
   --rds-background-primary: rgb(var(--rds-background-primary-rgb));
-  --rds-background-secondary: #001515;
-  --rds-background-tertiary: #004b50;
+  --rds-background-secondary: #001d1d;
+  --rds-background-tertiary: #001515;
 
   --rds-foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);
