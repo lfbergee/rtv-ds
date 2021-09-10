@@ -13,7 +13,7 @@ import { mdxComponents } from "./mdxComponents";
 import "./style.scss";
 
 export const App: FC = () => {
-  const [theme, setTheme] = useState<themes>("rtv");
+  const [theme, setTheme] = useState<themes>("strm");
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
