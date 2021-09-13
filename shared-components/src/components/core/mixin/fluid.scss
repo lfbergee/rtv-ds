@@ -1,0 +1,18 @@
+$pixelsPerRem: 16; //in case people change their browser’s font
+$minWidthPx: 576; //min view port in px
+$maxWidthPx: 1920; //max view port in px
+
+@function get-clamp($minFontSizePx, $maxFontSizePx) {
+  $minWidth: $minWidthPx/$pixelsPerRem;
+  $maxWidth: $maxWidthPx/$pixelsPerRem;
+
+  $minFontSize: $minFontSizePx/$pixelsPerRem;
+  $maxFontSize: $maxFontSizePx/$pixelsPerRem;
+
+  $slope: ($maxFontSize - $minFontSize)/ ($maxWidth - $minWidth);
+  $yAxisIntersection: -$minWidth * $slope + $minFontSize;
+
+  $fluid: calc(#{$yAxisIntersection}rem + #{$slope * 100}vw);
+
+  @return clamp(#{$minFontSize}rem, #{$fluid}, #{$maxFontSize}rem);
+}

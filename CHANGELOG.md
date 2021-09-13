@@ -1,5 +1,14 @@
 # 📖 Change Log
 
+## 0.5.3
+
+### 🤷 Description
+
+### 🎉 Features
+
+- Adjust typography scale
+- Function to generate proper fluid clamping
+
 ## 0.5.2
 
 ### 🤷 Description
