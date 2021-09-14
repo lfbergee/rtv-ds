@@ -1,5 +1,12 @@
 # 📖 Change Log
 
+
+## 0.6.0
+
+### 💥 BREAKING CHANGES 💥
+
+- New fonts added, display-title, title-1 and title-2 now expects HalMatex-Bold to be available in the app
+
 ## 0.5.3
 
 ### 🤷 Description
