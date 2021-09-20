@@ -110,3 +110,47 @@
 
   @include mix.with-keyboard-focus;
 }
+
+.rds-light {
+  .rds-button__shared--primary,
+  &.rds-button__shared--primary {
+    --common-button--primary-color: var(--rds-foreground-primary);
+    --common-button--primary-bg: var(--rds-button-primary-fg);
+
+    &:hover {
+      --common-button--primary-hover-bg: var(--rds-foreground-tertiary);
+    }
+
+    &:active {
+      box-shadow: none;
+      --common-button--primary-pressed-bg: var(--rds-background-primary);
+    }
+
+    &:disabled {
+      --common-button--disabled-color: var(--rds-button-tertiary-hover-bg);
+    }
+  }
+}
+
+.rds-light {
+  .rds-button__shared--secondary,
+  &.rds-button__shared--secondary {
+    --common-button--secondary-color: var(--rds-button-tertiary-hover-bg);
+    --common-button--secondary-border-color: var(--rds-button-tertiary-hover-bg);
+    --common-button--secondary-bg: var(--surface-background);
+
+    &:hover {
+      --common-button--secondary-hover-bg: var(--rds-button-primary-fg);
+      --common-button--secondary-hover-color: var(--rds-foreground-primary);
+    }
+
+    &:active {
+      --common-button--secondary-pressed-color: var(--rds-foreground-primary);
+      --common-button--secondary-pressed-bg: var(--rds-button-primary-fg);
+    }
+
+    &:disabled {
+      --common-button--disabled-color: var(--rds-button-primary-fg);
+    }
+  }
+}

@@ -6,6 +6,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon?: () => JSX.Element;
   className?: string;
   iconClass?: string;
+  lightBackground?: boolean;
 }
 
 interface BaseButtonProps extends ButtonProps {
@@ -24,6 +25,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       postfix,
       icon: Icon,
       iconClass = "",
+      lightBackground = false,
       disabled,
       className = "",
       "aria-busy": ariaBusy,
@@ -39,7 +41,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, BaseButtonProps>(
       aria-busy={isLoading || ariaBusy}
       className={`${buttonStyle} rds-button__shared rds-button__shared--${buttonType} rds-button--${buttonType} ${
         isLoading ? "rds-button--loading" : ""
-      } ${className}`}
+      } ${lightBackground ? "rds-light" : ""} ${className}`}
     >
       {Icon && (
         <span data-testid="rds-button__icon" className={`rds-button__icon ${iconClass}`}>

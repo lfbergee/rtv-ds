@@ -1,5 +1,15 @@
 # 📖 Change Log
 
+## 0.6.7
+
+### 🤷 Description
+
+- Adds lightmode for primary and secondary button in strim
+
+### 🎉 Features
+
+- Pimary and secondary buttons wrapped with lightMode component will adjust style accordingly
+- lightBackground attribute can be used to override/trigger the lightMode styling
 
 ## 0.6.3 - 0.6.6
 
