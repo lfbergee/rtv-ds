@@ -60,3 +60,47 @@ Kan brukes til å vise pris eller annen viktig info
   Spill av
 </PrimaryButton>
 ```
+
+## Lys bakgrunn
+
+Denne er kun implementert for Strim per nå.
+
+## PrimaryButton
+```tsx live=true 
+<LightMode style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)"
+}}>
+<PrimaryButton postfix="" isLoading={false} disabled={false}>
+  Hello world
+</PrimaryButton>
+</LightMode>
+```
+## SecondaryButton
+```tsx live=true
+<LightMode style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)"
+}}>
+<SecondaryButton postfix="" isLoading={false} disabled={false}>
+  Hello world
+</SecondaryButton>
+</LightMode>
+```
+
+### With 'lightBackground' attribute
+
+## PrimaryButton
+```tsx live=true 
+<div style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)"
+}}>
+<PrimaryButton postfix="" isLoading={false} disabled={false} lightBackground>
+  Hello world
+</PrimaryButton>
+</div>
+```
