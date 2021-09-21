@@ -30,7 +30,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "sass": "^1.41.0",
+    "sass": "^1.41.1",
     "vite-react-jsx": "^1.1.2"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "@types/babel__core": "^7.1.16",
     "@types/mdx-js__react": "^1.5.4",
     "@types/node": "^16.9.1",
-    "@types/react": "^17.0.21",
+    "@types/react": "^17.0.22",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
@@ -51,7 +51,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
-    "eslint-plugin-react": "^7.25.1",
+    "eslint-plugin-react": "^7.25.3",
     "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.1",
