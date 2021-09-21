@@ -2,8 +2,8 @@
 
 ## Overskrifter
 
-Komponentene kommer med låst semantikk og fri stil. 
-Det betyr at du MÅ bruke riktig semantisk React-komponent og heller overstyre stilen om den skal se ut som noe annet. 
+Komponentene kommer med låst semantikk og fri stil.
+Det betyr at du MÅ bruke riktig semantisk React-komponent og heller overstyre stilen om den skal se ut som noe annet.
 Husk at semantikk er viktig for mange brukere, så sørg for at sidene dine følger hierakriet med bare en h1.
 
 ```tsx live=true
@@ -46,12 +46,64 @@ Husk at semantikk er viktig for mange brukere, så sørg for at sidene dine føl
 <Meta>Meta</Meta>
 ```
 
+```tsx live=true
+<a
+  className="rds-link"
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    e.stopProagation();
+  }}
+>
+  Link
+</a>
+```
+
 ## Overstyr
 
 ```tsx render=true
-<DisplayTitle lookLike="body">
-    h1 som ser ut som body
-</DisplayTitle>
+<DisplayTitle lookLike="body">h1 som ser ut som body</DisplayTitle>
+```
+
+## Lenker
+
+Ut av boksen tilbys det bare stil for lenker.
+Det er fordi alle prosjekt kan ha ulike routere med ulike behov til lenkekomponentene.
+Anbefalingen er å lage en wrapper link komponent i ditt prosjekt, som legger til `rds-link`
+som klassenavn på din React Router, Reach Router, Wouter eller din egen lenke komponent.
+
+```tsx live=true
+<a
+  className="rds-title-2 rds-link"
+  href="#"
+  onClick={(e) => {
+      e.preventDefault();
+      e.stopProagation();
+  }}
+>
+  Link as title-2
+</a>
+```
+
+### Aktiv lenke
+
+Hvis man står på samme side som en lenke peker til, som kan skje i forskjellige menyer, 
+så skal det markeres at lenken er aktiv via `aria-current="page"`.
+Det er også mulig å sette stilen direkte med `rds-link--active`. Den er gjort med text-shadow 
+for å unngå reflow av siden.
+
+```tsx live=true
+<a
+  className="rds-link"
+  href="#"
+  aria-current="page"
+  onClick={(e) => {
+      e.preventDefault();
+      e.stopProagation();
+  }}
+>
+  Active link
+</a>
 ```
 
 ## Lys bakgrunn
@@ -59,32 +111,49 @@ Husk at semantikk er viktig for mange brukere, så sørg for at sidene dine føl
 Denne er kun implementert for Strim per nå.
 
 ```tsx render=true
-<LightMode style={{
+<LightMode
+  style={{
     backgroundColor: "var(--surface-background)",
     padding: "var(--rds-spacing--32)",
-    borderRadius: "var(--rds-roundness--default)"
-}}>
-    <DisplayTitle>display-title</DisplayTitle>
-    <H1>title-1</H1>
-    <H2>title-2</H2>
-    <H3>title-3</H3>
-    <H4>title-4</H4>
-    <Body>body</Body>
-    <SubBody>sub-body</SubBody>
-    <Tag>tag</Tag><br />
-    <Bold>Bold</Bold><br />
-    <Meta>Meta</Meta>
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <DisplayTitle>display-title</DisplayTitle>
+  <H1>title-1</H1>
+  <H2>title-2</H2>
+  <H3>title-3</H3>
+  <H4>title-4</H4>
+  <Body>body</Body>
+  <SubBody>sub-body</SubBody>
+  <Tag>tag</Tag>
+  <br />
+  <Bold>Bold</Bold>
+  <br />
+  <Meta>Meta</Meta>
+  <br />
+  <a
+    className="rds-link"
+    href="#"
+    onClick={(e) => {
+      e.preventDefault();
+      e.stopProagation();
+    }}
+  >
+    Link
+  </a>
 </LightMode>
 ```
 
 Man kan også bruke `lightBackground` prop om det kun er en enkelt typografi komponent som skal mot lys bakgrunn.
 
 ```tsx render=true
-<div style={{
+<div
+  style={{
     backgroundColor: "var(--surface-background)",
     padding: "var(--rds-spacing--32)",
-    borderRadius: "var(--rds-roundness--default)"
-}}>
-    <H1 lightBackground={true}>title-1</H1>
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <H1 lightBackground={true}>title-1</H1>
 </div>
 ```

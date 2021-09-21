@@ -1,4 +1,32 @@
 @use '../core/mixin/fluid';
+@use '../core/mixin/focus';
+
+.rds-link {
+  font-family: var(--rds-font-family-body);
+  font-size: fluid.get-clamp(16, 18);
+  font-weight: normal;
+  line-height: 1.5;
+  color: var(--rds-foreground-primary);
+  transition: 75ms ease color;
+
+  &:visited {
+    color: var(--rds-foreground-primary);
+  }
+  &:hover {
+    text-decoration-thickness: 2px;
+    color: var(--rds-heading-accent);
+  }
+  &:active {
+    text-decoration: none;
+    text-shadow: 0px 0px 1px var(--rds-foreground-primary);
+  }
+
+  &--active,
+  &[aria-current="page"] {
+    text-shadow: 0px 0px 1px var(--rds-foreground-primary);
+  }
+  @include focus.with-keyboard-focus;
+}
 
 .rds-display-title {
   font-family: var(--rds-font-family-lg-headlines);
@@ -80,6 +108,22 @@
   font-weight: normal;
   line-height: 1.5;
   color: var(--rds-foreground-overlay-heavy);
+}
+
+.rds-link--light {
+  color: var(--rds-background-primary);
+  &:hover {
+    color: var(--rds-foreground-tertiary);
+  }
+  &:active {
+    text-shadow: 0px 0px 1px var(--rds-background-primary);
+  }
+}
+
+.rds-light {
+  .rds-link {
+    @extend .rds-link--light;
+  }
 }
 
 $typography-scale: (
