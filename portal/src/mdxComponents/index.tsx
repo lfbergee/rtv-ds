@@ -15,7 +15,7 @@ export const mdxComponents = {
   b: (props: any): JSX.Element => <Bold {...props} />,
   strong: (props: any): JSX.Element => <Bold {...props} />,
   pre: (props: any): JSX.Element => <div {...props} />,
-  a: (props: any): JSX.Element => <a style={{ color: "currentColor" }} {...props} />,
+  a: (props: any): JSX.Element => <a style={props.className ? {} : { color: "currentColor" }} {...props} />,
   ul: (props: any): JSX.Element => <ul className="portal-max-width" {...props} />,
   li: (props: any): JSX.Element => <li className="portal-max-width portal-li rds-body" {...props} />,
   code: Code,

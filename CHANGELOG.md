@@ -1,5 +1,10 @@
 # 📖 Change Log
 
+## 0.6.1
+
+### 🎉 Features
+
+- Add link style and documentation
 
 ## 0.6.0
 
