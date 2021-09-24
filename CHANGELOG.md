@@ -1,5 +1,11 @@
 # 📖 Change Log
 
+## 0.6.3
+
+### 🎉 Features
+
+- Add ToggleButton
+
 ## 0.6.2
 
 ### 🐛 Bug Fixes

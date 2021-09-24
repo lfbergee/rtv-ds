@@ -9,10 +9,14 @@ const Button = lazy(() => import("@rikstv/shared-components/src/components/butto
 const IconButton = lazy(() => import("@rikstv/shared-components/src/components/button/iconButton.mdx"));
 const RadioToggle = lazy(() => import("@rikstv/shared-components/src/components/toggle/radioToggle.mdx"));
 const Typography = lazy(() => import("@rikstv/shared-components/src/components/typography/typography.mdx"));
+const ToggleButton = lazy(() => import("@rikstv/shared-components/src/components/toggleButton/toggleButton.mdx"));
 
 // Types
 const buttonType: LazyImportedTypes = import("../../../shared-components/src/components/button/Button?type");
 const iconButtonType: LazyImportedTypes = import("../../../shared-components/src/components/button/IconButton?type");
+const toggleButtonType: LazyImportedTypes = import(
+  "../../../shared-components/src/components/toggleButton/ToggleButton?type"
+);
 const radioToggleType: LazyImportedTypes = import("../../../shared-components/src/components/toggle/RadioToggle?type");
 const fieldSetType: LazyImportedTypes = import("../../../shared-components/src/components/toggle/FieldSet?type");
 const typographyType: LazyImportedTypes = import(
@@ -24,6 +28,7 @@ const typographyType: LazyImportedTypes = import(
 export const components = [
   makeComponent("button", Button, buttonType),
   makeComponent("icon button", IconButton, iconButtonType),
+  makeComponent("toggle button", ToggleButton, toggleButtonType),
   makeComponent("radio toggle", RadioToggle, radioToggleType, fieldSetType),
   makeComponent("core", Core),
   makeComponent("spacing", Spacing),

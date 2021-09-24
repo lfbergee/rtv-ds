@@ -1,0 +1,29 @@
+@keyframes rds-heart-beat {
+  10% {
+    transform: scale(0.95);
+  }
+  20% {
+    transform: scale(1.15);
+  }
+  30% {
+    transform: scale(0.95);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1);
+  }
+}
+
+.rds-icon__heart-toggle {
+  transform: scale(1);
+  animation-duration: 1000ms;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-name: rds-heart-beat;
+  animation-timing-function: ease-out;
+}

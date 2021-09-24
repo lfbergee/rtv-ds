@@ -1,0 +1,47 @@
+@use '../button/button-shared';
+@use '../button/button';
+@use '../button/icon-button';
+
+.rds-toggle-button {
+  @extend .rds-button__shared;
+  @extend .rds-button;
+  @extend .rds-button__shared--tertiary;
+
+  display: inline-block;
+  user-select: none;
+
+  &__input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &__rounded {
+    @extend .rds-button__icon;
+
+    &__number {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__input:checked {
+    & + .rds-toggle-button {
+      background-color: var(--rds-foreground-tertiary);
+
+      &:active {
+        background-color: var(--rds-foreground-overlay-medium);
+      }
+    }
+  }
+
+  &--round {
+    @extend .rds-icon-button;
+    .rds-toggle-button__rounded {
+      margin: 0;
+    }
+  }
+}
