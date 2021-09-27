@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@mdx-js/mdx": "^1.6.22",
-    "@testing-library/react": "^12.1.0",
+    "@testing-library/react": "^12.1.1",
     "@types/babel__core": "^7.1.16",
     "@types/mdx-js__react": "^1.5.4",
     "@types/node": "^16.10.1",
