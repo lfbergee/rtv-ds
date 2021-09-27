@@ -1,18 +1,13 @@
-@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+@use "../../../shared-components/src/components/core/mixin/focus" as mix;
 
 .portal-example__types {
-  padding: var(--rds-spacing--16);
-  background-color: var(--rds-background-overlay-medium);
-  border-radius: var(--rds-roundness--default);
   margin-top: var(--rds-spacing--8);
   max-width: 46rem;
 
   &__details {
-    & summary {
-      cursor: pointer;
-      user-select: none;
-      @include mix.with-keyboard-focus(var(--rds-spacing--8));
-    }
+    background-color: var(--rds-background-tertiary);
+    max-width: 46rem;
+    padding: var(--rds-spacing--16);
   }
 
   &__table {

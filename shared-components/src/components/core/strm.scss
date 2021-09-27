@@ -1,13 +1,9 @@
-@use './core';
+@use "./core";
 
 .strm {
   --stand-up-green: #49f5a4;
   --surface-background: #edfef6;
-  --rds-button-primary-fg: #004b50;
-  --rds-button-secondary-pressed-fg: #ffffff;
-  --rds-button-secondary-pressed-bg: #001d1d;
-  --rds-button-tertirary-bg: #193f3f;
-  --rds-button-tertiary-hover-bg: #004b50;
+
   --rds-accent-color: #faed6f;
   --rds-accent-color-mid: #f7e426;
   --rds-accent-color-dark: #f7e426;
@@ -27,6 +23,10 @@
   --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);
   --rds-foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
 
+  --rds-foreground-solid-soft: #1a4040;
+
+  --rds-surface-foreground: #004b50;
+
   --rds-background-overlay-soft: rgba(0, 0, 0, 0.1);
   --rds-background-overlay-medium: rgba(0, 0, 0, 0.5);
   --rds-background-overlay-heavy: rgba(0, 0, 0, 0.85);
@@ -35,6 +35,12 @@
   --rds-feedback-warning: #f2a900;
   --rds-feedback-confirm: #4cbb81;
   --rds-feedback-error: #e01c17;
+
+  --rds-button-primary-fg: var(--rds-surface-foreground);
+  --rds-button-secondary-pressed-fg: #ffffff;
+  --rds-button-secondary-pressed-bg: #001d1d;
+  --rds-button-tertirary-bg: #193f3f;
+  --rds-button-tertiary-hover-bg: var(--rds-surface-foreground);
 
   --rds-roundness--default: 12px;
   --rds-roundness--button: 12px;

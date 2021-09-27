@@ -1,4 +1,4 @@
-@use './core';
+@use "./core";
 
 .rtv {
   --rds-button-primary-fg: #fff;
@@ -24,6 +24,8 @@
   --rds-foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);
   --rds-foreground-overlay-heavy: rgba(255, 255, 255, 0.7);
+
+  --rds-foreground-solid-soft: #3c3c3c;
 
   --rds-background-overlay-soft: rgba(0, 0, 0, 0.1);
   --rds-background-overlay-medium: rgba(0, 0, 0, 0.5);

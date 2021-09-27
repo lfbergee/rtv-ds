@@ -1,24 +1,15 @@
 # 📖 Change Log
 
-## 0.6.5
 
-### 🐛 Bug Fixes
-
-- radio toggle style uses scss, not classes from button
-
-## 0.6.4
-
-### 🐛 Bug Fixes
-
-- Add a wrapping <div> to togglebutton
-- Remove number option from togglebutton
-- Handle defaultChecked value
-
-## 0.6.3
+## 0.6.3 - 0.6.6
 
 ### 🎉 Features
 
-- Add ToggleButton
+- Add accordion
+
+### 🐛 Bug Fixes
+
+- Improve style import for RadioToggle
 
 ## 0.6.2
 

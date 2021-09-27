@@ -1,0 +1,126 @@
+@use "../typography/typography.scss";
+@use "../core/mixin/focus.scss";
+
+@keyframes details-sweep {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rds-accordion-details {
+  border-radius: var(--rds-roundness--default);
+  transition: 125ms ease-in-out box-shadow;
+
+  &:hover {
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  &[open] {
+    --chevron-direction: 180deg;
+    background-color: var(--rds-foreground-solid-soft);
+    overflow: hidden;
+
+    & summary ~ * {
+      animation: details-sweep 0.5s ease-in-out forwards;
+      & > * {
+        --toggle-sweep-delay: 0;
+        opacity: 0;
+        animation: details-sweep 0.5s ease-in-out forwards;
+        animation-delay: var(--toggle-sweep-delay);
+      }
+    }
+    &:hover {
+      box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &:not([open]) {
+    --chevron-direction: 0;
+    &:hover {
+      box-shadow: none;
+      .rds-accordion-details__summary {
+        box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  &__summary {
+    @include focus.with-keyboard-focus();
+    @extend .rds-bold;
+    transition: 125ms ease-in-out box-shadow;
+    border-radius: var(--rds-roundness--default);
+    background-color: var(--rds-foreground-solid-soft);
+    color: var(--rds-foreground-primary) !important;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    padding: 8px 32px 8px 16px;
+
+    & > svg {
+      height: 100%;
+      & > path {
+        fill: var(--rds-foreground-primary);
+      }
+      transform: rotate(var(--chevron-direction));
+      transition: transform 125ms ease-in-out;
+      transform-origin: center;
+      position: absolute;
+      right: 18px;
+      top: 0;
+    }
+    &__content {
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    & ~ * {
+      padding: 0px 32px 16px 16px;
+    }
+  }
+
+  &--left > summary {
+    padding: 8px 32px 8px 64px;
+
+    & > svg {
+      right: initial;
+      left: 18px;
+    }
+  }
+
+  &--hide-default-text > summary {
+    max-width: 100%;
+    height: 100%;
+    background-color: transparent;
+    margin-bottom: 0;
+  }
+}
+
+.rds-accordion-details--light {
+  &[open] {
+    background-color: var(--rds-surface-foreground);
+  }
+  .rds-accordion-details__summary {
+    background-color: var(--rds-surface-foreground);
+  }
+}
+
+.rds-light {
+  .rds-accordion-details {
+    @extend .rds-accordion-details--light;
+  }
+}
