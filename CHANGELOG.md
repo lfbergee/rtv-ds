@@ -1,5 +1,11 @@
 # 📖 Change Log
 
+## 0.6.2
+
+### 🐛 Bug Fixes
+
+- Let link inherit all font props
+
 ## 0.6.1
 
 ### 🎉 Features

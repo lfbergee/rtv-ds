@@ -2,10 +2,10 @@
 @use '../core/mixin/focus';
 
 .rds-link {
-  font-family: var(--rds-font-family-body);
-  font-size: fluid.get-clamp(16, 18);
-  font-weight: normal;
-  line-height: 1.5;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
   color: var(--rds-foreground-primary);
   transition: 75ms ease color;
 
