@@ -1,0 +1,97 @@
+# Accordion
+
+Trekkspill komponent på godt norsk brukes til å la sideinfomasjon være tilgjengelig, men ikke ta opp veldig mye plass på siden.
+
+```tsx live=true
+<Accordion heading="Normal accordion">
+  <Body>Innholdet her vises by default, i full bredde</Body>
+</Accordion>
+```
+
+## Venstrestilt pil
+
+```tsx render=true
+<Accordion
+  style={{ maxWidth: "500px" }}
+  heading="Venstrestilt chevron og lukket"
+  alignChevronLeft={true}
+  initialOpen={false}
+>
+  <Body>Innhold her et begrenset til max 500px</Body>
+</Accordion>
+```
+
+## Light mode
+
+```tsx render=true
+<LightMode
+  style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <Accordion style={{ maxWidth: "500px" }} heading="Lys bakgrunn" initialOpen={false}>
+    <Body style={{ color: "#fff" }}>Innhold her et begrenset til max 500px</Body>
+  </Accordion>
+</LightMode>
+```
+
+```tsx render=true
+<div
+  style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <Accordion lightBackground={true} style={{ maxWidth: "500px" }} heading="Lys bakgrunn" initialOpen={false}>
+    <Body style={{ color: "#fff" }}>Innhold her et begrenset til max 500px</Body>
+  </Accordion>
+</div>
+```
+
+## Sammensatt
+
+La oss sette noen flere accordions sammen til en FAQ
+
+```tsx render=true
+<section>
+  <H2>FAQ</H2>
+  <div
+    style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(15rem, 1fr))",
+      gap: " var(--rds-spacing--8)",
+      maxWidth: "600px",
+    }}
+  >
+    <Accordion heading="Er dette HTML?" initialOpen={false}>
+      <Body>JA! Summary og Details er native HTML element</Body>
+    </Accordion>
+    <Accordion heading="Er det accessible?" initialOpen={false}>
+      <Body>
+        JA! Det er bare HTML, ikke noe fancy javascript. Eneste javascript gjør her er å sette rikig stil og om
+        komponenten skal stare lukket eller åpnet.
+      </Body>
+    </Accordion>
+    <Accordion heading="Kan jeg animere?" initialOpen={false}>
+      <div>
+        <Body style={{ "--toggle-sweep-delay": "100ms" }}>JA!</Body>
+        <Body style={{ "--toggle-sweep-delay": "150ms" }}>Det</Body>
+        <Body style={{ "--toggle-sweep-delay": "200ms" }}>kan</Body>
+        <Body style={{ "--toggle-sweep-delay": "250ms" }}>du!</Body>
+      </div>
+    </Accordion>
+    <Accordion heading="Funker det på mobil?" initialOpen={false}>
+      <Body>Jepp</Body>
+    </Accordion>
+    <Accordion heading="Kan jeg ha flere accordions?" initialOpen={false}>
+      <Body>Jepp</Body>
+    </Accordion>
+    <Accordion heading="Er dette magi" initialOpen={false}>
+      <Body>Nei, det er HTML og CSS</Body>
+    </Accordion>
+  </div>
+</section>
+```

@@ -2,6 +2,7 @@ export { RiksTVProvider } from "./core/RiksTV";
 export { StrimProvider } from "./core/Strim";
 export { LightMode } from "./core/LightMode";
 
+export { Accordion } from "./accordion/Accordion";
 export { PrimaryButton, SecondaryButton, TertiaryButton } from "./button/Button";
 export { PrimaryIconButton, SecondaryIconButton, TertiaryIconButton } from "./button/IconButton";
 export { ToggleButton } from "./toggleButton/ToggleButton";

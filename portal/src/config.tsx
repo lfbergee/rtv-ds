@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { makeComponent, LazyImportedTypes } from "./utils/makeComponent";
 
 // Components
+const Accordion = lazy(() => import("@rikstv/shared-components/src/components/accordion/accordion.mdx"));
 const Core = lazy(() => import("@rikstv/shared-components/src/components/core/core.mdx"));
 const Spacing = lazy(() => import("@rikstv/shared-components/src/components/core/spacing.mdx"));
 const Colors = lazy(() => import("@rikstv/shared-components/src/components/core/colors.mdx"));
@@ -21,10 +22,11 @@ const radioToggleType: LazyImportedTypes = import("../../../shared-components/sr
 const fieldSetType: LazyImportedTypes = import("../../../shared-components/src/components/toggle/FieldSet?type");
 const typographyType: LazyImportedTypes = import(
   "../../../shared-components/src/components/typography/Typography?type"
-);
+  );
+const accordionType: LazyImportedTypes = import("../../../shared-components/src/components/accordion/Accordion?type");
 
 // if more than one type is needed to show types in example
-// just add more at the end, makeCompontent takes as many types as you could ever want
+// just add more at the end, makeComponent takes as many types as you could ever want
 export const components = [
   makeComponent("button", Button, buttonType),
   makeComponent("icon button", IconButton, iconButtonType),
@@ -34,4 +36,5 @@ export const components = [
   makeComponent("spacing", Spacing),
   makeComponent("colors", Colors),
   makeComponent("typografi", Typography, typographyType),
+  makeComponent("accordion", Accordion, accordionType),
 ].sort((a, b) => a.displayName.localeCompare(b.displayName));

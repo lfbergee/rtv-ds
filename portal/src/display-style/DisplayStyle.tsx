@@ -1,3 +1,4 @@
+import { Accordion } from "@rikstv/shared-components/src/components";
 import { FC } from "react";
 
 const computedStyleValues = [
@@ -22,29 +23,30 @@ const displayComputedValue = (styleProp: string, styleValues?: CSSStyleDeclarati
 
 export const DisplayStyle: FC<{ styleValues?: CSSStyleDeclaration }> = ({ styleValues }) => (
   <aside className="portal-example__types">
-    <details className="portal-example__types__details">
-      <summary>Vis stil</summary>
-      <p>
-        Dette er utregna stiler, så verdier som font-størrelse, linje høyde vil kunne variere med akutell skjermbredde
-      </p>
-      <table className="portal-example__types__table">
-        <thead>
-          <tr>
-            <th scope="col">Prop</th>
-            <th scope="col">Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          {computedStyleValues.map((styleProp) =>
-            displayComputedValue(styleProp, styleValues) ? (
-              <tr key={styleProp}>
-                <td>{styleProp}</td>
-                <td>{styleValues?.getPropertyValue(styleProp)}</td>
-              </tr>
-            ) : null
-          )}
-        </tbody>
-      </table>
-    </details>
+    <Accordion heading="Vis stil" initialOpen={false}>
+      <div className="portal-example__types__details">
+        <p>
+          Dette er utregna stiler, så verdier som font-størrelse, linje høyde vil kunne variere med akutell skjermbredde
+        </p>
+        <table className="portal-example__types__table">
+          <thead>
+            <tr>
+              <th scope="col">Prop</th>
+              <th scope="col">Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            {computedStyleValues.map((styleProp) =>
+              displayComputedValue(styleProp, styleValues) ? (
+                <tr key={styleProp}>
+                  <td>{styleProp}</td>
+                  <td>{styleValues?.getPropertyValue(styleProp)}</td>
+                </tr>
+              ) : null
+            )}
+          </tbody>
+        </table>
+      </div>
+    </Accordion>
   </aside>
 );

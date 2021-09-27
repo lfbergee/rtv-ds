@@ -10,6 +10,8 @@ import { DisplayStyle } from "../../display-style/DisplayStyle";
 
 import "./style.scss";
 
+const { Accordion } = components;
+
 export const CodeBlock: FC<{
   children: string;
   className: string;
@@ -76,10 +78,11 @@ export const CodeBlock: FC<{
           <div ref={ref}>
             <LivePreview />
           </div>
-          <details className="portal-code-block__details">
-            <summary>Vis kode</summary>
-            <LiveEditor />
-          </details>
+          <Accordion initialOpen={false} heading="Vis kode" className="portal-code-block-accordion">
+            <div className="portal-code-block__details">
+              <LiveEditor />
+            </div>
+          </Accordion>
           <LiveError />
         </LiveProvider>
         <DisplayStyle styleValues={styleValues} />
