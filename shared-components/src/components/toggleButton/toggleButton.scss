@@ -1,6 +1,6 @@
-@use '../button/button-shared';
-@use '../button/button';
-@use '../button/icon-button';
+@use "../button/button-shared";
+@use "../button/button";
+@use "../button/icon-button";
 
 .rds-toggle-button {
   @extend .rds-button__shared;
@@ -17,15 +17,11 @@
 
   &__rounded {
     @extend .rds-button__icon;
-
-    &__number {
-      width: 100%;
-      text-align: center;
-    }
   }
 
   &__content {
     display: flex;
+    align-items: center;
   }
 
   &__input:checked {

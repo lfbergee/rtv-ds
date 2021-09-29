@@ -36,29 +36,11 @@ brands.forEach((brand) => {
     cy.findByTestId("heart-svg").should("exist");
   });
 
-  it(`Should render ToggleButton with number`, () => {
-    customMount(brand)(
-      <ToggleButton showLabel={false} number={10}>
-        Hello world
-      </ToggleButton>
-    );
-    cy.findByRole("checkbox").should("have.class", "rds-toggle-button__input").should("not.be.checked");
-    cy.findByTestId("toggle-button__label").click();
-    cy.findByTestId("toggle-button__label__text").contains("Hello world");
-    cy.findByTestId("toggle-button__label__number").contains("10");
-    cy.findByRole("checkbox").should("be.checked");
-  });
-
   it(`Should render ToggleButton with id`, () => {
-    customMount(brand)(
-      <ToggleButton id="hest" showLabel={false} number={10}>
-        Hello world
-      </ToggleButton>
-    );
+    customMount(brand)(<ToggleButton id="hest">Hello world</ToggleButton>);
     cy.findByRole("checkbox").should("have.id", "hest").should("not.be.checked");
     cy.findByTestId("toggle-button__label").click();
     cy.findByTestId("toggle-button__label__text").contains("Hello world");
-    cy.findByTestId("toggle-button__label__number").contains("10");
     cy.findByRole("checkbox").should("be.checked");
   });
 
@@ -71,15 +53,10 @@ brands.forEach((brand) => {
       called = true;
       return false;
     };
-    customMount(brand)(
-      <ToggleButton onChange={changeFn} showLabel={false} number={10}>
-        Hello world
-      </ToggleButton>
-    );
+    customMount(brand)(<ToggleButton onChange={changeFn}>Hello world</ToggleButton>);
     cy.findByRole("checkbox").should("have.class", "rds-toggle-button__input").should("not.be.checked");
     cy.findByTestId("toggle-button__label").click();
     cy.findByTestId("toggle-button__label__text").contains("Hello world");
-    cy.findByTestId("toggle-button__label__number").contains("10");
     cy.findByRole("checkbox")
       .should("be.checked")
       .then(() => {

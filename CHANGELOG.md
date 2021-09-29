@@ -1,5 +1,13 @@
 # 📖 Change Log
 
+## 0.6.4
+
+### 🐛 Bug Fixes
+
+- Add a wrapping <div> to togglebutton
+- Remove number option from togglebutton
+- Handle defaultChecked value
+
 ## 0.6.3
 
 ### 🎉 Features

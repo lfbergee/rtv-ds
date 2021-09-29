@@ -14,23 +14,11 @@ interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, "type"> {
         toggleIcon?: FC<{ checked: boolean }>;
       };
   iconClass?: string;
-  number?: number;
 }
 
 export const ToggleButton = forwardRef<HTMLInputElement, Props>(
   (
-    {
-      defaultChecked,
-      showLabel = true,
-      icons,
-      iconClass = "",
-      children,
-      onChange,
-      id,
-      className = "",
-      number,
-      ...rest
-    },
+    { defaultChecked, showLabel = true, icons, iconClass = "", children, onChange, id, className = "", ...rest },
     ref
   ) => {
     const internalRef = useRef<HTMLInputElement>(null);
@@ -55,13 +43,14 @@ export const ToggleButton = forwardRef<HTMLInputElement, Props>(
     };
 
     return (
-      <>
+      <div className={className}>
         <input
           id={internalId}
           ref={inputRef}
           type="checkbox"
-          className={`rds-toggle-button__input ${className}`}
+          className="rds-toggle-button__input"
           onChange={handleChange}
+          defaultChecked={defaultChecked}
           {...rest}
         />
         <label
@@ -77,17 +66,12 @@ export const ToggleButton = forwardRef<HTMLInputElement, Props>(
                 {UncheckedIcon && !isChecked && <UncheckedIcon />}
               </span>
             )}
-            {number && (
-              <span data-testid="toggle-button__label__number" className="rds-toggle-button__rounded">
-                <span className="rds-toggle-button__rounded__number">{number}</span>
-              </span>
-            )}
             <span data-testid="toggle-button__label__text" className={showLabel ? "" : "sr-only"}>
               {children}
             </span>
           </span>
         </label>
-      </>
+      </div>
     );
   }
 );
