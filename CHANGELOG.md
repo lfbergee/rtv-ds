@@ -1,5 +1,11 @@
 # 📖 Change Log
 
+## 0.6.5
+
+### 🐛 Bug Fixes
+
+- radio toggle style uses scss, not classes from button
+
 ## 0.6.4
 
 ### 🐛 Bug Fixes

@@ -1,5 +1,7 @@
-@use '../core/mixin/focus' as mix;
-@use '../core/mixin/rem';
+@use "../core/mixin/focus" as mix;
+@use "../core/mixin/rem";
+@use "../button/button-shared";
+@use "../button/button";
 
 .rds-field-set {
   border: none;
@@ -12,6 +14,9 @@
 }
 
 .rds-radio-toggle {
+  @extend .rds-button__shared;
+  @extend .rds-button;
+  @extend .rds-button__shared--tertiary;
   // button reset
   padding: 0;
   background-color: var(--rds-foreground-overlay-soft);

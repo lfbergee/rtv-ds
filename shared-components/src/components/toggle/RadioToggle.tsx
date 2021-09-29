@@ -13,7 +13,7 @@ export const RadioToggleInput = forwardRef<HTMLInputElement, RadioToggleInputPro
   ({ label, name, className = "", ...rest }, ref) => {
     const { radioName } = useContext(RadioContext);
     return (
-      <label className={`rds-radio-toggle rds-button rds-button__shared rds-button__shared--primary  ${className}`}>
+      <label className={`rds-radio-toggle ${className}`}>
         <input className="rds-radio-toggle__input" {...rest} ref={ref} type="radio" name={radioName || name} />
         <span className="rds-radio-toggle__label">{label}</span>
       </label>
