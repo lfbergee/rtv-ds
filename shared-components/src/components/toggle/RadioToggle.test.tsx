@@ -14,9 +14,7 @@ brands.forEach((brand) => {
     );
     cy.get("fieldset").should("have.class", "rds-field-set");
     cy.get("legend").should("have.class", "rds-field-set__legend");
-    cy.get("label")
-      .first()
-      .should("have.class", "rds-radio-toggle rds-button rds-button__shared rds-button__shared--primary");
+    cy.get("label").first().should("have.class", "rds-radio-toggle");
     cy.get("input").first().should("have.class", "rds-radio-toggle__input");
     cy.get("input").first().should("have.attr", "name", "fields");
     cy.get("input").last().should("have.attr", "name", "fields");
