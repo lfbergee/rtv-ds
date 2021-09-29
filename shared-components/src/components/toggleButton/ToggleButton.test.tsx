@@ -37,11 +37,7 @@ brands.forEach((brand) => {
   });
 
   it(`Should render ToggleButton with id`, () => {
-    customMount(brand)(
-      <ToggleButton id="hest" showLabel={false}>
-        Hello world
-      </ToggleButton>
-    );
+    customMount(brand)(<ToggleButton id="hest">Hello world</ToggleButton>);
     cy.findByRole("checkbox").should("have.id", "hest").should("not.be.checked");
     cy.findByTestId("toggle-button__label").click();
     cy.findByTestId("toggle-button__label__text").contains("Hello world");
@@ -57,11 +53,7 @@ brands.forEach((brand) => {
       called = true;
       return false;
     };
-    customMount(brand)(
-      <ToggleButton onChange={changeFn} showLabel={false}>
-        Hello world
-      </ToggleButton>
-    );
+    customMount(brand)(<ToggleButton onChange={changeFn}>Hello world</ToggleButton>);
     cy.findByRole("checkbox").should("have.class", "rds-toggle-button__input").should("not.be.checked");
     cy.findByTestId("toggle-button__label").click();
     cy.findByTestId("toggle-button__label__text").contains("Hello world");
