@@ -7,6 +7,17 @@ Hvis du har mer enn en toggle i samme view anbefales det å spesifikt sette id p
 <ToggleButton>Direkte</ToggleButton>
 ```
 
+Hvis du ønsker å bruke komponenten ukontrollert, men ha en start state, bruk defaultChecked-propen.
+
+```tsx render=true
+<ToggleButton
+  id="toggle-default"
+  defaultChecked
+>
+  Direkte
+</ToggleButton>
+```
+
 Det er to måter å sette ikon, du kan enten la en toggleIcon, som tar inn `checked` som prop og render riktig basert på det. 
 Denne måten er å foretrekke hvis man kan animere mellom to states i samme ikon.
 
@@ -28,16 +39,6 @@ Eller du kan gi et checked-ikon og et unchecked.
   icons={{ checkedIcon: Heart, uncheckedIcon: HeartUnfilled }}
 >
   Favoritt
-</ToggleButton>
-```
-
-```tsx render=true
-<ToggleButton
-  id="number"
-  showLabel={false}
-  number={12}
->
-  Antall
 </ToggleButton>
 ```
 
