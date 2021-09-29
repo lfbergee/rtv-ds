@@ -4,7 +4,7 @@
 
 ### 🐛 Bug Fixes
 
-- Add wrapper component to togglebutton
+- Add a wrapping <div> to togglebutton
 - Remove number option from togglebutton
 - Handle defaultChecked value
 
