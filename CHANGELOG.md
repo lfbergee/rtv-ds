@@ -1,5 +1,11 @@
 # 📖 Change Log
 
+## 0.6.9
+
+### 🤷 Description
+
+- Add TextField
+
 ## 0.6.8
 
 ### 🤷 Description

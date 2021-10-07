@@ -8,6 +8,7 @@ const Spacing = lazy(() => import("@rikstv/shared-components/src/components/core
 const Colors = lazy(() => import("@rikstv/shared-components/src/components/core/colors.mdx"));
 const Button = lazy(() => import("@rikstv/shared-components/src/components/button/button.mdx"));
 const IconButton = lazy(() => import("@rikstv/shared-components/src/components/button/iconButton.mdx"));
+const TextField = lazy(() => import("@rikstv/shared-components/src/components/textfield/textfield.mdx"));
 const RadioToggle = lazy(() => import("@rikstv/shared-components/src/components/toggle/radioToggle.mdx"));
 const Typography = lazy(() => import("@rikstv/shared-components/src/components/typography/typography.mdx"));
 const ToggleButton = lazy(() => import("@rikstv/shared-components/src/components/toggleButton/toggleButton.mdx"));
@@ -15,6 +16,7 @@ const ToggleButton = lazy(() => import("@rikstv/shared-components/src/components
 // Types
 const buttonType: LazyImportedTypes = import("../../../shared-components/src/components/button/Button?type");
 const iconButtonType: LazyImportedTypes = import("../../../shared-components/src/components/button/IconButton?type");
+const textFieldType: LazyImportedTypes = import("../../../shared-components/src/components/textfield/TextField?type");
 const toggleButtonType: LazyImportedTypes = import(
   "../../../shared-components/src/components/toggleButton/ToggleButton?type"
 );
@@ -22,7 +24,7 @@ const radioToggleType: LazyImportedTypes = import("../../../shared-components/sr
 const fieldSetType: LazyImportedTypes = import("../../../shared-components/src/components/toggle/FieldSet?type");
 const typographyType: LazyImportedTypes = import(
   "../../../shared-components/src/components/typography/Typography?type"
-  );
+);
 const accordionType: LazyImportedTypes = import("../../../shared-components/src/components/accordion/Accordion?type");
 
 // if more than one type is needed to show types in example
@@ -37,4 +39,5 @@ export const components = [
   makeComponent("colors", Colors),
   makeComponent("typografi", Typography, typographyType),
   makeComponent("accordion", Accordion, accordionType),
+  makeComponent("textfield", TextField, textFieldType),
 ].sort((a, b) => a.displayName.localeCompare(b.displayName));
