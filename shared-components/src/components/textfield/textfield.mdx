@@ -1,0 +1,83 @@
+# Input med label
+
+```tsx live=true
+<TextField type="email" name="epost" label="E-post" />
+```
+
+# Med error message
+
+```tsx live=true
+<TextField type="email" name="epost" label="E-post" error="Feil e-post!" />
+```
+
+# Lys bakgrunn
+
+Denne er kun implementert for Strim per nå.
+
+```tsx live=true
+<LightMode
+  style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <TextField name="epost" type="email" label="E-post" />
+</LightMode>
+```
+
+Med lightBackground attribut
+
+```tsx live=true
+<div
+  style={{
+    backgroundColor: "var(--surface-background)",
+    padding: "var(--rds-spacing--32)",
+    borderRadius: "var(--rds-roundness--default)",
+  }}
+>
+  <TextField name="epost" label="E-post" lightBackground />
+</div>
+```
+
+## Controlled component
+
+Hvis du ønsker å bruke komponenten direkte som en kontrollert komponent kan det gjøres
+ved å gi hver `Textfield` en `onChange` handler.
+
+```tsx
+const [value, setValue] = useState("");
+
+const changeValue = (e) => {
+  setValue(e.target.value);
+};
+
+return <TextField name="controlled-textfield" label="Brukernavn" onChange={changeValue}></TextField>;
+```
+
+## Uncontrolled component
+
+Den kan også brukes som en ukontrollert komponent. Du kan gi referanse til TextField.
+
+```tsx
+const targetRef = useRef(null);
+
+return <TextField type="email" label="E-post" error="Feil epost!" ref={targetRef} />;
+```
+
+## Uncontrolled with react-hook-form
+
+Den kan brukes sammen med et form-bibliotek som `react-hook-form`.
+Da register du hvert enkelt TextField med register funksjonen.
+
+```tsx
+const { register, handleSubmit } = useForm();
+const onSubmit = (data) => console.log(data);
+
+return (
+  <form onSubmit={handleSubmit(onSubmit)}>
+    <TextField {...register(email-input)} type="email" label="E-post" />
+    <PrimaryButton type="submit">Send inn</PrimaryButton>
+  </form>
+);
+```
