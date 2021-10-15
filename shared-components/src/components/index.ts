@@ -8,5 +8,6 @@ export { PrimaryIconButton, SecondaryIconButton, TertiaryIconButton } from "./bu
 export { ToggleButton } from "./toggleButton/ToggleButton";
 export { RadioToggleInput } from "./toggle/RadioToggle";
 export { FieldSet } from "./toggle/FieldSet";
+export { Checkbox } from "./checkbox/Checkbox";
 
 export { DisplayTitle, H1, H2, H3, H4, Body, Bold, SubBody, Tag, Meta } from "./typography/Typography";

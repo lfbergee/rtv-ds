@@ -1,0 +1,22 @@
+@use "../typography/typography.scss";
+
+.rds-form-group {
+  .rds-checkbox {
+    &--input {
+      display: none;
+      &:checked + label {
+        background-image: url(./icons/checkBoxCheckedStrimYellow.svg);
+      }
+    }
+
+    &--label {
+      @extend .rds-bold;
+      cursor: pointer;
+      padding-left: 2em;
+      background-image: url(./icons/checkBoxStrimYellow.svg);
+      background-position: left center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+    }
+  }
+}
