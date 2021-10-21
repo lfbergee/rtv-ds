@@ -1,5 +1,5 @@
-@use '../core/mixin/fluid';
-@use '../core/mixin/focus';
+@use "../core/mixin/fluid";
+@use "../core/mixin/focus";
 
 .rds-link {
   font-family: inherit;
@@ -116,6 +116,13 @@
     color: var(--rds-foreground-tertiary);
   }
   &:active {
+    text-shadow: 0px 0px 1px var(--rds-background-primary);
+  }
+  &:visited {
+    color: var(--rds-background-primary);
+  }
+  &--active,
+  &[aria-current="page"] {
     text-shadow: 0px 0px 1px var(--rds-background-primary);
   }
 }
