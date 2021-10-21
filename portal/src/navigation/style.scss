@@ -1,4 +1,4 @@
-@use '../../../shared-components/src/components/core/mixin/focus' as mix;
+@use "../../../shared-components/src/components/core/mixin/focus" as mix;
 
 .portal-navigation {
   &__toggle {
@@ -25,37 +25,13 @@
     &__item {
       list-style: none;
       margin-bottom: 16px;
-      color: var(--rds-background-primary);
 
       & > button {
         margin-top: var(--rds-spacing--16);
       }
 
-      & a::first-letter {
+      &::first-letter {
         text-transform: uppercase;
-      }
-
-      & a:visited {
-        color: var(--rds-background-primary);
-      }
-
-      & .active {
-        position: relative;
-
-        &::before {
-          content: "";
-          position: absolute;
-          left: -16px;
-          top: calc(50% - 3px);
-          height: 6px;
-          width: 6px;
-          border-radius: 50%;
-          background-color: var(--rds-background-primary);
-        }
-      }
-      & a {
-        border-radius: var(--rds-spacing--2);
-        @include mix.with-keyboard-focus;
       }
     }
   }

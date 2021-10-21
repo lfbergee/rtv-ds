@@ -1,5 +1,11 @@
 # 📖 Change Log
 
+## 0.6.8
+
+### 🤷 Description
+
+- Improve links in light mode
+
 ## 0.6.7
 
 ### 🤷 Description
