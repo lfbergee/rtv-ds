@@ -1,5 +1,5 @@
 import { FC, Suspense, useState } from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { MDXProvider } from "@mdx-js/react";
 import { Core } from "@rikstv/shared-components/src/components/core/Core";
 
@@ -18,21 +18,21 @@ export const App: FC = () => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <Core brand={theme}>
-        <HashRouter basename="rtv-ds">
+        <HashRouter>
           <div className="portal-layout">
             <Header />
             <Navigation />
             <main>
               <Suspense fallback="Laster innhold">
                 <MDXProvider components={mdxComponents}>
-                  <Switch>
+                  <Routes>
                     {allPages.map((page) => (
-                      <Route key={page.path} {...page} exact />
+                      <Route key={page.path} {...page} />
                     ))}
                     {components.map(({ displayName, Page }) => (
-                      <Route key={displayName} path={`/${displayName.replace(" ", "-")}`} exact component={Page} />
+                      <Route key={displayName} path={`/${displayName.replace(" ", "-")}`} element={<Page />} />
                     ))}
-                  </Switch>
+                  </Routes>
                 </MDXProvider>
               </Suspense>
             </main>
