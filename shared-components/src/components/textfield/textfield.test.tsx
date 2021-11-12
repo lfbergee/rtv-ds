@@ -4,10 +4,7 @@ import { TextField } from "./TextField";
 import "./textfield.scss";
 
 brands.forEach((brand) => {
-  it(`Should have xxx`, () => {
-    const now = new Date(2021, 11, 5).getTime(); // We set the time so we know what Id will be generated from generateId()
-    cy.clock(now);
-
+  it(`Should have have working text field for ${brand}`, () => {
     customMount(brand)(
       <>
         <TextField name="username" className="username-input-class" id="username-input" label="Username" />
@@ -30,7 +27,6 @@ brands.forEach((brand) => {
 
     cy.get("div").should("have.class", "rds-form-group").and("have.class", "password-input-class");
     cy.get("input").last().should("have.class", "rds-textfield").and("have.class", "rds-textfield--input");
-    cy.get("input").last().should("have.id", "1638658800000");
     cy.get("input").last().should("have.attr", "name", "password");
     cy.get("input").last().should("have.attr", "placeholder", "Password");
     cy.get("input").last().should("have.attr", "type", "password");
