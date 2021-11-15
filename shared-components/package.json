@@ -1,6 +1,6 @@
 {
   "name": "@rikstv/shared-components",
-  "version": "0.6.9",
+  "version": "0.6.10",
   "publishConfig": {
     "access": "public"
   },
@@ -17,7 +17,7 @@
   "browser": "./dist/shared-components.es.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
+    "build": "tsc src/*.ts* && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
     "serve": "vite preview",
     "test": "cypress run-ct",
     "test:open": "cypress open-ct"

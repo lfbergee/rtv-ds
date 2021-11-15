@@ -6,7 +6,7 @@
     "dev": "vite --host",
     "dev:clean": "vite --force",
     "build": "vite build -l info",
-    "typecheck": "tsc",
+    "typecheck": "tsc src/*.ts*",
     "serve": "vite preview"
   },
   "dependencies": {

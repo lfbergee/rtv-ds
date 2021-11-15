@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, forwardRef, InputHTMLAttributes } from "react";
-import { SubBody } from "..";
+import { SubBody } from "../typography/Typography";
 import { generateId } from "../core/utils/generateId";
 
 import "./textfield.scss";
