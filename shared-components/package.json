@@ -33,7 +33,7 @@
   "devDependencies": {
     "@cypress/react": "^5.10.3",
     "@cypress/vite-dev-server": "^2.2.0",
-    "@testing-library/cypress": "^8.0.1",
+    "@testing-library/cypress": "^8.0.2",
     "react-hook-form": "^7.19.5",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-svg": "^2.0.0",
