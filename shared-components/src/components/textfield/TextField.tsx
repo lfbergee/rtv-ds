@@ -51,17 +51,17 @@ export const TextField = forwardRef<
           aria-describedby={error ? errorTextId : undefined}
           {...props}
         />
-        {error && (
-          <SubBody id={errorTextId} className="rds-textfield--error-text">
-            {error}
-          </SubBody>
-        )}
         <label
           htmlFor={generatedId}
           className={`rds-textfield rds-textfield--label ${labelClass} ${lightBackground ? "rds-light" : ""}`}
         >
           <span>{label}</span>
         </label>
+        {error && (
+          <SubBody id={errorTextId} className="rds-textfield--error-text">
+            {error}
+          </SubBody>
+        )}
       </div>
     );
   }
