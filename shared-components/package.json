@@ -1,6 +1,6 @@
 {
   "name": "@rikstv/shared-components",
-  "version": "0.6.7",
+  "version": "0.6.10",
   "publishConfig": {
     "access": "public"
   },
@@ -17,7 +17,7 @@
   "browser": "./dist/shared-components.es.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
+    "build": "tsc src/*.ts* && vite build && tsc src/components/index.ts --declaration --emitDeclarationOnly --jsx react-jsx --esModuleInterop --outDir dist",
     "serve": "vite preview",
     "test": "cypress run-ct",
     "test:open": "cypress open-ct"
@@ -31,10 +31,10 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@cypress/react": "^5.10.1",
-    "@cypress/vite-dev-server": "^2.1.1",
+    "@cypress/react": "^5.10.3",
+    "@cypress/vite-dev-server": "^2.2.0",
     "@testing-library/cypress": "^8.0.1",
-    "react-hook-form": "^7.17.2",
+    "react-hook-form": "^7.19.5",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-svg": "^2.0.0",
     "vite-plugin-react-svg": "^0.2.0"

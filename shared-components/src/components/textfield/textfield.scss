@@ -1,0 +1,101 @@
+@use "../typography/typography.scss";
+@use "../core/mixin/focus" as mix;
+@use "../core/mixin/rem";
+
+.rds-form-group {
+  --input-color: var(--rds-foreground-primary);
+  --input-label-color: var(--rds-foreground-secondary);
+  --input-border-color: var(--rds-foreground-primary);
+  --input-error-color: var(--rds-feedback-error);
+  --input-bg: var(--rds-background-primary);
+
+  .rds-textfield {
+    &--input {
+      border: 1px solid var(--input-border-color);
+      background-color: var(--input-border-bg);
+      color: var(--input-color);
+      border-radius: 2px;
+
+      height: 3rem;
+      width: 100%;
+      max-width: 500px;
+      padding: 0 var(--rds-spacing--8);
+
+      &--full-width {
+        max-width: unset;
+      }
+
+      &::placeholder {
+        opacity: 0;
+      }
+
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        display: none;
+      }
+
+      &:-webkit-autofill {
+        box-shadow: 0 0 0 30px var(--rds-background-primary) inset;
+        -webkit-box-shadow: 0 0 0 30px var(--rds-background-primary) inset;
+        -webkit-text-fill-color: var(--rds-foreground-primary);
+      }
+    }
+
+    &--label {
+      cursor: text;
+      background-color: var(--input-bg);
+      position: absolute;
+      padding: 0 8px;
+      top: 50%;
+      left: var(--rds-spacing--4);
+      transform: translateY(-50%);
+      transition: 0.2s ease-in-out;
+      transition-property: top, font-size;
+
+      span {
+        @extend .rds-bold;
+        font-size: rem.convert(18px);
+        color: var(--input-label-color);
+      }
+    }
+
+    &--error-text {
+      color: var(--input-error-color);
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      position: absolute;
+    }
+
+    @include mix.with-keyboard-focus;
+  }
+}
+
+.rds-form-group {
+  position: relative;
+
+  &:focus-within {
+    .rds-textfield--label {
+      top: 0;
+      font-size: 1rem;
+    }
+  }
+
+  input:not(:placeholder-shown) + label {
+    top: 0;
+    font-size: 1rem;
+  }
+}
+
+.rds-light {
+  .rds-textfield,
+  &.rds-textfield {
+    --input-color: var(--rds-button-primary-fg);
+    --input-border-color: var(--rds-button-primary-fg);
+    --input-bg: var(--surface-background);
+    &--label {
+      span {
+        --input-label-color: var(--rds-background-primary);
+      }
+    }
+  }
+}

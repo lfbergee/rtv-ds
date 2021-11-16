@@ -1,5 +1,23 @@
 # 📖 Change Log
 
+## 0.6.10
+
+### 🤷 Description
+
+- Fix build of TextField
+
+## 0.6.9
+
+### 🤷 Description
+
+- Add TextField
+
+## 0.6.8
+
+### 🤷 Description
+
+- Improve links in light mode
+
 ## 0.6.7
 
 ### 🤷 Description

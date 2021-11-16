@@ -47,6 +47,7 @@ export const Navigation: FC = () => {
           {documentationPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
               <NavLink
+                className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
                 exact
@@ -71,6 +72,7 @@ export const Navigation: FC = () => {
           {componentPages.map((page) => (
             <li key={page.path} className="portal-navigation__list__item">
               <NavLink
+                className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
                 exact
@@ -83,6 +85,7 @@ export const Navigation: FC = () => {
           {filteredComponents.map(({ displayName }) => (
             <li key={displayName} className="portal-navigation__list__item">
               <NavLink
+                className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
                 exact
