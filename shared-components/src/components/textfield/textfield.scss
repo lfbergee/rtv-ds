@@ -8,6 +8,7 @@
   --input-border-color: var(--rds-foreground-primary);
   --input-error-color: var(--rds-feedback-error);
   --input-bg: var(--rds-background-primary);
+  position: relative;
 
   .rds-textfield {
     &--input {
@@ -40,7 +41,6 @@
 
       &:-webkit-autofill {
         box-shadow: 0 0 0 30px var(--input-bg) inset;
-        -webkit-box-shadow: 0 0 0 30px var(--input-bg) inset;
         -webkit-text-fill-color: var(--input-color);
       }
     }
@@ -72,10 +72,6 @@
 
     @include mix.with-keyboard-focus;
   }
-}
-
-.rds-form-group {
-  position: relative;
 
   &:focus-within {
     .rds-textfield--label {
@@ -84,8 +80,8 @@
     }
   }
 
-  input:not(:placeholder-shown) + label {
-    top: 0px;
+  .rds-textfield--input:not(:placeholder-shown) + label {
+    top: 0;
     font-size: 1rem;
   }
 }
@@ -102,5 +98,11 @@
         --input-label-color: var(--rds-background-primary);
       }
     }
+  }
+}
+
+.rds-white {
+  &.rds-textfield {
+    --input-bg: var(--rds-foreground-primary);
   }
 }

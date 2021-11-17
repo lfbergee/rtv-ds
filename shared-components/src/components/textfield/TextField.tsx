@@ -13,7 +13,8 @@ export const TextField = forwardRef<
     name: string;
     label: string;
     fullWidth?: boolean;
-    lightBackground?: boolean;
+    lightBackground?: boolean | "white";
+    whiteBackground?: boolean;
     labelClass?: string;
     error?: string | null | false;
   }
@@ -34,6 +35,7 @@ export const TextField = forwardRef<
   ) => {
     const errorTextId = generateId();
     const generatedId = generateId(id);
+    const useWhiteBackground = lightBackground === "white";
 
     return (
       <div className={`rds-form-group ${className}`}>
@@ -45,6 +47,7 @@ export const TextField = forwardRef<
         rds-textfield--input ${error ? "rds-textfield--input--error" : ""} ${
             fullWidth ? "rds-textfield--input--full-width" : ""
           } ${lightBackground ? "rds-light" : ""}
+          ${useWhiteBackground ? "rds-white" : ""}
         `}
           type={type}
           placeholder={label}
@@ -53,7 +56,9 @@ export const TextField = forwardRef<
         />
         <label
           htmlFor={generatedId}
-          className={`rds-textfield rds-textfield--label ${labelClass} ${lightBackground ? "rds-light" : ""}`}
+          className={`rds-textfield rds-textfield--label ${labelClass} ${lightBackground ? "rds-light" : ""} ${
+            useWhiteBackground ? "rds-white" : ""
+          }`}
         >
           <span>{label}</span>
         </label>
