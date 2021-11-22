@@ -3,18 +3,18 @@
 @use "../core/mixin/rem";
 
 .rds-form-group {
-  --input-color: var(--rds-foreground-primary);
-  --input-label-color: var(--rds-foreground-secondary);
-  --input-border-color: var(--rds-foreground-primary);
-  --input-error-color: var(--rds-feedback-error);
-  --input-bg: var(--rds-background-primary);
+  --textfield-color: var(--rds-foreground-primary);
+  --textfield-label-color: var(--rds-foreground-secondary);
+  --textfield-border-color: var(--rds-foreground-primary);
+  --textfield-error-color: var(--rds-feedback-error);
+  --textfield-bg: var(--rds-background-primary);
   position: relative;
 
   .rds-textfield {
     &--input {
-      border: 1px solid var(--input-border-color);
+      border: 1px solid var(--textfield-border-color);
       background-color: var(--input-border-bg);
-      color: var(--input-color);
+      color: var(--textfield-color);
       border-radius: 2px;
 
       height: 3rem;
@@ -40,14 +40,14 @@
       }
 
       &:-webkit-autofill {
-        box-shadow: 0 0 0 30px var(--input-bg) inset;
-        -webkit-text-fill-color: var(--input-color);
+        box-shadow: 0 0 0 30px var(--textfield-bg) inset;
+        -webkit-text-fill-color: var(--textfield-color);
       }
     }
 
     &--label {
       cursor: text;
-      background-color: var(--input-bg);
+      background-color: var(--textfield-bg);
       position: absolute;
       padding: 0 8px;
       top: 50%;
@@ -59,12 +59,12 @@
       span {
         @extend .rds-body;
         font-size: rem.convert(18px);
-        color: var(--input-label-color);
+        color: var(--textfield-label-color);
       }
     }
 
     &--error-text {
-      color: var(--rds-feedback-error);
+      color: var(--textfield-error-color);
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       position: absolute;
@@ -89,13 +89,13 @@
 .rds-light {
   .rds-textfield,
   &.rds-textfield {
-    --input-color: var(--rds-button-primary-fg);
-    --input-border-color: var(--rds-button-primary-fg);
-    --input-bg: var(--surface-background);
+    --textfield-color: var(--rds-button-primary-fg);
+    --textfield-border-color: var(--rds-button-primary-fg);
+    --textfield-bg: var(--surface-background);
 
     &--label {
       span {
-        --input-label-color: var(--rds-background-primary);
+        --textfield-label-color: var(--rds-background-primary);
       }
     }
   }
@@ -103,6 +103,6 @@
 
 .rds-white {
   &.rds-textfield {
-    --input-bg: var(--rds-foreground-primary);
+    --textfield-bg: var(--rds-foreground-primary);
   }
 }
