@@ -1,14 +1,45 @@
 @use "../typography/typography.scss";
 
 .rds-form-group {
-  --svg-checkbox: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiIGZpbGw9IiNmYWVkNmYiPgogICAgICAgIDxwYXRoIGQ9Ik0xOSw1IEwxOSwxOSBMNSwxOSBMNSw1IEwxOSw1IFogTTE5LDMgTDUsMyBDMy45LDMgMywzLjkgMyw1IEwzLDE5IEMzLDIwLjEgMy45LDIxIDUsMjEgTDE5LDIxIEMyMC4xLDIxIDIxLDIwLjEgMjEsMTkgTDIxLDUgQzIxLDMuOSAyMC4xLDMgMTksMyBaIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
-  --svg-checkbox-checked: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCkiPgogICAgICAgIDxwb2x5Z29uIHBvaW50cz0iMCAwIDI0IDAgMjQgMjQgMCAyNCI+PC9wb2x5Z29uPgogICAgICAgIDxwYXRoIGZpbGw9IiNmYWVkNmYiIGQ9Ik0xOSwzIEw1LDMgQzMuODksMyAzLDMuOSAzLDUgTDMsMTkgQzMsMjAuMSAzLjg5LDIxIDUsMjEgTDE5LDIxIEMyMC4xMSwyMSAyMSwyMC4xIDIxLDE5IEwyMSw1IEMyMSwzLjkgMjAuMTEsMyAxOSwzIFogTTEwLDE3IEw1LDEyIEw2LjQxLDEwLjU5IEwxMCwxNC4xNyBMMTcuNTksNi41OCBMMTksOCBMMTAsMTcgWiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=);
+  --checkbox-border-color: var(--rds-accent-color);
+  --checkbox-background-color: var(--rds-background-primary);
+  --checkbox-checkmark-color: var(--rds-background-primary);
 
   .rds-checkbox {
     &--input {
-      display: none;
-      &:checked + label {
-        background-image: var(--svg-checkbox-checked);
+      appearance: none;
+      background-color: var(--checkbox-background-color);
+      margin: 0;
+      font: inherit;
+      color: currentColor;
+      width: 1.25em;
+      height: 1.25em;
+      border: 0.15em solid var(--checkbox-border-color);
+      border-radius: 0.15em;
+      transform: translateY(-0.075em);
+
+      display: grid;
+      place-content: center;
+
+      &::before {
+        content: "";
+        width: 0.85rem; //Borde vara i relation till storlek?
+        height: 0.85rem;
+        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        //clip-path: path('M17.4284 0.384404C17.7684 0.621009 17.8522 1.08843 17.6156 1.42842C17.4634 1.6471 14.4837 5.62335 11.5642 9.5159C10.0995 11.4687 8.64381 13.4087 7.55424 14.8605L5.74175 17.2752C5.74175 17.2752 5.74122 17.2759 5.14144 16.8256L5.74175 17.2752C5.60891 17.4521 5.40418 17.5621 5.18325 17.5744C4.96233 17.5868 4.74724 17.5009 4.59552 17.3399L0.454082 12.9436C0.173254 12.6454 0.183501 12.1772 0.477101 11.8916C0.770701 11.6061 1.23908 11.6089 1.52926 11.8979L1.70508 12.073C1.73726 12.1051 1.76592 12.1393 1.79107 12.1753L5.07647 15.6629L6.35453 13.9601C7.44405 12.5083 8.89969 10.5685 10.3642 8.61588C11.8287 6.66324 13.302 4.69801 14.4269 3.1955C14.9893 2.4442 15.4645 1.80886 15.8078 1.34872C15.9795 1.11859 16.1179 0.932717 16.2176 0.798231C16.2675 0.730925 16.3073 0.677067 16.3366 0.637225L16.3715 0.589469C16.3811 0.576327 16.3844 0.571594 16.3844 0.571594C16.621 0.231608 17.0884 0.1478 17.4284 0.384404Z');
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--checkbox-checkmark-color); // Why doesn't it work?
+        /* Windows High Contrast Mode */
+        background-color: CanvasText;
+      }
+
+      &:checked {
+        --checkbox-background-color: var(--rds-accent-color);
+        &::before {
+          transform: scale(1);
+        }
       }
     }
 
@@ -16,24 +47,7 @@
       @extend .rds-bold;
       user-select: none;
       cursor: pointer;
-      padding-left: 2em;
-      background-image: var(--svg-checkbox);
-      background-position: left center;
-      background-repeat: no-repeat;
-      background-size: auto 100%;
-    }
-  }
-}
-
-.rds-light {
-  .rds-checkbox,
-  &.rds-checkbox {
-    &--label {
-      --svg-checkbox: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4KPHN2ZyB3aWR0aD0nMThweCcgaGVpZ2h0PScxOHB4JyB2aWV3Qm94PScwIDAgMTggMTgnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+CiAgICA8ZyB0cmFuc2Zvcm09J3RyYW5zbGF0ZSgtMy4wMDAwMDAsIC0zLjAwMDAwMCknIGZpbGw9JyMwMDJBMkEnPgogICAgICAgIDxwYXRoIGQ9J00xOSw1IEwxOSwxOSBMNSwxOSBMNSw1IEwxOSw1IFogTTE5LDMgTDUsMyBDMy45LDMgMywzLjkgMyw1IEwzLDE5IEMzLDIwLjEgMy45LDIxIDUsMjEgTDE5LDIxIEMyMC4xLDIxIDIxLDIwLjEgMjEsMTkgTDIxLDUgQzIxLDMuOSAyMC4xLDMgMTksMyBaJz48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==);
-    }
-
-    &--input:checked + label {
-      background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMThweCIgaGVpZ2h0PSIxOHB4IiB2aWV3Qm94PSIwIDAgMTggMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyAgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTMuMDAwMDAwLCAtMy4wMDAwMDApIj4KICAgICAgICA8cG9seWdvbiBwb2ludHM9IjAgMCAyNCAwIDI0IDI0IDAgMjQiIGZpbGw9InRyYW5zcGFyZW50Ij48L3BvbHlnb24+CiAgICAgICAgPHBhdGggIGZpbGw9IiMwMDJBMkEiIGQ9Ik0xOSwzIEw1LDMgQzMuODksMyAzLDMuOSAzLDUgTDMsMTkgQzMsMjAuMSAzLjg5LDIxIDUsMjEgTDE5LDIxIEMyMC4xMSwyMSAyMSwyMC4xIDIxLDE5IEwyMSw1IEMyMSwzLjkgMjAuMTEsMyAxOSwzIFogTTEwLDE3IEw1LDEyIEw2LjQxLDEwLjU5IEwxMCwxNC4xNyBMMTcuNTksNi41OCBMMTksOCBMMTAsMTcgWiI+PC9wYXRoPgogICAgPC9nPgo8L3N2Zz4=);
+      padding-left: 0.5rem;
     }
   }
 }
