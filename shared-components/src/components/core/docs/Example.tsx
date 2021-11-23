@@ -46,7 +46,6 @@ export const Colors: FC = () => (
       <ColorSwatch color="--rds-feedback-info" />
       <ColorSwatch color="--rds-feedback-warning" />
       <ColorSwatch color="--rds-feedback-confirm" />
-      <ColorSwatch color="--rds-feedback-error" />
       <ColorSwatch color="--rds-feedback-error-text" />
       <ColorSwatch color="--rds-feedback-error-object" />
     </ExampleGrid>
