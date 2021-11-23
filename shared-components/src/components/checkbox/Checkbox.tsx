@@ -17,7 +17,7 @@ export const Checkbox = forwardRef<HTMLInputElement, Props>(
     const internalId = generateId(id);
 
     return (
-      <div className="rds-form-group">
+      <div className="rds-form-group-box">
         <input
           ref={ref}
           className={`

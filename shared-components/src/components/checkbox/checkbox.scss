@@ -1,13 +1,19 @@
 @use "../typography/typography.scss";
 
-.rds-form-group {
+.rds-form-group-box {
   --checkbox-border-color: var(--rds-accent-color);
-  --checkbox-background-color: var(--rds-background-primary);
+  --checkbox-background-color: transparent;
   --checkbox-checkmark-color: var(--rds-background-primary);
+
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 0.75em;
+  align-items: center;
 
   .rds-checkbox {
     &--input {
       appearance: none;
+      cursor: pointer;
       background-color: var(--checkbox-background-color);
       margin: 0;
       font: inherit;
@@ -26,13 +32,12 @@
         width: 0.85rem; //Borde vara i relation till storlek?
         height: 0.85rem;
         clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-        //clip-path: path('M17.4284 0.384404C17.7684 0.621009 17.8522 1.08843 17.6156 1.42842C17.4634 1.6471 14.4837 5.62335 11.5642 9.5159C10.0995 11.4687 8.64381 13.4087 7.55424 14.8605L5.74175 17.2752C5.74175 17.2752 5.74122 17.2759 5.14144 16.8256L5.74175 17.2752C5.60891 17.4521 5.40418 17.5621 5.18325 17.5744C4.96233 17.5868 4.74724 17.5009 4.59552 17.3399L0.454082 12.9436C0.173254 12.6454 0.183501 12.1772 0.477101 11.8916C0.770701 11.6061 1.23908 11.6089 1.52926 11.8979L1.70508 12.073C1.73726 12.1051 1.76592 12.1393 1.79107 12.1753L5.07647 15.6629L6.35453 13.9601C7.44405 12.5083 8.89969 10.5685 10.3642 8.61588C11.8287 6.66324 13.302 4.69801 14.4269 3.1955C14.9893 2.4442 15.4645 1.80886 15.8078 1.34872C15.9795 1.11859 16.1179 0.932717 16.2176 0.798231C16.2675 0.730925 16.3073 0.677067 16.3366 0.637225L16.3715 0.589469C16.3811 0.576327 16.3844 0.571594 16.3844 0.571594C16.621 0.231608 17.0884 0.1478 17.4284 0.384404Z');
+        //clip-path: polygon(5.77% 12.98%, 0.39% 7.60%, 0.39% 5.72%, 2.27% 5.72%, 6.12% 9.56%, 15.29% 0.39%, 17.18% 0.39%, 17.18% 2.27%, 6.46% 12.98%, 5.77% 12.98%);
         transform: scale(0);
         transform-origin: bottom left;
         transition: 120ms transform ease-in-out;
-        box-shadow: inset 1em 1em var(--checkbox-checkmark-color); // Why doesn't it work?
         /* Windows High Contrast Mode */
-        background-color: CanvasText;
+        background-color: var(--checkbox-checkmark-color);
       }
 
       &:checked {
@@ -47,7 +52,20 @@
       @extend .rds-bold;
       user-select: none;
       cursor: pointer;
-      padding-left: 0.5rem;
+    }
+  }
+}
+
+.rds-light {
+  .rds-form-group-box,
+  &.rds-form-group-box {
+    --checkbox-border-color: var(--rds-button-primary-fg);
+    --checkbox-checkmark-color: var(--surface-background);
+
+    .rds-checkbox--input {
+      &:checked {
+        --checkbox-background-color: var(--rds-button-primary-fg);
+      }
     }
   }
 }
