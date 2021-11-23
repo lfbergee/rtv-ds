@@ -4,7 +4,7 @@
 
 ### 🤷 Description
 
-- Adds new feedback colors for Strim and RiksTV
+- Adds new feedback colors for Strim and RiksTV. The "rds-feedback-error" color is now deprecated.
 
 ## 0.6.10
 
