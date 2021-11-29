@@ -36,7 +36,10 @@
   --rds-feedback-info: #00aec7;
   --rds-feedback-warning: #f2a900;
   --rds-feedback-confirm: #4cbb81;
+  // --rds-feedback-error is deprecated and should not be used
   --rds-feedback-error: #e01c17;
+  --rds-feedback-error-text: #f17774;
+  --rds-feedback-error-object: #e01c17;
 
   --rds-roundness--default: 4px;
   --rds-roundness--button: 34px;
