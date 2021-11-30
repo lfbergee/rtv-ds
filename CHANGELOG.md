@@ -1,5 +1,19 @@
 # 📖 Change Log
 
+## 0.7.0
+
+### 💥 BREAKING CHANGES 💥
+
+- Supply style as a single file, no longer splitting css files into each component, se reasoning [here](https://github.com/lfbergee/rtv-ds/issues/278)
+
+#### 👉 Migration 👈
+1. Import or preload `import "@rikstv/shared-components/dist/style.css"` early in your app or in root html file
+1. Remove all import of spesific `.css` files
+
+or:
+
+1. Change import from `.css` to `.scss`, also the naming convention of sass files differs from css, so every import must be updated
+
 ## 0.6.11
 
 ### 🤷 Description

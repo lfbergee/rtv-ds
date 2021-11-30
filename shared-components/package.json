@@ -1,6 +1,6 @@
 {
   "name": "@rikstv/shared-components",
-  "version": "0.6.11",
+  "version": "0.7.0",
   "publishConfig": {
     "access": "public"
   },
@@ -27,7 +27,7 @@
     "url": "git+https://github.com/lfbergee/rtv-ds.git"
   },
   "bugs": {
-    "url": "https://github.com/fremtind/lfbergee/rtv-ds/issues"
+    "url": "https://github.com/lfbergee/rtv-ds/issues"
   },
   "dependencies": {},
   "devDependencies": {

@@ -50,7 +50,6 @@ export const Navigation: FC = () => {
                 className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
-                exact
                 to={page.path.replace(" ", "-")}
               >
                 {page.name}
@@ -75,7 +74,6 @@ export const Navigation: FC = () => {
                 className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
-                exact
                 to={page.path.replace(" ", "-")}
               >
                 {page.name}
@@ -88,7 +86,6 @@ export const Navigation: FC = () => {
                 className="rds-link rds-link--light"
                 tabIndex={isSmallScreen && !showMenu ? -1 : 0}
                 onClick={closeMenu}
-                exact
                 to={`/${displayName.replace(" ", "-")}`}
               >
                 {displayName}
