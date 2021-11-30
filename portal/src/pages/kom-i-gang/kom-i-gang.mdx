@@ -1,9 +1,12 @@
 # Kom i gang
 
+## Prelastet stil
+
+Hvis du benytter flere komponenter fra systemet er dette den anbefalte metoden.
+
 1. `$` `npm install @rikstv/shared-components`
 1. Pakk inn appen din i ønsket merkevare, `<StrimProvider> <App /> <StrimProvider>` eller `<RiksTVProvider> <App /> <RiksTVProvider>`
-1. Importer rot stilen `import "@rikstv/shared-components/dist/core/strim.css"` eller `import "@rikstv/shared-components/dist/core/rikstv.css"`
-1. Importer stilen til komponentene du trenger feks `import "@rikstv/shared-components/dist/button/Button.css"`
+1. Importer eller preload rot stilen `import "@rikstv/shared-components/dist/style.css"`
 1. Legg til fontene du trenger, kan hentes fra portalen
 
 ```tsx
@@ -13,9 +16,45 @@ import {
     DisplayTitle,
 } from '@rikstv/shared-components";
 
-import '@rikstv/shared-components/dist/core/Strim.css";
-import '@rikstv/shared-components/dist/button/Button.css";
-import '@rikstv/shared-components/dist/typography/Typography.css";
+import "@rikstv/shared-components/dist/style.css"
+
+const Root = () => (
+    <StrimProvider>
+        <main>
+            <DisplayTitle>
+                MyApp
+            </DisplayTitle>
+
+            <PrimaryButton>
+                Hello world
+            </PrimaryButton>
+        </main>
+    </StrimProvider>
+)
+```
+
+## Kodesplittet stil
+
+Hvis du bare bruker noen få komponenter, eller du har behov til å gjøre gjøre spesielle ting med stilen, så kan man laste inn stilfilene selv.
+Da må du ha en scss-loader og du må sette den opp til å parse filene fra shared-components. Hvis du bruker Vite anbefales `vite-plugin-style-import`,
+for å sette opp komponent til stil mappingen et sted.
+
+1. `$` `npm install @rikstv/shared-components`
+1. Pakk inn appen din i ønsket merkevare, `<StrimProvider> <App /> <StrimProvider>` eller `<RiksTVProvider> <App /> <RiksTVProvider>`
+1. Importer rot stilen `import "@rikstv/shared-components/dist/core/strm.scss"` eller `import "@rikstv/shared-components/dist/core/rtv.scss"`
+1. Importer stilen til komponentene du trenger feks `import "@rikstv/shared-components/dist/button/button.scss"`
+1. Legg til fontene du trenger, kan hentes fra portalen
+
+```tsx
+import {
+    StrimProvider,
+    PrimaryButton,
+    DisplayTitle,
+} from '@rikstv/shared-components";
+
+import '@rikstv/shared-components/dist/core/strm.scss";
+import '@rikstv/shared-components/dist/button/button.scss";
+import '@rikstv/shared-components/dist/typography/typography.scss";
 
 const Root = () => (
     <StrimProvider>

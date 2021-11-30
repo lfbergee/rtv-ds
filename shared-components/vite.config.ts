@@ -31,7 +31,7 @@ export default defineConfig({
     },
   ],
   build: {
-    cssCodeSplit: true,
+    cssCodeSplit: false,
     lib: {
       entry: path.resolve(__dirname, "src/components/index.ts"),
       name: "index",
