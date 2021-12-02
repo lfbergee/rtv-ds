@@ -36,6 +36,7 @@ export const TextField = forwardRef<
     const errorTextId = generateId();
     const generatedId = generateId(id);
     const useWhiteBackground = lightBackground === "white";
+    const ariaInvalid = !!error;
 
     return (
       <div className={`rds-form-group ${className}`}>
@@ -51,6 +52,7 @@ export const TextField = forwardRef<
         `}
           type={type}
           placeholder={label}
+          aria-invalid={ariaInvalid}
           aria-describedby={error ? errorTextId : undefined}
           {...props}
         />
@@ -63,7 +65,10 @@ export const TextField = forwardRef<
           <span>{label}</span>
         </label>
         {error && (
-          <SubBody id={errorTextId} className="rds-textfield--error-text">
+          <SubBody
+            id={errorTextId}
+            className={`rds-textfield rds-textfield--error-text ${lightBackground ? "rds-light" : ""}`}
+          >
             {error}
           </SubBody>
         )}

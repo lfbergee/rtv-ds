@@ -6,21 +6,23 @@
   --textfield-color: var(--rds-foreground-primary);
   --textfield-label-color: var(--rds-foreground-secondary);
   --textfield-border-color: var(--rds-foreground-primary);
-  --textfield-error-color: var(--rds-feedback-error);
+  --textfield-selected-color: var(--rds-heading-accent);
+  --textfield-error-color: var(--rds-feedback-error-text);
   --textfield-bg: var(--rds-background-primary);
   position: relative;
 
   .rds-textfield {
     &--input {
       border: 1px solid var(--textfield-border-color);
-      background-color: var(--input-border-bg);
-      color: var(--textfield-color);
-      border-radius: 2px;
-
+      border-radius: 12px;
+      margin: 1px;
+      padding: 0 var(--rds-spacing--8);
       height: 3rem;
       width: 100%;
-      max-width: 500px;
-      padding: 0 var(--rds-spacing--8);
+      max-width: 335px;
+
+      background-color: var(--input-border-bg);
+      color: var(--textfield-color);
 
       &--full-width {
         max-width: unset;
@@ -31,7 +33,17 @@
       }
 
       &:focus {
-        outline-color: var(--rds-feedback-info);
+        font-family: var(--rds-font-family-headlines);
+        color: var(--textfield-color);
+        --textfield-border-color: var(--textfield-selected-color);
+        border-width: 2px;
+        outline: none;
+        margin: 0;
+      }
+
+      &--error,
+      &:invalid {
+        --textfield-border-color: var(--textfield-error-color);
       }
 
       &::-webkit-search-cancel-button {
@@ -65,6 +77,7 @@
 
     &--error-text {
       color: var(--textfield-error-color);
+      font-family: var(--rds-font-family-headlines);
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       position: absolute;
@@ -91,11 +104,18 @@
   &.rds-textfield {
     --textfield-color: var(--rds-button-primary-fg);
     --textfield-border-color: var(--rds-button-primary-fg);
+    --textfield-selected-color: var(--rds-button-primary-fg);
     --textfield-bg: var(--surface-background);
+    --textfield-error-color: var(--rds-feedback-error-object);
+
+    &--input--error,
+    &:invalid {
+      --textfield-border-color: var(--textfield-error-color);
+    }
 
     &--label {
       span {
-        --textfield-label-color: var(--rds-background-primary);
+        --textfield-label-color: var(--rds-background-primary) !important;
       }
     }
   }
