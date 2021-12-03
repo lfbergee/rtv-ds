@@ -12,6 +12,7 @@
 
   .rds-checkbox {
     &--input {
+      -webkit-appearance: none;
       appearance: none;
       cursor: pointer;
       background-color: var(--checkbox-background-color);
@@ -29,10 +30,21 @@
 
       &::before {
         content: "";
-        width: 0.85rem; //Borde vara i relation till storlek?
-        height: 0.85rem;
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-        //clip-path: polygon(5.77% 12.98%, 0.39% 7.60%, 0.39% 5.72%, 2.27% 5.72%, 6.12% 9.56%, 15.29% 0.39%, 17.18% 0.39%, 17.18% 2.27%, 6.46% 12.98%, 5.77% 12.98%);
+        width: 0.85em;
+        height: 0.85em;
+        //clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+        clip-path: polygon(
+          33.59% 75.55%,
+          2.27% 44.24%,
+          2.27% 33.29%,
+          13.21% 33.29%,
+          35.62% 55.65%,
+          89% 2.27%,
+          100% 2.27%,
+          100% 13.21%,
+          37.6% 75.55%,
+          33.59% 75.55%
+        );
         transform: scale(0);
         transform-origin: bottom left;
         transition: 120ms transform ease-in-out;
