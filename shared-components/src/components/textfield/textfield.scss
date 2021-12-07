@@ -4,7 +4,7 @@
 
 .rds-form-group {
   --textfield-color: var(--rds-foreground-primary);
-  --textfield-label-color: var(--rds-foreground-secondary);
+  --textfield-label-color: var(--rds-foreground-primary);
   --textfield-border-color: var(--rds-foreground-primary);
   --textfield-selected-color: var(--rds-heading-accent);
   --textfield-error-color: var(--rds-feedback-error-text);
@@ -13,10 +13,9 @@
 
   .rds-textfield {
     &--input {
-      border: 1px solid var(--textfield-border-color);
+      border: 2px solid var(--textfield-border-color);
       border-radius: 12px;
-      margin: 1px;
-      padding: 0 var(--rds-spacing--8);
+      padding: 0 var(--rds-spacing--16) 0;
       height: 3rem;
       width: 100%;
       max-width: 335px;
@@ -36,14 +35,14 @@
         font-family: var(--rds-font-family-headlines);
         color: var(--textfield-color);
         --textfield-border-color: var(--textfield-selected-color);
-        border-width: 2px;
         outline: none;
-        margin: 0;
+        outline: var(--textfield-border-color) solid 1px;
       }
 
       &--error,
       &:invalid {
         --textfield-border-color: var(--textfield-error-color);
+        outline: var(--textfield-border-color) solid 1px;
       }
 
       &::-webkit-search-cancel-button {
@@ -63,6 +62,7 @@
       position: absolute;
       padding: 0 8px;
       top: 50%;
+      margin-left: 6px;
       left: var(--rds-spacing--4);
       transform: translateY(-50%);
       transition: 0.2s ease-in-out;
@@ -90,12 +90,14 @@
     .rds-textfield--label {
       top: 0;
       font-size: 1rem;
+      --textfield-label-color: var(--rds-foreground-overlay-heavy);
     }
   }
 
   .rds-textfield--input:not(:placeholder-shown) + label {
     top: 0;
     font-size: 1rem;
+    --textfield-label-color: var(--rds-foreground-overlay-heavy);
   }
 }
 
@@ -115,7 +117,7 @@
 
     &--label {
       span {
-        --textfield-label-color: var(--rds-background-primary) !important;
+        --textfield-label-color: var(--rds-background-primary);
       }
     }
   }
