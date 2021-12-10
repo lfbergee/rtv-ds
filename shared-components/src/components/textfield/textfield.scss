@@ -2,7 +2,7 @@
 @use "../core/mixin/focus" as mix;
 @use "../core/mixin/rem";
 
-.rds-form-group {
+.rds-textfield-form-group {
   --textfield-color: var(--rds-foreground-primary);
   --textfield-label-color: var(--rds-foreground-primary);
   --textfield-border-color: var(--rds-foreground-primary);
@@ -12,7 +12,7 @@
   position: relative;
 
   .rds-textfield {
-    &--input {
+    &-input {
       border: 2px solid var(--textfield-border-color);
       border-radius: 12px;
       padding: 0 var(--rds-spacing--16) 0;
@@ -35,12 +35,10 @@
         font-family: var(--rds-font-family-headlines);
         color: var(--textfield-color);
         --textfield-border-color: var(--textfield-selected-color);
-        outline: none;
         outline: var(--textfield-border-color) solid 1px;
       }
 
-      &--error,
-      &:invalid {
+      &--error {
         --textfield-border-color: var(--textfield-error-color);
         outline: var(--textfield-border-color) solid 1px;
       }
@@ -56,10 +54,32 @@
       }
     }
 
-    &--label {
+    &-label {
+      &::after {
+        position: absolute;
+        right: 0.75em;
+        top: 0.25em;
+        content: "";
+        width: 18px;
+        height: 14px;
+        transform: scale(0);
+        transform-origin: bottom left;
+        transition: 120ms transform ease-in-out;
+        clip-path: path(
+          "M5.77 12.98L0.39 7.6C-0.13 7.08 -0.13 6.24 0.39 5.72C0.91 5.2 1.75 5.2 2.27 5.72L6.12 9.56L15.29 0.39C15.81 -0.13 16.66 -0.13 17.18 0.39C17.7 0.91 17.7 1.75 17.18 2.27L6.46 12.98C6.27 13.17 5.96 13.17 5.77 12.98Z"
+        );
+        box-shadow: inset 2.1em 2.1em var(--textfield-color);
+      }
+
+      &[data-valid="true"]::after {
+        transform: scale(1);
+      }
+    }
+
+    &-label span {
+      position: absolute;
       cursor: text;
       background-color: var(--textfield-bg);
-      position: absolute;
       padding: 0 8px;
       top: 50%;
       margin-left: 6px;
@@ -68,11 +88,9 @@
       transition: 0.2s ease-in-out;
       transition-property: top, font-size;
 
-      span {
-        @extend .rds-body;
-        font-size: rem.convert(18px);
-        color: var(--textfield-label-color);
-      }
+      font-size: rem.convert(18px);
+      color: var(--textfield-label-color);
+      @extend .rds-body;
     }
 
     &--error-text {
@@ -87,44 +105,59 @@
   }
 
   &:focus-within {
-    .rds-textfield--label {
-      top: 0;
+    .rds-textfield-label span {
+      top: -1rem;
       font-size: 1rem;
       --textfield-label-color: var(--rds-foreground-overlay-heavy);
     }
   }
 
-  .rds-textfield--input:not(:placeholder-shown) + label {
-    top: 0;
+  .rds-textfield-input:not(:placeholder-shown) + span {
+    top: -1rem;
     font-size: 1rem;
     --textfield-label-color: var(--rds-foreground-overlay-heavy);
   }
 }
 
+.rds-textfield-input {
+  position: relative;
+}
+
 .rds-light {
-  .rds-textfield,
-  &.rds-textfield {
+  .rds-textfield-form-group,
+  &.rds-textfield-form-group {
     --textfield-color: var(--rds-button-primary-fg);
     --textfield-border-color: var(--rds-button-primary-fg);
     --textfield-selected-color: var(--rds-button-primary-fg);
     --textfield-bg: var(--surface-background);
     --textfield-error-color: var(--rds-feedback-error-object);
 
-    &--input--error,
-    &:invalid {
-      --textfield-border-color: var(--textfield-error-color);
-    }
+    .rds-textfield {
+      &-input--error {
+        --textfield-border-color: var(--textfield-error-color);
+      }
 
-    &--label {
-      span {
+      &-label {
+        --textfield-label-color: var(--rds-background-primary);
+
+        &.rds-white {
+          --textfield-bg: var(--rds-foreground-primary);
+        }
+      }
+
+      &-input:not(:placeholder-shown) + span {
+        top: -1rem;
+        font-size: 1rem;
+        --textfield-label-color: var(--rds-background-primary);
+      }
+
+      &-input:focus {
+        --textfield-border-color: var(--textfield-selected-color);
+      }
+
+      &-label:focus-within span {
         --textfield-label-color: var(--rds-background-primary);
       }
     }
-  }
-}
-
-.rds-white {
-  &.rds-textfield {
-    --textfield-bg: var(--rds-foreground-primary);
   }
 }
