@@ -41,45 +41,47 @@ export const TextField = forwardRef<
     const ariaInvalid = !!error;
 
     return (
-      <span
+      <div
         className={`rds-textfield-form-group 
-          ${lightBackground ? "rds-light" : ""}
-          ${useWhiteBackground ? "rds-white" : ""} 
-          ${className}`}
+      ${lightBackground ? "rds-light" : ""}
+      ${useWhiteBackground ? "rds-white" : ""} 
+      ${className}`}
       >
-        <label
-          htmlFor={generatedId}
-          className={`rds-textfield-label ${labelClass} ${lightBackground ? "rds-light" : ""} ${
-            useWhiteBackground ? "rds-white" : ""
-          }`}
-          data-valid={valid}
-        >
-          <input
-            ref={ref}
-            id={generatedId}
-            className={`
-            rds-textfield-input ${error || valid === false ? "rds-textfield-input--error" : ""} ${
-              fullWidth ? "rds-textfield-input--full-width" : ""
-            } 
-            `}
-            type={type}
-            placeholder={label}
-            aria-invalid={ariaInvalid}
-            aria-describedby={error ? errorTextId : undefined}
+        <span className="rds-textfield-wrapper">
+          <label
+            htmlFor={generatedId}
+            className={`rds-textfield-label ${labelClass} ${lightBackground ? "rds-light" : ""} ${
+              useWhiteBackground ? "rds-white" : ""
+            }`}
             data-valid={valid}
-            {...props}
-          />
-          <span>{label}</span>
-        </label>
-        {error && (
-          <SubBody
-            id={errorTextId}
-            className={`rds-textfield rds-textfield--error-text ${lightBackground ? "rds-light" : ""}`}
           >
-            {error}
-          </SubBody>
-        )}
-      </span>
+            <input
+              ref={ref}
+              id={generatedId}
+              className={`
+            rds-textfield-input ${error || valid === false ? "rds-textfield-input--error" : ""} ${
+                fullWidth ? "rds-textfield-input--full-width" : ""
+              } 
+            `}
+              type={type}
+              placeholder={label}
+              aria-invalid={ariaInvalid}
+              aria-describedby={error ? errorTextId : undefined}
+              data-valid={valid}
+              {...props}
+            />
+            <span>{label}</span>
+          </label>
+          {error && (
+            <SubBody
+              id={errorTextId}
+              className={`rds-textfield rds-textfield--error-text ${lightBackground ? "rds-light" : ""}`}
+            >
+              {error}
+            </SubBody>
+          )}
+        </span>
+      </div>
     );
   }
 );
