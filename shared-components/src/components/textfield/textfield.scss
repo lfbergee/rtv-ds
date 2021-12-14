@@ -38,7 +38,8 @@
         outline: var(--textfield-border-color) solid 1px;
       }
 
-      &--error {
+      &--error,
+      &[data-valid="false"] {
         --textfield-border-color: var(--textfield-error-color);
         outline: var(--textfield-border-color) solid 1px;
       }
@@ -51,6 +52,12 @@
       &:-webkit-autofill {
         box-shadow: 0 0 0 30px var(--textfield-bg) inset;
         -webkit-text-fill-color: var(--textfield-color);
+      }
+
+      &:not(:placeholder-shown) + span {
+        top: -1rem;
+        font-size: 1rem;
+        --textfield-label-color: var(--rds-foreground-overlay-heavy);
       }
     }
 
@@ -96,8 +103,7 @@
     &--error-text {
       color: var(--textfield-error-color);
       font-family: var(--rds-font-family-headlines);
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      margin-top: 0.75rem;
       position: absolute;
     }
 
@@ -111,16 +117,6 @@
       --textfield-label-color: var(--rds-foreground-overlay-heavy);
     }
   }
-
-  .rds-textfield-input:not(:placeholder-shown) + span {
-    top: -1rem;
-    font-size: 1rem;
-    --textfield-label-color: var(--rds-foreground-overlay-heavy);
-  }
-}
-
-.rds-textfield-input {
-  position: relative;
 }
 
 .rds-light {

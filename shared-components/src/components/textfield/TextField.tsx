@@ -66,6 +66,7 @@ export const TextField = forwardRef<
             placeholder={label}
             aria-invalid={ariaInvalid}
             aria-describedby={error ? errorTextId : undefined}
+            data-valid={valid}
             {...props}
           />
           <span>{label}</span>
