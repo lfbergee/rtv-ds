@@ -19,9 +19,11 @@
   &-input {
     border: 2px solid var(--textfield-border-color);
     border-radius: 12px;
+    outline: none;
     padding: 0 var(--rds-spacing--16) 0;
     height: 3rem;
     width: 100%;
+    margin: 0;
 
     background-color: var(--input-border-bg);
     color: var(--textfield-color);
@@ -34,13 +36,14 @@
       font-family: var(--rds-font-family-headlines);
       color: var(--textfield-color);
       --textfield-border-color: var(--textfield-selected-color);
-      outline: var(--textfield-border-color) solid 1px;
+      border-width: 3px;
+      margin: -1px;
     }
 
-    &--error,
-    &[data-valid="false"] {
+    &--error {
       --textfield-border-color: var(--textfield-error-color);
-      outline: var(--textfield-border-color) solid 1px;
+      border-width: 3px;
+      margin: -1px;
     }
 
     &::-webkit-search-cancel-button {
