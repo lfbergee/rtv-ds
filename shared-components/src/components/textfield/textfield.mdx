@@ -7,7 +7,7 @@
 # Med error message
 
 ```tsx live=true
-<TextField type="email" name="epost" label="E-post" error="Feil e-post!" />
+<TextField type="email" name="epost" label="E-post" errorMessage="Feil e-post!" />
 ```
 
 # Lys bakgrunn
@@ -76,7 +76,7 @@ Den kan også brukes som en ukontrollert komponent. Du kan gi referanse til Text
 ```tsx
 const targetRef = useRef(null);
 
-return <TextField type="email" label="E-post" error="Feil epost!" ref={targetRef} />;
+return <TextField type="email" label="E-post" ref={targetRef} />;
 ```
 
 ## Uncontrolled with react-hook-form
