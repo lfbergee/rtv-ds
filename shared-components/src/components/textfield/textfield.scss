@@ -61,6 +61,8 @@
       font-size: 1rem;
       --textfield-label-color: var(--rds-foreground-overlay-heavy);
     }
+
+    @include mix.with-keyboard-focus;
   }
 
   &-label {
@@ -116,8 +118,6 @@
       --textfield-label-color: var(--rds-foreground-overlay-heavy);
     }
   }
-
-  @include mix.with-keyboard-focus;
 }
 
 .rds-light {
