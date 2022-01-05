@@ -17,7 +17,7 @@ export const TextField = forwardRef<
     lightBackground?: boolean | "white";
     whiteBackground?: boolean;
     labelClass?: string;
-    error?: string | null | false;
+    errorMessage?: string | null | false;
   }
 >(
   (
@@ -30,7 +30,7 @@ export const TextField = forwardRef<
       valid,
       lightBackground = false,
       label,
-      error,
+      errorMessage,
       ...props
     },
     ref
@@ -38,7 +38,7 @@ export const TextField = forwardRef<
     const errorTextId = generateId();
     const generatedId = generateId(id);
     const useWhiteBackground = lightBackground === "white";
-    const ariaInvalid = !!error;
+    const ariaInvalid = !!errorMessage || valid === false;
 
     return (
       <div
@@ -59,23 +59,23 @@ export const TextField = forwardRef<
             ref={ref}
             id={generatedId}
             className={`
-            rds-textfield-input ${error || valid === false ? "rds-textfield-input--error" : ""} 
+            rds-textfield-input ${errorMessage || valid === false ? "rds-textfield-input--error" : ""} 
             `}
             type={type}
             placeholder={label}
             aria-invalid={ariaInvalid}
-            aria-describedby={error ? errorTextId : undefined}
+            aria-describedby={errorMessage ? errorTextId : undefined}
             data-valid={valid}
             {...props}
           />
           <span>{label}</span>
         </label>
-        {error && (
+        {errorMessage && (
           <SubBody
             id={errorTextId}
             className={`rds-textfield rds-textfield--error-text ${lightBackground ? "rds-light" : ""}`}
           >
-            {error}
+            {errorMessage}
           </SubBody>
         )}
       </div>
