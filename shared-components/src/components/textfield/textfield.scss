@@ -35,9 +35,12 @@
     &:focus {
       font-family: var(--rds-font-family-headlines);
       color: var(--textfield-color);
-      --textfield-border-color: var(--textfield-selected-color);
       border-width: 3px;
       margin: -1px;
+
+      &:not([data-valid="false"]) {
+        --textfield-border-color: var(--textfield-selected-color);
+      }
     }
 
     &--error {
@@ -107,7 +110,8 @@
   &--error-text {
     color: var(--textfield-error-color);
     font-family: var(--rds-font-family-headlines);
-    margin-top: 0.75rem;
+    margin: 0.25rem 0 0 0;
+    padding-left: var(--rds-spacing--16);
     position: absolute;
   }
 
@@ -133,6 +137,10 @@
       --textfield-border-color: var(--textfield-error-color);
     }
 
+    &--error-text {
+      color: var(--textfield-error-color);
+    }
+
     &-label {
       --textfield-label-color: var(--rds-background-primary);
 
@@ -148,7 +156,9 @@
     }
 
     &-input:focus {
-      --textfield-border-color: var(--textfield-selected-color);
+      &:not([data-valid="false"]) {
+        --textfield-border-color: var(--textfield-selected-color);
+      }
     }
 
     &-label:focus-within span {
