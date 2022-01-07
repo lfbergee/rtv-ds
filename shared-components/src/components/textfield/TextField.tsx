@@ -15,9 +15,8 @@ export const TextField = forwardRef<
     fullWidth?: boolean;
     valid?: boolean;
     lightBackground?: boolean | "white";
-    whiteBackground?: boolean;
     labelClass?: string;
-    errorMessage?: string | null | false;
+    errorMessage?: string;
   }
 >(
   (
@@ -37,35 +36,36 @@ export const TextField = forwardRef<
   ) => {
     const errorTextId = generateId();
     const generatedId = generateId(id);
-    const useWhiteBackground = lightBackground === "white";
+    const whiteBackground = lightBackground === "white";
+    const isValid = !errorMessage && valid;
     const ariaInvalid = !!errorMessage || valid === false;
 
     return (
       <div
         className={`rds-textfield
       ${lightBackground ? "rds-light" : ""}
-      ${useWhiteBackground ? "rds-white" : ""}
+      ${whiteBackground ? "rds-white" : ""}
       ${fullWidth ? "rds-textfield--full-width" : ""}  
       ${className}`}
       >
         <label
           htmlFor={generatedId}
           className={`rds-textfield-label ${labelClass} ${lightBackground ? "rds-light" : ""} ${
-            useWhiteBackground ? "rds-white" : ""
+            whiteBackground ? "rds-white" : ""
           }`}
-          data-valid={valid}
+          data-valid={isValid}
         >
           <input
             ref={ref}
             id={generatedId}
             className={`
-            rds-textfield-input ${errorMessage || valid === false ? "rds-textfield-input--error" : ""} 
+            rds-textfield-input ${ariaInvalid ? "rds-textfield-input--error" : ""} 
             `}
             type={type}
             placeholder={label}
             aria-invalid={ariaInvalid}
             aria-describedby={errorMessage ? errorTextId : undefined}
-            data-valid={valid}
+            data-valid={isValid}
             {...props}
           />
           <span>{label}</span>
