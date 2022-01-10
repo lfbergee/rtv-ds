@@ -16,8 +16,9 @@
 
   --rds-background-primary-rgb: 0, 42, 42; // #002a2a
   --rds-background-primary: rgb(var(--rds-background-primary-rgb));
-  --rds-background-secondary: #001d1d;
-  --rds-background-tertiary: #001515;
+  --rds-background-secondary: #001515;
+  --rds-background-tertiary: #004b50;
+  --rds-background-card: #193f3f;
 
   --rds-foreground-overlay-soft: rgba(255, 255, 255, 0.1);
   --rds-foreground-overlay-medium: rgba(255, 255, 255, 0.3);
