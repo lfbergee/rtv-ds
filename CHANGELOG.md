@@ -4,7 +4,7 @@
 
 ### 💥 BREAKING CHANGES 💥
 
-- Changes the secondary and tertiary background colors. Also adds new color "--rds-background-card"
+- Changes the secondary- and tertiary-background colors. Also adds new color "--rds-background-card"
 
 ## 0.7.0
 
