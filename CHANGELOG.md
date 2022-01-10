@@ -1,8 +1,8 @@
 # 📖 Change Log
 
-## 0.7.1
+## 0.8.0
 
-### 🤷 Description
+### 💥 BREAKING CHANGES 💥
 
 - Changes the secondary and tertiary background colors. Also adds new color "--rds-background-card"
 
