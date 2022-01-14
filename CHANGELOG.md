@@ -1,5 +1,9 @@
 # 📖 Change Log
 
+## 0.8.1
+
+### 💥 Deprecated 💥
+
 ## 0.8.0
 
 ### 💥 BREAKING CHANGES 💥

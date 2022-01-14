@@ -20,3 +20,16 @@ jobs:
           npm install
           npm run test
           npm run build
+
+      - name: Release 🔥
+        if: "contains(github.event.head_commit.message, '[release]')"
+        run: |
+          npm run release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.7
+        with:
+          branch: gh-pages
+          folder: portal/dist
