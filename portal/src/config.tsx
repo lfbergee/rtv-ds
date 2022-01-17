@@ -8,6 +8,7 @@ const Spacing = lazy(() => import("@rikstv/shared-components/src/components/core
 const Colors = lazy(() => import("@rikstv/shared-components/src/components/core/colors.mdx"));
 const Button = lazy(() => import("@rikstv/shared-components/src/components/button/button.mdx"));
 const IconButton = lazy(() => import("@rikstv/shared-components/src/components/button/iconButton.mdx"));
+const Checkbox = lazy(() => import("@rikstv/shared-components/src/components/checkbox/checkbox.mdx"));
 const TextField = lazy(() => import("@rikstv/shared-components/src/components/textfield/textfield.mdx"));
 const RadioToggle = lazy(() => import("@rikstv/shared-components/src/components/toggle/radioToggle.mdx"));
 const Typography = lazy(() => import("@rikstv/shared-components/src/components/typography/typography.mdx"));
@@ -26,6 +27,7 @@ const typographyType: LazyImportedTypes = import(
   "../../../shared-components/src/components/typography/Typography?type"
 );
 const accordionType: LazyImportedTypes = import("../../../shared-components/src/components/accordion/Accordion?type");
+const checkboxType: LazyImportedTypes = import("../../../shared-components/src/components/checkbox/Checkbox?type");
 
 // if more than one type is needed to show types in example
 // just add more at the end, makeComponent takes as many types as you could ever want
@@ -39,5 +41,6 @@ export const components = [
   makeComponent("colors", Colors),
   makeComponent("typografi", Typography, typographyType),
   makeComponent("accordion", Accordion, accordionType),
+  makeComponent("checkbox", Checkbox, checkboxType),
   makeComponent("textfield", TextField, textFieldType),
 ].sort((a, b) => a.displayName.localeCompare(b.displayName));
