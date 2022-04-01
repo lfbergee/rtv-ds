@@ -15,7 +15,7 @@
     "normalize.css": "^8.0.1",
     "react-docgen-typescript": "^2.2.1",
     "react-live": "^2.3.0",
-    "react-router-dom": "^6.0.2"
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@types/mdx-js__react": "^1.5.5",
